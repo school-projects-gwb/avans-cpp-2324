@@ -22,10 +22,15 @@ HotkeyManager::~HotkeyManager() {
   }
 }
 
-void HotkeyManager::HandleCommand(int key, Game& game) const {
-  for (const Hotkey& hotkey : hotkeys_) {
-    if (hotkey.key != key) continue;
-    hotkey.command->HandleCommand(game, key);
-    return;
+void HotkeyManager::HandleCommand(int inputValue, Game& game) const {
+  auto it = std::find_if(hotkeys_.begin(), hotkeys_.end(),
+                         [inputValue](const Hotkey& hotkey) {
+                           return hotkey.key == inputValue;
+                         });
+
+  if (it != hotkeys_.end()) {
+    it->command->HandleCommand(game, inputValue);
+  } else {
+    game.HandlePlayerInputValue(inputValue);
   }
 }

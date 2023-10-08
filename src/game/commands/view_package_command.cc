@@ -2,6 +2,7 @@
 void ViewPackageCommand::HandleCommand(Game &game, int key) const {
 
 }
+
 bool ViewPackageCommand::IsAllowed(Game &game) const {
-  return game.state == 1;
+  return game.GetState() == Main;
 }

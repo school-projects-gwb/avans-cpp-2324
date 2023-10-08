@@ -2,7 +2,7 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_STATE_H_
 
 enum GameState {
-  Scan, PlayerAction, Encounter, Combat
+  Scan, Main, Encounter, Combat
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_STATE_H_

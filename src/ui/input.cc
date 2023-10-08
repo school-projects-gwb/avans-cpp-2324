@@ -25,9 +25,8 @@ void Input::HandleInput(Game& game) const {
 }
 
 void Input::ShowAllowedCommands(Game& game) const {
-  std::cout << "Toegestane acties (toets : omschrijving):\n";
   for(const Hotkey& hotkey : hotkey_manager_.hotkeys_)
     if (hotkey.command->IsAllowed(game)) std::cout << hotkey.key << " : " << hotkey.description << "\n";
 
-  std::cout << "\n< ";
+  std::cout << "\n> ";
 }

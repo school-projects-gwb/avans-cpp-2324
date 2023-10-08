@@ -3,6 +3,7 @@
 void PickupPackageCommand::HandleCommand(Game &game, int key) const {
 
 }
+
 bool PickupPackageCommand::IsAllowed(Game &game) const {
-  return game.state == 1;
+  return game.GetState() == Main;
 }

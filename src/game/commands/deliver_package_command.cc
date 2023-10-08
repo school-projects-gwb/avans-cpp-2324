@@ -5,5 +5,5 @@ void DeliverPackageCommand::HandleCommand(Game &game, int key) const {
 }
 
 bool DeliverPackageCommand::IsAllowed(Game &game) const {
-  return game.state == 1;
+  return game.GetState() == Main;
 }

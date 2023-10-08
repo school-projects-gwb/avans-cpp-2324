@@ -3,9 +3,11 @@
 #include "ui/input.h"
 
 int main() {
-  Ui ui = Ui();
-  Input input = Input();
   Game game = Game();
+  Ui ui = Ui(game);
+  Input input = Input();
+
+  ui.ShowScan();
 
   while (true) input.HandleInput(game);
 }
