@@ -6,9 +6,10 @@
 class Input {
  private:
   HotkeyManager hotkey_manager_;
+  void ShowAllowedCommands(Game& game) const;
  public:
   Input();
-  const void HandleInput(Game& game);
+  void HandleInput(Game& game) const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_INPUT_H_

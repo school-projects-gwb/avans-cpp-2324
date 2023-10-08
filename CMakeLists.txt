@@ -7,4 +7,5 @@ include_directories(src)
 include_directories(src/game)
 
 file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
-add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES})
+add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
+        src/game/game_state.h)

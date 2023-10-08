@@ -6,6 +6,7 @@
 class Command {
  public:
   virtual void HandleCommand(Game& game, int key) const = 0;
+  virtual bool IsAllowed(Game& game) const = 0;
   virtual ~Command() = default;
 };
 

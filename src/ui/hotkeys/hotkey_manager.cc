@@ -22,7 +22,7 @@ HotkeyManager::~HotkeyManager() {
   }
 }
 
-const void HotkeyManager::HandleCommand(int key, Game& game) {
+void HotkeyManager::HandleCommand(int key, Game& game) const {
   for (const Hotkey& hotkey : hotkeys_) {
     if (hotkey.key != key) continue;
     hotkey.command->HandleCommand(game, key);

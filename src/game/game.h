@@ -2,6 +2,7 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_H_
 
 #include "scanner.h"
+#include "game_state.h"
 class Game {
  private:
   Scanner scanner_;
@@ -9,6 +10,7 @@ class Game {
   Game();
   void HandleInput(char input);
   void Move(int direction);
+  GameState state = Scan;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_H_

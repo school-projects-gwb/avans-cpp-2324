@@ -4,12 +4,11 @@
 #include <vector>
 #include "hotkey.h"
 class HotkeyManager {
- private:
-  std::vector<Hotkey> hotkeys_;
  public:
+  std::vector<Hotkey> hotkeys_;
   HotkeyManager();
   ~HotkeyManager();
-  const void HandleCommand(int key, Game& game);
+  void HandleCommand(int key, Game& game) const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_HOTKEYS_HOTKEY_MANAGER_H_
