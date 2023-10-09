@@ -16,19 +16,28 @@ void Sector::GenerateObjects() {
 }
 
 void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
-  RandomHelper random_helper = RandomHelper::GetInstance();
-
   for (int i = 0; i < amount; i++) {
-    int pos_x, pos_y;
-    do {
-      pos_x = random_helper.GenerateRandomInt(0, kGridSize - 1);
-      pos_y = random_helper.GenerateRandomInt(0, kGridSize - 1);
-    } while (objects_[pos_x][pos_y] != SectorObjectType::Empty);
-
-    objects_[pos_x][pos_y] = type;
+    Coords coords = GetRandomFreeCoords();
+    objects_[coords.pos_x_][coords.pos_y_] = type;
   }
 }
 
 Grid<SectorObjectType> Sector::GetSectorObjects() const {
   return MultiDimensionalArrayToGrid(objects_);
+}
+
+Coords Sector::GetRandomFreeCoords() const {
+  RandomHelper random_helper = RandomHelper::GetInstance();
+  Coords coords = {};
+  int pos_x, pos_y;
+
+  do {
+    pos_x = random_helper.GenerateRandomInt(0, kGridSize - 1);
+    pos_y = random_helper.GenerateRandomInt(0, kGridSize - 1);
+  } while (objects_[pos_x][pos_y] != SectorObjectType::Empty);
+
+  coords.pos_x_ = pos_x;
+  coords.pos_y_ = pos_y;
+
+  return coords;
 }

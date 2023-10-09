@@ -5,11 +5,13 @@
 #include "game/scans/scan_creator.h"
 #include "game_state.h"
 #include "game/sectors/universe.h"
+#include "spaceship.h"
 
 class Game {
  private:
   ScanCreator scanner_;
   Universe universe_;
+  SpaceShip space_ship_;
   GameState state_ = Scanning;
  public:
   Game();

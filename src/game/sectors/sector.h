@@ -5,6 +5,7 @@
 #include "game/scans/scan_object.h"
 #include "sector_object.h"
 #include "data/grid.h"
+#include "data/coords.h"
 
 class Sector {
  public:
@@ -17,7 +18,7 @@ class Sector {
   const Sector* kLeft = nullptr;
   const Sector* kRight = nullptr;
   Grid<SectorObjectType> GetSectorObjects() const;
-
+  Coords GetRandomFreeCoords() const;
  private:
   ScanObject scan_data_;
   static const int kGridSize = 10;

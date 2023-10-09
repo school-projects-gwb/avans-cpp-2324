@@ -1,7 +1,7 @@
 #include <iostream>
 #include "game.h"
 
-Game::Game() : scanner_(), universe_() {
+Game::Game() : scanner_(), universe_(), space_ship_() {
   scanner_.CreateScan();
 }
 
