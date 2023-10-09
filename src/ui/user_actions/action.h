@@ -4,12 +4,12 @@
 #include <string>
 #include <utility>
 #include "commands/command.h"
-struct Hotkey {
+struct UserAction {
   int key;
   Command* command;
   std::string description;
 
-  Hotkey(int k, Command* cmd, std::string desc)
+  UserAction(int k, Command* cmd, std::string desc)
       : key(k), command(cmd), description(std::move(desc)) {}
 };
 

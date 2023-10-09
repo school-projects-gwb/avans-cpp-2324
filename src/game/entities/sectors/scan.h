@@ -4,12 +4,12 @@
 #include <vector>
 #include "entities/scan_object.h"
 #include "sector.h"
-#include "entities/scan_pick_result.h"
+#include "entities/scan_select_result.h"
 
-class SectorManager {
+class Scan {
  public:
-  SectorManager() = default;
-  void SetSectors(const std::vector<std::vector<ScanObject>>& scanData, const ScanPickResult& pickResult);
+  Scan() = default;
+  void SetSectors(const std::vector<std::vector<ScanObject>>& scanData, const ScanSelectResult& pickResult);
  private:
   std::vector<std::vector<Sector>> sectors_;
   Sector* active_sector_;

@@ -3,11 +3,11 @@
 #include <sstream>
 #include "input.h"
 
-Input::Input() : hotkey_manager_() {}
+Input::Input() : action_registry_() {}
 
 void Input::HandleInput(Game& game) const {
   std::string input;
-  int userInput;
+  int user_input;
 
   while (true) {
     ShowAllowedCommands(game);
@@ -15,8 +15,8 @@ void Input::HandleInput(Game& game) const {
 
     std::istringstream iss(input);
 
-    if (iss >> userInput) {
-      hotkey_manager_.HandleCommand(userInput, game);
+    if (iss >> user_input) {
+      action_registry_.HandleCommand(user_input, game);
       break;
     }
 
@@ -25,7 +25,7 @@ void Input::HandleInput(Game& game) const {
 }
 
 void Input::ShowAllowedCommands(Game& game) const {
-  for(const Hotkey& hotkey : hotkey_manager_.hotkeys_)
+  for(const UserAction& hotkey : action_registry_.hotkeys_)
     if (hotkey.command->IsAllowed(game)) std::cout << hotkey.key << " : " << hotkey.description << "\n";
 
   std::cout << "\n> ";

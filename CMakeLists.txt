@@ -8,4 +8,4 @@ include_directories(src/game)
 
 file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
 add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
-        src/game/entities/scan_pick_result.h)
+        src/game/entities/scan_select_result.h)

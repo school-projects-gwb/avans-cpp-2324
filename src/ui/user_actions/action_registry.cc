@@ -1,11 +1,11 @@
-#include "hotkey_manager.h"
+#include "action_registry.h"
 #include "commands/move_command.h"
 #include "commands/pickup_package_command.h"
 #include "commands/view_package_command.h"
 #include "commands/deliver_package_command.h"
 #include "commands/empty_command.h"
 
-HotkeyManager::HotkeyManager() {
+ActionRegistry::ActionRegistry() {
   hotkeys_.push_back({1, new MoveCommand(), "Naar boven bewegen"});
   hotkeys_.push_back({2, new MoveCommand(), "Naar beneden bewegen"});
   hotkeys_.push_back({3, new MoveCommand(), "Naar links bewegen"});
@@ -16,15 +16,15 @@ HotkeyManager::HotkeyManager() {
   hotkeys_.push_back({7, new EmptyCommand(), "Niets doen"});
 }
 
-HotkeyManager::~HotkeyManager() {
-  for (Hotkey& hotkey : hotkeys_) {
+ActionRegistry::~ActionRegistry() {
+  for (UserAction& hotkey : hotkeys_) {
     delete hotkey.command;
   }
 }
 
-void HotkeyManager::HandleCommand(int inputValue, Game& game) const {
+void ActionRegistry::HandleCommand(int inputValue, Game& game) const {
   auto it = std::find_if(hotkeys_.begin(), hotkeys_.end(),
-                         [inputValue](const Hotkey& hotkey) {
+                         [inputValue](const UserAction& hotkey) {
                            return hotkey.key == inputValue;
                          });
 

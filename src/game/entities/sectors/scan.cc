@@ -1,7 +1,7 @@
 #include <iostream>
-#include "sector_manager.h"
+#include "scan.h"
 
-void SectorManager::SetSectors(const std::vector<std::vector<ScanObject>> &scanData, const ScanPickResult &pickResult) {
+void Scan::SetSectors(const std::vector<std::vector<ScanObject>> &scanData, const ScanSelectResult &pickResult) {
   size_t numRows = scanData.size();
   size_t numCols = (numRows > 0) ? scanData[0].size() : 0;
 

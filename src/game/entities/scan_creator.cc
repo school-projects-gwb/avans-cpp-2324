@@ -1,10 +1,10 @@
 #include <string>
 #include <iostream>
-#include "scanner.h"
+#include "scan_creator.h"
 #include "helpers/random_helper.h"
-#include "scan_pick_result.h"
+#include "scan_select_result.h"
 
-void Scanner::Scan() {
+void ScanCreator::CreateScan() {
   RandomHelper random_helper = RandomHelper::GetInstance();
 
   for (auto & row : scan_) {
@@ -16,8 +16,8 @@ void Scanner::Scan() {
   }
 }
 
-const ScanPickResult Scanner::PickSectorByInput(int input) const {
-  ScanPickResult result{};
+const ScanSelectResult ScanCreator::PickSectorByInput(int input) const {
+  ScanSelectResult result{};
   result.is_valid_ = false;
   result.row_number_ = -1;
   result.col_number_ = -1;
@@ -36,7 +36,7 @@ const ScanPickResult Scanner::PickSectorByInput(int input) const {
   return result;
 }
 
-std::vector<std::vector<ScanObject>> Scanner::GetCurrentScan() const {
+std::vector<std::vector<ScanObject>> ScanCreator::GetCurrentScan() const {
   std::vector<std::vector<ScanObject>> scanVector(kColRowCount, std::vector<ScanObject>(kColRowCount));
 
   std::transform(scan_, scan_ + kColRowCount, scanVector.begin(),

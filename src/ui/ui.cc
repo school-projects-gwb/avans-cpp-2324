@@ -4,7 +4,7 @@
 void Ui::ShowScan() const {
   auto scan = game_.GetCurrentScan();
 
-  std::cout << "Scan van universum:\n";
+  std::cout << "CreateScan van universum:\n";
 
   for (const auto& row : scan) {
     for (const auto &col : row)
