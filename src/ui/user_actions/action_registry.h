@@ -8,7 +8,7 @@ class ActionRegistry {
   std::vector<UserAction> hotkeys_;
   ActionRegistry();
   ~ActionRegistry();
-  void HandleCommand(int inputValue, Game& game) const;
+  void HandleCommand(int input_value, Game& game) const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_HOTKEYS_HOTKEY_MANAGER_H_

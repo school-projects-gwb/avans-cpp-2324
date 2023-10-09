@@ -11,4 +11,5 @@ add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
         src/game/scans/scan_select_result.h
         src/game/sectors/sector_object_type.h
         src/game/sectors/sector_object.h
+        src/game/data/grid.h
 )

@@ -3,8 +3,7 @@
 
 #include "scan_object.h"
 #include "scan_select_result.h"
-
-using Grid = std::vector<std::vector<ScanObject>>;
+#include "data/grid.h"
 
 class ScanCreator {
  private:
@@ -13,8 +12,8 @@ class ScanCreator {
 
  public:
   void CreateScan();
-  const ScanSelectResult PickSectorByInput(int input) const;
-  Grid GetCurrentScan() const;
+  ScanSelectResult PickSectorByInput(int input) const;
+  Grid<ScanObject> GetCurrentScan() const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SCANNER_H_

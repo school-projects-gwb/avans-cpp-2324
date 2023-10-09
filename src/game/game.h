@@ -16,7 +16,7 @@ class Game {
   void MovePlayer(int direction);
   void ProcessPlayerInput(int userInput);
   GameState GetState() const;
-  Grid GetCurrentScan() const;
+  Grid<ScanObject> GetCurrentScan() const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_H_

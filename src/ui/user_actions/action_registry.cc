@@ -17,20 +17,19 @@ ActionRegistry::ActionRegistry() {
 }
 
 ActionRegistry::~ActionRegistry() {
-  for (UserAction& hotkey : hotkeys_) {
+  for (UserAction& hotkey : hotkeys_)
     delete hotkey.command;
-  }
 }
 
-void ActionRegistry::HandleCommand(int inputValue, Game& game) const {
+void ActionRegistry::HandleCommand(int input_value, Game& game) const {
   auto it = std::find_if(hotkeys_.begin(), hotkeys_.end(),
-                         [inputValue](const UserAction& hotkey) {
-                           return hotkey.key == inputValue;
+                         [input_value](const UserAction& hotkey) {
+                           return hotkey.key == input_value;
                          });
 
   if (it != hotkeys_.end()) {
-    it->command->HandleCommand(game, inputValue);
+    it->command->HandleCommand(game, input_value);
   } else {
-    game.ProcessPlayerInput(inputValue);
+    game.ProcessPlayerInput(input_value);
   }
 }

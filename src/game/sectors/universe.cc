@@ -27,6 +27,6 @@ void Universe::SetSectors(const std::vector<std::vector<ScanObject>> &scanData, 
   active_sector_->GenerateObjects();
 }
 
-Grid Universe::GetActiveSector() {
-
+Sector& Universe::GetActiveSector() const {
+  return *active_sector_;
 }

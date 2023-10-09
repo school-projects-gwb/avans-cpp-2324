@@ -11,7 +11,7 @@ class Universe {
  public:
   Universe() = default;
   void SetSectors(const std::vector<std::vector<ScanObject>>& scanData, const ScanSelectResult& pickResult);
-  Grid GetActiveSector();
+  Sector& GetActiveSector() const;
  private:
   std::vector<std::vector<Sector>> sectors_;
   Sector* active_sector_ = nullptr;
