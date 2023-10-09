@@ -14,6 +14,7 @@ class ScanCreator {
   void CreateScan();
   ScanSelectResult PickSectorByInput(int input) const;
   Grid<ScanObject> GetCurrentScan() const;
+  bool IsOnEdge(int row_number, int col_number) const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SCANNER_H_

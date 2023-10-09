@@ -6,7 +6,6 @@ Game::Game() : scanner_(), universe_() {
 }
 
 void Game::MovePlayer(int direction) {
-
 }
 
 GameState Game::GetState() const {
@@ -14,23 +13,20 @@ GameState Game::GetState() const {
 }
 
 void Game::ProcessPlayerInput(int userInput) {
-  if (state_ == Scanning) {
-    auto result = scanner_.PickSectorByInput(userInput);
-    auto sectors = scanner_.GetCurrentScan();
-    if (result.is_valid_) {
-      universe_.SetSectors(sectors, result);
-      auto& x = universe_.GetActiveSector();
-      auto objects = x.GetSectorObjects();
+  if (state_ == GameState::Scanning) {
+    auto sector_input_result = scanner_.PickSectorByInput(userInput);
+    if (!sector_input_result.is_valid_) return;
 
-      for (const auto &row : objects) {
-        for (const auto &col : row)
-          std::cout << col << "  ";
-        std::cout << "\n";
-      }
-    }
+    auto sector_scan = scanner_.GetCurrentScan();
+    universe_.SetSectors(sector_scan, sector_input_result);
+    state_ = GameState::Movement;
   }
 }
 
 Grid<ScanObject> Game::GetCurrentScan() const {
   return scanner_.GetCurrentScan();
+}
+
+Grid<SectorObjectType> Game::GetCurrentSector() const {
+  return universe_.GetActiveSector().GetSectorObjects();
 }

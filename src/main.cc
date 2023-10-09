@@ -6,8 +6,10 @@ int main() {
   Game game = Game();
   Ui ui = Ui(game);
   Input input = Input();
+  ui.UpdateUi(game.GetState());
 
-  ui.ShowScan();
-
-  while (true) input.ProcessInput(game);
+  while (true) {
+    input.ProcessInput(game);
+    ui.UpdateUi(game.GetState());
+  }
 }

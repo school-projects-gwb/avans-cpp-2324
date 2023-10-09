@@ -8,8 +8,4 @@ include_directories(src/game)
 
 file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
 add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
-        src/game/scans/scan_select_result.h
-        src/game/sectors/sector_object_type.h
-        src/game/sectors/sector_object.h
-        src/game/data/grid.h
-)
+        src/game/game_observer.h)

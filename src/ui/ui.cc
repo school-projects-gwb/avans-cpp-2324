@@ -1,6 +1,9 @@
 #include <iostream>
 #include "ui.h"
 
+Ui::Ui(const Game& game) : game_(game) {
+}
+
 void Ui::ShowScan() const {
   auto scan = game_.GetCurrentScan();
 
@@ -16,5 +19,20 @@ void Ui::ShowScan() const {
   std::cout << "Kies je sector (Rij + kolom. Voorbeeld: 01 = rij 0 sector 1):\n";
 }
 
-Ui::Ui(const Game& game) : game_(game) {
+void Ui::ShowSector() const {
+  auto sector = game_.GetCurrentSector();
+
+  std::cout << "Huidige sector:\n";
+
+  for (const auto &row : sector) {
+    for (const auto &col : row)
+      std::cout << col << " ";
+
+    std::cout << "\n";
+  }
+}
+
+void Ui::UpdateUi(GameState state) const {
+  if (state == GameState::Scanning) ShowScan();
+  if (state == GameState::Movement) ShowSector();
 }
