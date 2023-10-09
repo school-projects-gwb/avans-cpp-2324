@@ -1,10 +1,11 @@
+#include <iostream>
 #include "game.h"
 
-Game::Game() : scanner_(), sector_manager_() {
+Game::Game() : scanner_(), universe_() {
   scanner_.CreateScan();
 }
 
-void Game::HandlePlayerMovement(int direction) {
+void Game::MovePlayer(int direction) {
 
 }
 
@@ -12,14 +13,17 @@ GameState Game::GetState() const {
   return state_;
 }
 
-void Game::HandlePlayerInputValue(int userInput) {
+void Game::ProcessPlayerInput(int userInput) {
   if (state_ == Scanning) {
     auto result = scanner_.PickSectorByInput(userInput);
     auto sectors = scanner_.GetCurrentScan();
-    if (result.is_valid_) sector_manager_.SetSectors(sectors, result);
+    if (result.is_valid_) {
+      universe_.SetSectors(sectors, result);
+//      auto x = universe_.GetActiveSector();
+    }
   }
 }
 
-std::vector<std::vector<ScanObject>> Game::GetCurrentScan() const {
+Grid Game::GetCurrentScan() const {
   return scanner_.GetCurrentScan();
 }

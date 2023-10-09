@@ -9,5 +9,5 @@ int main() {
 
   ui.ShowScan();
 
-  while (true) input.HandleInput(game);
+  while (true) input.ProcessInput(game);
 }

@@ -25,18 +25,23 @@ const ScanSelectResult ScanCreator::PickSectorByInput(int input) const {
   std::string value_string = std::to_string(input);
   if (value_string.length() != 2) return result;
 
-  int row_number = static_cast<int>(value_string[0] - '0');
-  int col_number = static_cast<int>(value_string[1] - '0');
-  if ((row_number < 0 || row_number > kColRowCount) || (col_number < 0 || col_number > kColRowCount)) return result;
+  int row_number = static_cast<int>(value_string[0] - '0') - 1;
+  int col_number = static_cast<int>(value_string[1] - '0') -1;
 
-  result.is_valid_ = true;
-  result.row_number_ = row_number;
-  result.col_number_ = col_number;
+  std::cout << row_number << " " << col_number;
+
+  if ((row_number == 0 || row_number == kColRowCount-1) && (col_number == 0 || col_number == kColRowCount-1)) {
+    std::cout << "valid";
+    result.is_valid_ = true;
+    result.row_number_ = row_number;
+    result.col_number_ = col_number;
+    return result;
+  }
 
   return result;
 }
 
-std::vector<std::vector<ScanObject>> ScanCreator::GetCurrentScan() const {
+Grid ScanCreator::GetCurrentScan() const {
   std::vector<std::vector<ScanObject>> scanVector(kColRowCount, std::vector<ScanObject>(kColRowCount));
 
   std::transform(scan_, scan_ + kColRowCount, scanVector.begin(),

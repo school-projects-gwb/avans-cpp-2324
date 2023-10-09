@@ -5,5 +5,5 @@ void EmptyCommand::HandleCommand(Game &game, int key) const {
 }
 
 bool EmptyCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Main;
+  return game.GetState() == Movement;
 }

@@ -4,5 +4,5 @@ void ViewPackageCommand::HandleCommand(Game &game, int key) const {
 }
 
 bool ViewPackageCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Main;
+  return game.GetState() == Movement;
 }

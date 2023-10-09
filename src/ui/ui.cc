@@ -6,7 +6,7 @@ void Ui::ShowScan() const {
 
   std::cout << "CreateScan van universum:\n";
 
-  for (const auto& row : scan) {
+  for (const auto &row : scan) {
     for (const auto &col : row)
       std::cout << col.asteroid_amount << col.encounter_amount << col.planet_amount << "  ";
 

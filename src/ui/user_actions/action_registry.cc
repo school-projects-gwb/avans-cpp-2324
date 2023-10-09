@@ -31,6 +31,6 @@ void ActionRegistry::HandleCommand(int inputValue, Game& game) const {
   if (it != hotkeys_.end()) {
     it->command->HandleCommand(game, inputValue);
   } else {
-    game.HandlePlayerInputValue(inputValue);
+    game.ProcessPlayerInput(inputValue);
   }
 }

@@ -2,20 +2,21 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_H_
 
 #include <vector>
-#include "game/entities/scan_creator.h"
+#include "game/scans/scan_creator.h"
 #include "game_state.h"
-#include "entities/sectors/scan.h"
+#include "game/sectors/universe.h"
+
 class Game {
  private:
   ScanCreator scanner_;
-  Scan sector_manager_;
+  Universe universe_;
   GameState state_ = Scanning;
  public:
   Game();
-  void HandlePlayerMovement(int direction);
-  void HandlePlayerInputValue(int userInput);
+  void MovePlayer(int direction);
+  void ProcessPlayerInput(int userInput);
   GameState GetState() const;
-  std::vector<std::vector<ScanObject>> GetCurrentScan() const;
+  Grid GetCurrentScan() const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_H_

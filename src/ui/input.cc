@@ -5,7 +5,7 @@
 
 Input::Input() : action_registry_() {}
 
-void Input::HandleInput(Game& game) const {
+void Input::ProcessInput(Game& game) const {
   std::string input;
   int user_input;
 

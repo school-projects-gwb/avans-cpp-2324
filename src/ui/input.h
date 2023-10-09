@@ -10,7 +10,7 @@ class Input {
   void ShowAllowedCommands(Game& game) const;
  public:
   Input();
-  void HandleInput(Game& game) const;
+  void ProcessInput(Game& game) const;
 };
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_INPUT_H_
