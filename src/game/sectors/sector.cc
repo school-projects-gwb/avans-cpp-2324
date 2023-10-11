@@ -43,5 +43,5 @@ Coords Sector::GetRandomFreeCoords() const {
 }
 
 bool Sector::IsPositionAvailable(Coords coords) {
-  return objects_[coords.pos_x_][coords.pos_y_] == SectorObjectType::Empty;
+  return objects_[coords.pos_y_][coords.pos_x_] == SectorObjectType::Empty;
 }

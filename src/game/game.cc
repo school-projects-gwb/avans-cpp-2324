@@ -1,13 +1,16 @@
 #include <iostream>
 #include "game.h"
+#include "data/movement_direction.h"
 
 Game::Game() : scanner_(), universe_(), space_ship_() {
   scanner_.CreateScan();
 }
 
-void Game::MovePlayer(int direction) {
+void Game::MovePlayer(MovementDirection direction) {
   auto next_position = space_ship_.GetNextMovementPosition(direction);
   auto position_available = universe_.GetActiveSector().IsPositionAvailable(next_position);
+  std::cout << position_available;
+  if (position_available) space_ship_.SetPosition(next_position);
 }
 
 GameState Game::GetState() const {
@@ -34,5 +37,9 @@ Grid<ScanObject> Game::GetCurrentScan() const {
 }
 
 Grid<SectorObjectType> Game::GetCurrentSector() const {
-  return universe_.GetActiveSector().GetSectorObjects();
+  auto sector_objects = universe_.GetActiveSector().GetSectorObjects();
+  auto spaceship_position = space_ship_.GetPosition();
+  sector_objects[spaceship_position.pos_y_][spaceship_position.pos_x_] = SectorObjectType::Spaceship;
+
+  return sector_objects;
 }

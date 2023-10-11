@@ -4,6 +4,7 @@
 #include "encounter_view_object.h"
 #include "planet_view_object.h"
 #include "asteroid_view_object.h"
+#include "spaceship_view_object.h"
 
 std::shared_ptr<ViewObject> ViewObjectFactory::GetObjectCharacter(SectorObjectType object_type) const {
   switch (object_type) {
@@ -13,6 +14,8 @@ std::shared_ptr<ViewObject> ViewObjectFactory::GetObjectCharacter(SectorObjectTy
       return std::make_shared<PlanetViewObject>();
     case SectorObjectType::Encounter:
       return std::make_shared<EncounterViewObject>();
+    case SectorObjectType::Spaceship:
+      return std::make_shared<SpaceshipViewObject>();
     default:
       return std::make_shared<ViewObject>();
   }

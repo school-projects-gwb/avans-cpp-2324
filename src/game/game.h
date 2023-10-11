@@ -6,6 +6,7 @@
 #include "game_state.h"
 #include "game/sectors/universe.h"
 #include "spaceship.h"
+#include "data/movement_direction.h"
 
 class Game {
  private:
@@ -15,7 +16,7 @@ class Game {
   GameState state_ = Scanning;
  public:
   Game();
-  void MovePlayer(int direction);
+  void MovePlayer(MovementDirection direction);
   void ProcessPlayerInput(int userInput);
   GameState GetState() const;
   Grid<ScanObject> GetCurrentScan() const;
