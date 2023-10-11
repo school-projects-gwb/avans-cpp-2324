@@ -1,10 +1,12 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_ENTITIES_SCAN_SELECT_RESULT_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_ENTITIES_SCAN_SELECT_RESULT_H_
 
-struct ScanSelectResult {
-  bool is_valid_;
-  int row_number_;
-  int col_number_;
-};
+namespace Game {
+  struct ScanSelectResult {
+    bool is_valid_;
+    int row_number_;
+    int col_number_;
+  };
+}
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_ENTITIES_SCAN_SELECT_RESULT_H_

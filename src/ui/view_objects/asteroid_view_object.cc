@@ -1,5 +1,7 @@
 #include "asteroid_view_object.h"
 
-char AsteroidViewObject::GetDisplayCharacter() {
-  return 'O';
+namespace Interface {
+  char AsteroidViewObject::GetDisplayCharacter() {
+    return 'O';
+  }
 }

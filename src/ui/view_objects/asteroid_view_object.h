@@ -3,8 +3,10 @@
 
 #include "view_object.h"
 
-class AsteroidViewObject : public ViewObject {
-  char GetDisplayCharacter() override;
-};
+namespace Interface {
+  class AsteroidViewObject : public ViewObject {
+    char GetDisplayCharacter() override;
+  };
+}
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_VIEW_OBJECTS_ASTEROID_VIEW_OBJECT_H_

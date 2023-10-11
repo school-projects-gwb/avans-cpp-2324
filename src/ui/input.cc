@@ -3,30 +3,34 @@
 #include <sstream>
 #include "input.h"
 
-Input::Input() : action_registry_() {}
+using namespace Game;
 
-void Input::ProcessInput(Game& game) const {
-  std::string input;
-  int user_input;
+namespace Interface {
+  Input::Input() : action_registry_() {}
 
-  while (true) {
-    ShowAllowedCommands(game);
-    std::getline(std::cin, input);
+  void Input::ProcessInput(CommandCenter &game) const {
+    std::string input;
+    int user_input;
 
-    std::istringstream iss(input);
+    while (true) {
+      ShowAllowedCommands(game);
+      std::getline(std::cin, input);
 
-    if (iss >> user_input) {
-      action_registry_.HandleCommand(user_input, game);
-      break;
+      std::istringstream iss(input);
+
+      if (iss >> user_input) {
+        action_registry_.HandleCommand(user_input, game);
+        break;
+      }
+
+      std::cout << "Deze input is niet toegestaan!\n";
     }
-
-    std::cout << "Deze input is niet toegestaan!\n";
   }
-}
 
-void Input::ShowAllowedCommands(Game& game) const {
-  for(const UserAction& hotkey : action_registry_.hotkeys_)
-    if (hotkey.command->IsAllowed(game)) std::cout << hotkey.key << " : " << hotkey.description << "\n";
+  void Input::ShowAllowedCommands(CommandCenter &game) const {
+    for (const UserAction &hotkey : action_registry_.hotkeys_)
+      if (hotkey.command->IsAllowed(game)) std::cout << hotkey.key << " : " << hotkey.description << "\n";
 
-  std::cout << "\n> ";
+    std::cout << "\n> ";
+  }
 }

@@ -1,9 +1,11 @@
 #include "pickup_package_command.h"
 
-void PickupPackageCommand::HandleCommand(Game &game, int key) const {
+namespace Game {
+  void PickupPackageCommand::HandleCommand(CommandCenter &game, int key) const {
 
-}
+  }
 
-bool PickupPackageCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Movement;
+  bool PickupPackageCommand::IsAllowed(CommandCenter &game) const {
+    return game.GetState() == Movement;
+  }
 }

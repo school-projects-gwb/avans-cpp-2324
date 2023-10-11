@@ -1,9 +1,11 @@
 #include "empty_command.h"
 
-void EmptyCommand::HandleCommand(Game &game, int key) const {
+namespace Game {
+  void EmptyCommand::HandleCommand(CommandCenter &game, int key) const {
 
-}
+  }
 
-bool EmptyCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Movement;
+  bool EmptyCommand::IsAllowed(CommandCenter &game) const {
+    return game.GetState() == Movement;
+  }
 }

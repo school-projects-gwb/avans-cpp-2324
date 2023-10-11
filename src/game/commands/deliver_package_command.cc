@@ -1,9 +1,11 @@
 #include "deliver_package_command.h"
 
-void DeliverPackageCommand::HandleCommand(Game &game, int key) const {
+namespace Game {
+  void DeliverPackageCommand::HandleCommand(CommandCenter &game, int key) const {
 
-}
+  }
 
-bool DeliverPackageCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Movement;
+  bool DeliverPackageCommand::IsAllowed(CommandCenter &game) const {
+    return game.GetState() == Movement;
+  }
 }

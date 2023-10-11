@@ -1,5 +1,7 @@
 #include "spaceship_view_object.h"
 
-char SpaceshipViewObject::GetDisplayCharacter() {
-  return 'P';
+namespace Interface {
+  char SpaceshipViewObject::GetDisplayCharacter() {
+    return 'P';
+  }
 }

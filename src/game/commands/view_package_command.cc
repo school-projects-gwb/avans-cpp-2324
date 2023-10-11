@@ -1,8 +1,11 @@
 #include "view_package_command.h"
-void ViewPackageCommand::HandleCommand(Game &game, int key) const {
 
-}
+namespace Game {
+  void ViewPackageCommand::HandleCommand(CommandCenter &game, int key) const {
 
-bool ViewPackageCommand::IsAllowed(Game &game) const {
-  return game.GetState() == Movement;
+  }
+
+  bool ViewPackageCommand::IsAllowed(CommandCenter &game) const {
+    return game.GetState() == Movement;
+  }
 }

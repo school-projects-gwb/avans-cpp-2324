@@ -3,8 +3,10 @@
 
 #include "view_object.h"
 
-class EncounterViewObject : public ViewObject {
-  char GetDisplayCharacter() override;
-};
+namespace Interface {
+  class EncounterViewObject : public ViewObject {
+    char GetDisplayCharacter() override;
+  };
+}
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_VIEW_OBJECTS_ENCOUNTER_VIEW_OBJECT_H_

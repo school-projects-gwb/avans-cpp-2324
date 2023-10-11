@@ -1,5 +1,7 @@
 #include "encounter_view_object.h"
 
-char EncounterViewObject::GetDisplayCharacter() {
-  return '*';
+namespace Interface {
+  char EncounterViewObject::GetDisplayCharacter() {
+    return '*';
+  }
 }
