@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ui.h"
 
-Ui::Ui(const Game& game) : game_(game) {
+Ui::Ui(const Game& game) : game_(game), view_object_factory_() {
 }
 
 void Ui::ShowScan() const {
@@ -25,8 +25,10 @@ void Ui::ShowSector() const {
   std::cout << "Huidige sector:\n";
 
   for (const auto &row : sector) {
-    for (const auto &col : row)
-      std::cout << col << " ";
+    for (const auto &col : row) {
+      auto view_object = view_object_factory_.GetObjectCharacter(col);
+      if (view_object) view_object->Print();
+    }
 
     std::cout << "\n";
   }

@@ -1,12 +1,13 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_H_
 
+#include "data/coords.h"
 class SpaceShip {
  public:
-  void GetNextMovementPosition(int direction) const;
+  Coords GetNextMovementPosition(int direction) const;
+  void SetPosition(Coords new_position);
  private:
-  int pos_x_;
-  int pos_y_;
+  Coords position_;
   // package
 };
 

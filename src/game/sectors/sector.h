@@ -19,6 +19,7 @@ class Sector {
   const Sector* kRight = nullptr;
   Grid<SectorObjectType> GetSectorObjects() const;
   Coords GetRandomFreeCoords() const;
+  bool IsPositionAvailable(Coords coords);
  private:
   ScanObject scan_data_;
   static const int kGridSize = 10;

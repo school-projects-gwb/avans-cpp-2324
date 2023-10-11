@@ -6,6 +6,8 @@ Game::Game() : scanner_(), universe_(), space_ship_() {
 }
 
 void Game::MovePlayer(int direction) {
+  auto next_position = space_ship_.GetNextMovementPosition(direction);
+  auto position_available = universe_.GetActiveSector().IsPositionAvailable(next_position);
 }
 
 GameState Game::GetState() const {
@@ -19,6 +21,10 @@ void Game::ProcessPlayerInput(int userInput) {
 
     auto sector_scan = scanner_.GetCurrentScan();
     universe_.SetSectors(sector_scan, sector_input_result);
+
+    auto free_coords = universe_.GetActiveSector().GetRandomFreeCoords();
+    space_ship_.SetPosition(free_coords);
+
     state_ = GameState::Movement;
   }
 }

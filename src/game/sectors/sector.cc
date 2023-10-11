@@ -18,7 +18,7 @@ void Sector::GenerateObjects() {
 void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
   for (int i = 0; i < amount; i++) {
     Coords coords = GetRandomFreeCoords();
-    objects_[coords.pos_x_][coords.pos_y_] = type;
+    objects_[coords.pos_y_][coords.pos_x_] = type;
   }
 }
 
@@ -34,10 +34,14 @@ Coords Sector::GetRandomFreeCoords() const {
   do {
     pos_x = random_helper.GenerateRandomInt(0, kGridSize - 1);
     pos_y = random_helper.GenerateRandomInt(0, kGridSize - 1);
-  } while (objects_[pos_x][pos_y] != SectorObjectType::Empty);
+  } while (objects_[pos_y][pos_x] != SectorObjectType::Empty);
 
   coords.pos_x_ = pos_x;
   coords.pos_y_ = pos_y;
 
   return coords;
+}
+
+bool Sector::IsPositionAvailable(Coords coords) {
+  return objects_[coords.pos_x_][coords.pos_y_] == SectorObjectType::Empty;
 }
