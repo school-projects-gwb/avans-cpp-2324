@@ -10,7 +10,7 @@
 class Universe {
  public:
   Universe() = default;
-  void SetSectors(const std::vector<std::vector<ScanObject>>& scanData, const ScanSelectResult& pickResult);
+  void SetSectors(const Grid<ScanObject>& scanData, const ScanSelectResult& pickResult);
   Sector& GetActiveSector() const;
  private:
   Grid<Sector> sectors_;

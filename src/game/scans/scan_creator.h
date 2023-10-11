@@ -8,9 +8,10 @@
 class ScanCreator {
  private:
   static const int kColRowCount = 5;
-  ScanObject scan_[kColRowCount][kColRowCount];
+  Grid<ScanObject> scan_;
 
  public:
+  ScanCreator();
   void CreateScan();
   ScanSelectResult PickSectorByInput(int input) const;
   Grid<ScanObject> GetCurrentScan() const;

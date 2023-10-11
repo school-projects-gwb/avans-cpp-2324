@@ -4,6 +4,10 @@
 #include "helpers/random_helper.h"
 #include "scan_select_result.h"
 
+ScanCreator::ScanCreator() : scan_(kColRowCount, kColRowCount) {
+//  scan_.resize(kColRowCount, std::vector<ScanObject>(kColRowCount));
+}
+
 void ScanCreator::CreateScan() {
   RandomHelper random_helper = RandomHelper::GetInstance();
 
@@ -46,5 +50,5 @@ bool ScanCreator::IsOnEdge(int row_number, int col_number) const {
 }
 
 Grid<ScanObject> ScanCreator::GetCurrentScan() const {
-  return MultiDimensionalArrayToGrid(scan_);
+  return scan_;
 }

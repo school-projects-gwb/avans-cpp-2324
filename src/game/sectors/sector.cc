@@ -3,8 +3,8 @@
 #include "scans/scan_creator.h"
 
 Sector::Sector(const ScanObject& scanData, size_t row, size_t col)
-    : scan_data_(scanData), row_(row), col_(col) {
-  objects_.resize(kGridSize, std::vector<SectorObjectType>(kGridSize));
+    : scan_data_(scanData), row_(row), col_(col), objects_(kGridSize, kGridSize) {
+//  objects_.resize(kGridSize, std::vector<SectorObjectType>(kGridSize));
   for (auto & object : objects_)
     for (auto & column : object)
       column = SectorObjectType::Empty;
@@ -19,7 +19,7 @@ void Sector::GenerateObjects() {
 void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
   for (int i = 0; i < amount; i++) {
     Coords coords = GetRandomFreeCoords();
-    objects_[coords.pos_y_][coords.pos_x_] = type;
+    objects_[coords] = type;
   }
 }
 
@@ -30,19 +30,15 @@ Grid<SectorObjectType> Sector::GetSectorObjects() const {
 Coords Sector::GetRandomFreeCoords() const {
   RandomHelper random_helper = RandomHelper::GetInstance();
   Coords coords = {};
-  int pos_x, pos_y;
 
   do {
-    pos_x = random_helper.GenerateRandomInt(0, kGridSize - 1);
-    pos_y = random_helper.GenerateRandomInt(0, kGridSize - 1);
-  } while (objects_[pos_y][pos_x] != SectorObjectType::Empty);
-
-  coords.pos_x_ = pos_x;
-  coords.pos_y_ = pos_y;
+    coords.pos_x_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
+    coords.pos_y_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
+  } while (objects_[coords] != SectorObjectType::Empty);
 
   return coords;
 }
 
 bool Sector::IsPositionAvailable(Coords coords) {
-  return objects_[coords.pos_y_][coords.pos_x_] == SectorObjectType::Empty;
+  return objects_[coords] == SectorObjectType::Empty;
 }
