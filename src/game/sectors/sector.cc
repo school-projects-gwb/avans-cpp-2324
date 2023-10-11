@@ -4,6 +4,7 @@
 
 Sector::Sector(const ScanObject& scanData, size_t row, size_t col)
     : scan_data_(scanData), row_(row), col_(col) {
+  objects_.resize(kGridSize, std::vector<SectorObjectType>(kGridSize));
   for (auto & object : objects_)
     for (auto & column : object)
       column = SectorObjectType::Empty;
@@ -23,7 +24,7 @@ void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
 }
 
 Grid<SectorObjectType> Sector::GetSectorObjects() const {
-  return MultiDimensionalArrayToGrid(objects_);
+  return objects_;
 }
 
 Coords Sector::GetRandomFreeCoords() const {

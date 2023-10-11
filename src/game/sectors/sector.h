@@ -23,7 +23,7 @@ class Sector {
  private:
   ScanObject scan_data_;
   static const int kGridSize = 10;
-  SectorObjectType objects_[kGridSize][kGridSize];
+  Grid<SectorObjectType> objects_;
   int row_;
   int col_;
 
