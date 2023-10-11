@@ -7,7 +7,7 @@ namespace Game {
   class ViewPackageCommand : public Command {
    public:
     void HandleCommand(CommandCenter &game, int key) const override;
-    bool IsAllowed(CommandCenter &game) const override;
+    bool IsAllowed(const CommandCenter &game) const override;
   };
 }
 

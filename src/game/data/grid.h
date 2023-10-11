@@ -52,7 +52,7 @@ namespace Game {
       return grid_.size();
     }
 
-    size_t ColColCount() const {
+    size_t GetColCount() const {
       return grid_.empty() ? 0 : grid_[0].size();
     }
 

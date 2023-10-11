@@ -6,6 +6,7 @@
 #include "sector.h"
 #include "game/scans/scan_select_result.h"
 #include "scans/scan_creator.h"
+#include "spaceship/spaceship.h"
 
 namespace Game {
   class Universe {
@@ -13,9 +14,11 @@ namespace Game {
     Universe() = default;
     void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
     Sector &GetActiveSector() const;
+    void MoveSpaceship(SpaceShip& space_ship, Direction direction);
    private:
     Grid<Sector> sectors_;
-    Sector *active_sector_ = nullptr;
+    Sector* active_sector_ = nullptr;
+    void AttemptMoveSpaceshipToDifferentSector(SpaceShip& space_ship, Direction direction);
   };
 }
 

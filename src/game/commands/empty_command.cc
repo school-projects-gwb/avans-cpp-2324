@@ -5,7 +5,7 @@ namespace Game {
 
   }
 
-  bool EmptyCommand::IsAllowed(CommandCenter &game) const {
+  bool EmptyCommand::IsAllowed(const CommandCenter &game) const {
     return game.GetState() == Movement;
   }
 }

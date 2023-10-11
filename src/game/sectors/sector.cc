@@ -1,10 +1,11 @@
+#include <iostream>
 #include "sector.h"
 #include "helpers/random_helper.h"
 #include "scans/scan_creator.h"
 
 namespace Game {
-  Sector::Sector(const ScanObject &scanData, size_t row, size_t col)
-      : scan_data_(scanData), row_(row), col_(col), objects_(kGridSize, kGridSize) {
+  Sector::Sector(const ScanObject &scanData)
+      : scan_data_(scanData), objects_(kGridSize, kGridSize) {
     for (auto &object : objects_)
       for (auto &column : object)
         column = SectorObjectType::Empty;
@@ -14,6 +15,7 @@ namespace Game {
     PlaceObjectsOfType(SectorObjectType::Asteroid, scan_data_.asteroid_amount);
     PlaceObjectsOfType(SectorObjectType::Planet, scan_data_.planet_amount);
     PlaceObjectsOfType(SectorObjectType::Encounter, scan_data_.encounter_amount);
+    is_generated_ = true;
   }
 
   void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
@@ -23,7 +25,7 @@ namespace Game {
     }
   }
 
-  Grid<SectorObjectType> Sector::GetSectorObjects() const {
+  const Grid<SectorObjectType>& Sector::GetSectorObjects() const {
     return objects_;
   }
 
@@ -39,7 +41,69 @@ namespace Game {
     return coords;
   }
 
-  bool Sector::IsPositionAvailable(Coords coords) {
-    return objects_[coords] == SectorObjectType::Empty;
+  bool Sector::IsEmptyNewPosition(Coords coords) const {
+    return IsPositionInSectorBounds(coords) && objects_[coords] == SectorObjectType::Empty;
+  }
+
+  std::vector<SectorObjectType> Sector::GetNeighborObjects(Coords coords) const {
+    std::vector<SectorObjectType> neighbors;
+
+    const Coords offsets[] = {
+        {0, -1}, // Above
+        {0, 1},  // Below
+        {-1, 0}, // Left
+        {1, 0}   // Right
+    };
+
+    for (const Coords& offset : offsets) {
+      Coords neighborCoords = coords;
+      neighborCoords.pos_x_ +=  + offset.pos_x_;
+      neighborCoords.pos_y_ +=  + offset.pos_y_;
+
+      if (IsPositionInSectorBounds(neighborCoords)) {
+        SectorObjectType neighborObject = objects_[neighborCoords];
+        neighbors.push_back(neighborObject);
+      }
+    }
+
+    return neighbors;
+  }
+
+  bool Sector::IsPositionInSectorBounds(Coords coords) const {
+    return (coords.pos_x_ >= 0 && coords.pos_x_ < objects_.GetColCount()
+        && coords.pos_y_ >= 0 && coords.pos_y_ < objects_.GetRowCount());
+  }
+
+  Coords Sector::GetRelativeNeighborSectorCoords(Coords coords, Direction direction) const {
+    Coords new_coords = coords;
+    int col_count_check = objects_.GetColCount()-1;
+    int row_count_check = objects_.GetRowCount()-1;
+
+    if (direction == Left || direction == Right) {
+      new_coords.pos_x_ = coords.pos_x_ <= 0 ? col_count_check : 0;
+    } else {
+      new_coords.pos_y_ = coords.pos_y_ <= 0 ? row_count_check : 0;
+    }
+
+    return new_coords;
+  }
+
+  bool Sector::AreObjectsGenerated() const {
+    return is_generated_;
+  }
+
+  Sector* Sector::GetNeighboringSector(Direction direction) const {
+    switch (direction) {
+      case Up:
+        return kUp;
+      case Down:
+        return kDown;
+      case Left:
+        return kLeft;
+      case Right:
+        return kRight;
+      default:
+        return nullptr;
+    }
   }
 }

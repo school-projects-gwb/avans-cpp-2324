@@ -7,7 +7,7 @@ namespace Game {
   class Command {
    public:
     virtual void HandleCommand(CommandCenter &game, int key) const = 0;
-    virtual bool IsAllowed(CommandCenter &game) const = 0;
+    virtual bool IsAllowed(const CommandCenter &game) const = 0;
     virtual ~Command() = default;
   };
 }

@@ -6,27 +6,35 @@
 #include "sector_object.h"
 #include "data/grid.h"
 #include "data/coords.h"
+#include "data/direction.h"
+#include "spaceship/spaceship.h"
 
 namespace Game {
   class Sector {
    public:
-    Sector(const ScanObject &scanData, size_t row, size_t col);
+    Sector(const ScanObject &scanData);
 
     void GenerateObjects();
 
-    const Sector *kUp = nullptr;
-    const Sector *kDown = nullptr;
-    const Sector *kLeft = nullptr;
-    const Sector *kRight = nullptr;
-    Grid<SectorObjectType> GetSectorObjects() const;
+    Sector *kUp = nullptr;
+    Sector *kDown = nullptr;
+    Sector *kLeft = nullptr;
+    Sector *kRight = nullptr;
+
+    const Grid<SectorObjectType>& GetSectorObjects() const;
     Coords GetRandomFreeCoords() const;
-    bool IsPositionAvailable(Coords coords);
+    std::vector<SectorObjectType> GetNeighborObjects(Coords coords) const;
+    Coords GetRelativeNeighborSectorCoords(Coords coords, Direction direction) const;
+    Sector* GetNeighboringSector(Game::Direction direction) const;
+
+    bool IsEmptyNewPosition(Coords coords) const;
+    bool IsPositionInSectorBounds(Coords coords) const;
+    bool AreObjectsGenerated() const;
    private:
+    bool is_generated_ = false;
     ScanObject scan_data_;
     static const int kGridSize = 10;
     Grid<SectorObjectType> objects_;
-    int row_;
-    int col_;
 
     void PlaceObjectsOfType(SectorObjectType type, int amount);
   };

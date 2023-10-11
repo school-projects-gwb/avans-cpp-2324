@@ -5,7 +5,7 @@ namespace Game {
 
   }
 
-  bool DeliverPackageCommand::IsAllowed(CommandCenter &game) const {
-    return game.GetState() == Movement;
+  bool DeliverPackageCommand::IsAllowed(const CommandCenter &game) const {
+    return game.GetState() == Movement && game.GetSpaceship().CanDeliverCargo();
   }
 }

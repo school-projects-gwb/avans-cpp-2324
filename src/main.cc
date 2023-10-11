@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ui/ui.h"
 #include "command_center.h"
 #include "ui/input.h"

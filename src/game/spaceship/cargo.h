@@ -1,0 +1,11 @@
+#ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_CARGO_H_
+#define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_CARGO_H_
+
+class Cargo {
+ public:
+  bool HasCargo() const;
+  bool CanDeliverCargo();
+  void AddCargo();
+};
+
+#endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_CARGO_H_

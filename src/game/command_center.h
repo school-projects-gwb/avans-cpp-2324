@@ -5,8 +5,8 @@
 #include "game/scans/scan_creator.h"
 #include "game_state.h"
 #include "game/sectors/universe.h"
-#include "spaceship.h"
-#include "data/movement_direction.h"
+#include "game/spaceship/spaceship.h"
+#include "data/direction.h"
 
 namespace Game {
   class CommandCenter {
@@ -17,11 +17,12 @@ namespace Game {
     GameState state_ = Scanning;
    public:
     CommandCenter();
-    void MovePlayer(MovementDirection direction);
+    void MovePlayer(Direction direction);
     void ProcessPlayerInput(int userInput);
     GameState GetState() const;
     Grid<ScanObject> GetCurrentScan() const;
     Grid<SectorObjectType> GetCurrentSector() const;
+    const SpaceShip& GetSpaceship() const;
   };
 }
 
