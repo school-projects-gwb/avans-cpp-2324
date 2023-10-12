@@ -3,7 +3,7 @@
 
 namespace Game {
   enum GameState {
-    Scanning, Movement, ActiveEncounter, Combat
+    Scanning, Movement, ActiveEncounter, Combat, PendingReset, ShouldReset
   };
 }
 

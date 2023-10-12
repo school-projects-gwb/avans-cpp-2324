@@ -19,6 +19,7 @@ namespace Game {
     CommandCenter();
     void MovePlayer(Direction direction);
     void ProcessPlayerInput(int userInput);
+    void ResetGame();
     GameState GetState() const;
     Grid<ScanObject> GetCurrentScan() const;
     Grid<SectorObjectType> GetCurrentSector() const;

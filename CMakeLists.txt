@@ -9,4 +9,6 @@ include_directories(src/game)
 file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
 add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
         src/game/spaceship/cargo.cc
-        src/game/spaceship/cargo.h)
+        src/game/spaceship/cargo.h
+        src/game/commands/game_reset_command.cc
+        src/game/commands/game_reset_command.h)

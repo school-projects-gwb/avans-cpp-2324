@@ -6,6 +6,6 @@ namespace Game {
   }
 
   bool EmptyCommand::IsAllowed(const CommandCenter &game) const {
-    return game.GetState() == Movement;
+    return game.GetState() == Movement || game.GetState() == PendingReset;
   }
 }

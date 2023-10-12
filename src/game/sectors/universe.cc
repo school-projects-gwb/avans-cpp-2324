@@ -35,11 +35,10 @@ namespace Game {
     if (position_available) {
       auto neighbor_objects = active_sector_->GetNeighborObjects(next_position);
       space_ship.SetPosition(next_position, neighbor_objects);
+      space_ship.SetIsAtUniverseEdge(false);
     } else if (!active_sector_->IsPositionInSectorBounds(next_position)) {
       AttemptMoveSpaceshipToDifferentSector(space_ship, direction);
     }
-
-    space_ship.SetIsAtUniverseEdge(false);
   }
 
   void Universe::AttemptMoveSpaceshipToDifferentSector(SpaceShip& space_ship, Direction direction) {

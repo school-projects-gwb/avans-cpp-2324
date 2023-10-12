@@ -4,6 +4,7 @@
 #include "commands/view_package_command.h"
 #include "commands/deliver_package_command.h"
 #include "commands/empty_command.h"
+#include "commands/game_reset_command.h"
 
 using namespace Game;
 
@@ -16,7 +17,8 @@ namespace Interface {
     hotkeys_.push_back({5, new PickupPackageCommand(), "Pakketje oppikken"});
     hotkeys_.push_back({6, new ViewPackageCommand(), "Pakketje bekijken"});
     hotkeys_.push_back({7, new DeliverPackageCommand(), "Pakketje bezorgen"});
-    hotkeys_.push_back({7, new EmptyCommand(), "Niets doen"});
+    hotkeys_.push_back({8, new EmptyCommand(), "Niets doen"});
+    hotkeys_.push_back({9, new GameResetCommand(), "Rand van universum: geef op en reset spel"});
   }
 
   ActionRegistry::~ActionRegistry() {

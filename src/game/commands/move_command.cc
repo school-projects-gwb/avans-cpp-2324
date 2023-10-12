@@ -3,6 +3,8 @@
 
 namespace Game {
   void MoveCommand::HandleCommand(CommandCenter &game, int key) const {
+    if (!IsAllowed(game)) return;
+
     Direction movement_direction;
 
     switch (key) {

@@ -7,8 +7,13 @@ namespace Game {
     scanner_.CreateScan();
   }
 
+  void CommandCenter::ResetGame() {
+    state_ = GameState::ShouldReset;
+  }
+
   void CommandCenter::MovePlayer(Direction direction) {
     universe_.MoveSpaceship(space_ship_, direction);
+    if (space_ship_.IsAtUniverseEdge()) state_ = GameState::PendingReset;
   }
 
   GameState CommandCenter::GetState() const {
@@ -16,18 +21,18 @@ namespace Game {
   }
 
   void CommandCenter::ProcessPlayerInput(int userInput) {
-    if (state_ == GameState::Scanning) {
-      auto sector_input_result = scanner_.PickSectorByInput(userInput);
-      if (!sector_input_result.is_valid_) return;
+    if (state_ != GameState::Scanning) return;
 
-      universe_.SetSectors(scanner_.GetCurrentScan(), sector_input_result);
+    auto sector_input_result = scanner_.PickSectorByInput(userInput);
+    if (!sector_input_result.is_valid_) return;
 
-      auto free_coords = universe_.GetActiveSector().GetRandomFreeCoords();
-      auto neighbor_objects = universe_.GetActiveSector().GetNeighborObjects(free_coords);
-      space_ship_.SetPosition(free_coords, neighbor_objects);
+    universe_.SetSectors(scanner_.GetCurrentScan(), sector_input_result);
 
-      state_ = GameState::Movement;
-    }
+    auto free_coords = universe_.GetActiveSector().GetRandomFreeCoords();
+    auto neighbor_objects = universe_.GetActiveSector().GetNeighborObjects(free_coords);
+    space_ship_.SetPosition(free_coords, neighbor_objects);
+
+    state_ = GameState::Movement;
   }
 
   Grid<ScanObject> CommandCenter::GetCurrentScan() const {
