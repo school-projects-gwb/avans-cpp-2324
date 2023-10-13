@@ -18,6 +18,33 @@ namespace Game {
     is_generated_ = true;
   }
 
+  void Sector::MoveObjects(SectorObjectType object_type, Coords target_location) {
+    for (int x = 0; x < objects_.GetColCount(); ++x) {
+      for (int y = 0; y < objects_.GetRowCount(); ++y) {
+        Coords current_position{x, y};
+        if (objects_[current_position] != object_type) continue;
+
+        Coords next_position = current_position;
+
+        if (current_position.pos_x_ < target_location.pos_x_) {
+          next_position.pos_x_++;
+        } else if (current_position.pos_x_ > target_location.pos_x_) {
+          next_position.pos_x_--;
+        } else if (current_position.pos_y_ < target_location.pos_y_) {
+          next_position.pos_y_++;
+        } else if (current_position.pos_y_ > target_location.pos_y_) {
+          next_position.pos_y_--;
+        }
+
+        if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
+          if (next_position == target_location) return;
+          objects_[current_position] = SectorObjectType::Empty;
+          objects_[next_position] = object_type;
+        }
+      }
+    }
+  }
+
   void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
     for (int i = 0; i < amount; i++) {
       Coords coords = GetRandomFreeCoords();

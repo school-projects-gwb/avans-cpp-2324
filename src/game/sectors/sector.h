@@ -30,6 +30,7 @@ namespace Game {
     bool IsEmptyNewPosition(Coords coords) const;
     bool IsPositionInSectorBounds(Coords coords) const;
     bool AreObjectsGenerated() const;
+    void MoveObjects(SectorObjectType object_type, Coords target_location);
    private:
     bool is_generated_ = false;
     ScanObject scan_data_;

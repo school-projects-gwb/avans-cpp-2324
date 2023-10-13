@@ -13,6 +13,7 @@ namespace Game {
 
   void CommandCenter::MovePlayer(Direction direction) {
     universe_.MoveSpaceship(space_ship_, direction);
+    universe_.MoveObjects(space_ship_.GetPosition());
     if (space_ship_.IsAtUniverseEdge()) state_ = GameState::PendingReset;
   }
 

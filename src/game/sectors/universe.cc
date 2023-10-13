@@ -28,6 +28,10 @@ namespace Game {
     active_sector_->GenerateObjects();
   }
 
+  void Universe::MoveObjects(Coords target_location) {
+    active_sector_->MoveObjects(SectorObjectType::Encounter, target_location);
+  }
+
   void Universe::MoveSpaceship(SpaceShip& space_ship, Direction direction) {
     auto next_position = space_ship.GetNextMovementPosition(direction);
     auto position_available = active_sector_->IsEmptyNewPosition(next_position);

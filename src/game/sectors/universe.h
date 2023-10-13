@@ -15,6 +15,7 @@ namespace Game {
     void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
     Sector &GetActiveSector() const;
     void MoveSpaceship(SpaceShip& space_ship, Direction direction);
+    void MoveObjects(Coords target_location);
    private:
     Grid<Sector> sectors_;
     Sector* active_sector_ = nullptr;
