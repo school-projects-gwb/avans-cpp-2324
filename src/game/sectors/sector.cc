@@ -37,12 +37,21 @@ namespace Game {
         }
 
         if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
-          if (next_position == target_location) return;
           objects_[current_position] = SectorObjectType::Empty;
           objects_[next_position] = object_type;
         }
       }
     }
+  }
+
+  void Sector::SetObjectAtPosition(SectorObjectType type, Coords target_position) {
+    if (IsEmptyNewPosition(target_position)) objects_[target_position] = type;
+  }
+
+  void Sector::MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position) {
+    if (IsEmptyNewPosition(current_position)) return;
+    objects_[target_position] = objects_[current_position];
+    objects_[current_position] = SectorObjectType::Empty;
   }
 
   void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {

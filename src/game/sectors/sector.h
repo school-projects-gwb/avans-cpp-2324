@@ -31,6 +31,8 @@ namespace Game {
     bool IsPositionInSectorBounds(Coords coords) const;
     bool AreObjectsGenerated() const;
     void MoveObjects(SectorObjectType object_type, Coords target_location);
+    void MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position);
+    void SetObjectAtPosition(SectorObjectType type, Coords target_position);
    private:
     bool is_generated_ = false;
     ScanObject scan_data_;

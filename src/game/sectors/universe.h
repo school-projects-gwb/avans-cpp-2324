@@ -14,12 +14,14 @@ namespace Game {
     Universe() = default;
     void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
     Sector &GetActiveSector() const;
-    void MoveSpaceship(SpaceShip& space_ship, Direction direction);
+    void MoveSpaceship(Direction direction);
     void MoveObjects(Coords target_location);
+    void SetSpaceship(SpaceShip& ship);
    private:
     Grid<Sector> sectors_;
     Sector* active_sector_ = nullptr;
-    void AttemptMoveSpaceshipToDifferentSector(SpaceShip& space_ship, Direction direction);
+    SpaceShip* space_ship_ = nullptr;
+    void AttemptMoveSpaceshipToDifferentSector(Direction direction);
   };
 }
 

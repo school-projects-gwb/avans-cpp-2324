@@ -32,37 +32,48 @@ namespace Game {
     active_sector_->MoveObjects(SectorObjectType::Encounter, target_location);
   }
 
-  void Universe::MoveSpaceship(SpaceShip& space_ship, Direction direction) {
-    auto next_position = space_ship.GetNextMovementPosition(direction);
+  void Universe::MoveSpaceship(Direction direction) {
+    auto next_position = space_ship_->GetNextMovementPosition(direction);
     auto position_available = active_sector_->IsEmptyNewPosition(next_position);
 
     if (position_available) {
       auto neighbor_objects = active_sector_->GetNeighborObjects(next_position);
-      space_ship.SetPosition(next_position, neighbor_objects);
-      space_ship.SetIsAtUniverseEdge(false);
+      active_sector_->MoveObjectAtPositionToTargetPosition(space_ship_->GetPosition(), next_position);
+      space_ship_->SetPosition(next_position, neighbor_objects);
+      space_ship_->SetIsAtUniverseEdge(false);
     } else if (!active_sector_->IsPositionInSectorBounds(next_position)) {
-      AttemptMoveSpaceshipToDifferentSector(space_ship, direction);
+      AttemptMoveSpaceshipToDifferentSector(direction);
     }
   }
 
-  void Universe::AttemptMoveSpaceshipToDifferentSector(SpaceShip& space_ship, Direction direction) {
+  void Universe::AttemptMoveSpaceshipToDifferentSector(Direction direction) {
     auto neighboring_sector = active_sector_->GetNeighboringSector(direction);
     if (neighboring_sector == nullptr) {
-      space_ship.SetIsAtUniverseEdge(true);
+      space_ship_->SetIsAtUniverseEdge(true);
       return;
     }
 
-    auto next_position_sector_neighbor = active_sector_->GetRelativeNeighborSectorCoords(space_ship.GetPosition(), direction);
+    auto next_position_sector_neighbor = active_sector_->GetRelativeNeighborSectorCoords(space_ship_->GetPosition(), direction);
 
     if (!neighboring_sector->AreObjectsGenerated()) neighboring_sector->GenerateObjects();
     auto new_sector_position_available = neighboring_sector->IsEmptyNewPosition(next_position_sector_neighbor);
     if (!new_sector_position_available) return;
     active_sector_ = neighboring_sector;
     auto neighbor_objects = active_sector_->GetNeighborObjects(next_position_sector_neighbor);
-    space_ship.SetPosition(next_position_sector_neighbor, neighbor_objects);
+
+    active_sector_->SetObjectAtPosition(SectorObjectType::Spaceship, next_position_sector_neighbor);
+    space_ship_->SetPosition(next_position_sector_neighbor, neighbor_objects);
   }
 
   Sector &Universe::GetActiveSector() const {
     return *active_sector_;
+  }
+
+  void Universe::SetSpaceship(SpaceShip& space_ship) {
+    space_ship_ = &space_ship;
+    auto free_coords = active_sector_->GetRandomFreeCoords();
+    auto neighbor_objects = active_sector_->GetNeighborObjects(free_coords);
+    space_ship_->SetPosition(free_coords, neighbor_objects);
+    active_sector_->SetObjectAtPosition(SectorObjectType::Spaceship, free_coords);
   }
 }
