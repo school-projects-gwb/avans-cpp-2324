@@ -5,12 +5,13 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(src)
 include_directories(src/game)
+include_directories(src/persistence)
+include_directories(src/ui)
 
-file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
+file(GLOB_RECURSE SOURCES src/*.cc src/*.h planetexpress.db)
 add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES})
 
+configure_file(planetexpress.db ${CMAKE_BINARY_DIR}/planetexpress.db COPYONLY)
 
-#SQLITE3
 find_package(SQLite3 REQUIRED)
-#include_directories (${SDL2_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} SQLite::SQLite3)
