@@ -16,11 +16,12 @@ int main() {
     game::GameManager game = game::GameManager();
     interface::Ui ui = interface::Ui(game);
     interface::Input input = interface::Input();
-    ui.UpdateUi(game.GetState());
+    ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
 
-    while (game.GetState() != game::GameState::ShouldReset) {
+    while (game.GetMainGameState() != game::MainGameState::ShouldReset) {
       input.ProcessInput(game);
-      ui.UpdateUi(game.GetState());
+      ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
+      game.ResetSubGameState();
     }
   }
 }

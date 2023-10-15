@@ -3,7 +3,7 @@
 
 namespace game {
   enum SectorObjectType {
-    Asteroid, Planet, Encounter, Empty, Spaceship
+    Asteroid, Planet, Encounter, EmptySpace, Spaceship
   };
 }
 

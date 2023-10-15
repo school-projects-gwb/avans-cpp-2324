@@ -2,10 +2,10 @@
 
 namespace game {
   void ViewPackageCommand::HandleCommand(GameManager &game, int key) const {
-
+    game.ProcessPackageView();
   }
 
   bool ViewPackageCommand::IsAllowed(const GameManager &game) const {
-    return game.GetState() == Movement && game.GetSpaceship().HasCargo();
+    return game.GetMainGameState() == Movement && game.GetSpaceship().CanViewCargo();
   }
 }

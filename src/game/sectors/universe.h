@@ -7,6 +7,7 @@
 #include "game/scans/scan_select_result.h"
 #include "scans/scan_creator.h"
 #include "spaceship/spaceship.h"
+#include "package_destination_result.h"
 
 namespace game {
   class Universe {
@@ -17,6 +18,7 @@ namespace game {
     void MoveSpaceship(Direction direction);
     void MoveObjects(Coords target_location);
     void SetSpaceship(SpaceShip& ship);
+    PackageDestinationResult GetPackageDestinationInfo();
    private:
     Grid<Sector> sectors_;
     Sector* active_sector_ = nullptr;

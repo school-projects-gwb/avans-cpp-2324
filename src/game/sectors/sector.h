@@ -8,11 +8,12 @@
 #include "data/coords.h"
 #include "data/direction.h"
 #include "spaceship/spaceship.h"
+#include "spaceship/spaceship_neighbor_object.h"
 
 namespace game {
   class Sector {
    public:
-    Sector(const ScanObject &scanData);
+    Sector(const ScanObject &scanData, Coords universe_position);
 
     void GenerateObjects();
 
@@ -23,17 +24,21 @@ namespace game {
 
     const Grid<SectorObjectType>& GetSectorObjects() const;
     Coords GetRandomFreeCoords() const;
-    std::vector<SectorObjectType> GetNeighborObjects(Coords coords) const;
+    std::vector<SpaceshipNeighborObject> GetNeighborObjects(Coords coords) const;
     Coords GetRelativeNeighborSectorCoords(Coords coords, Direction direction) const;
+    Coords GetPositionInUniverse() const;
     Sector* GetNeighboringSector(game::Direction direction) const;
+    Coords GetRandomObjectPosition(SectorObjectType object_type);
 
     bool IsEmptyNewPosition(Coords coords) const;
     bool IsPositionInSectorBounds(Coords coords) const;
+    bool HasObjectOfType(SectorObjectType object_type) const;
     bool AreObjectsGenerated() const;
     void MoveObjects(SectorObjectType object_type, Coords target_location);
     void MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position);
     void SetObjectAtPosition(SectorObjectType type, Coords target_position);
    private:
+    Coords position_in_universe_;
     bool is_generated_ = false;
     ScanObject scan_data_;
     static const int kGridSize = 10;

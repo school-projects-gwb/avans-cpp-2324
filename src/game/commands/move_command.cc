@@ -23,6 +23,6 @@ namespace game {
   }
 
   bool MoveCommand::IsAllowed(const GameManager &game) const {
-    return game.GetState() == Movement;
+    return game.GetMainGameState() == Movement;
   }
 }

@@ -7,26 +7,33 @@
 #include "cargo.h"
 #include "sectors/sector_object_type.h"
 #include "sectors/sector.h"
+#include "sectors/package_destination_result.h"
+#include "spaceship_neighbor_object.h"
 
 namespace game {
   class SpaceShip {
    public:
-    void SetPosition(Coords new_position, std::vector<SectorObjectType> neighbor_objects);
+    void SetPosition(Coords sector_position, Coords universe_position, std::vector<SpaceshipNeighborObject> neighbor_objects);
     void SetIsAtUniverseEdge(bool is_at_edge);
+    void AddCargo(const Package& package, PackageDestinationResult destination_info);
 
     const Coords &GetPosition() const;
     Coords GetNextMovementPosition(Direction direction) const;
+    CargoInfo GetCargoInfo() const;
 
     bool HasNeighborOfType(SectorObjectType object_type) const;
-    bool HasCargo() const;
-    bool CanDeliverCargo() const;
     bool IsAtUniverseEdge() const;
+    bool CanDeliverCargo() const;
+    bool CanPickupCargo() const;
+    bool CanViewCargo() const;
+    void DeliverCargo();
    private:
     int damage_points_ = 0;
     int winning_points = 0;
     Cargo cargo_;
-    Coords position_;
-    std::vector<SectorObjectType> neighbor_objects_;
+    Coords universe_position_;
+    Coords sector_position_;
+    std::vector<SpaceshipNeighborObject> neighbor_objects_;
     bool at_universe_edge = false;
   };
 }

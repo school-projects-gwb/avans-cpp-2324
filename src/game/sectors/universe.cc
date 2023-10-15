@@ -1,17 +1,22 @@
 #include <iostream>
 #include "universe.h"
 #include "scans/scan_creator.h"
+#include "package_destination_result.h"
 
 namespace game {
   void Universe::SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult) {
     size_t numRows = scanData.GetRowCount();
     size_t numCols = scanData.GetColCount();
 
-    sectors_.Resize(numRows, numCols, Sector(ScanObject{}));
+    sectors_.Resize(numRows, numCols, Sector(ScanObject{}, Coords{}));
 
     for (size_t row = 0; row < numRows; row++)
-      for (size_t col = 0; col < numCols; col++)
-        sectors_(row, col) = Sector(scanData(row, col));
+      for (size_t col = 0; col < numCols; col++) {
+        Coords universe_coords = Coords();
+        universe_coords.pos_x_ = col;
+        universe_coords.pos_y_ = row;
+        sectors_(row, col) = Sector(scanData(row, col), universe_coords);
+      }
 
     for (size_t row = 0; row < numRows; row++) {
       for (size_t col = 0; col < numCols; col++) {
@@ -39,7 +44,7 @@ namespace game {
     if (position_available) {
       auto neighbor_objects = active_sector_->GetNeighborObjects(next_position);
       active_sector_->MoveObjectAtPositionToTargetPosition(space_ship_->GetPosition(), next_position);
-      space_ship_->SetPosition(next_position, neighbor_objects);
+      space_ship_->SetPosition(next_position, active_sector_->GetPositionInUniverse(), neighbor_objects);
       space_ship_->SetIsAtUniverseEdge(false);
     } else if (!active_sector_->IsPositionInSectorBounds(next_position)) {
       AttemptMoveSpaceshipToDifferentSector(direction);
@@ -62,7 +67,7 @@ namespace game {
     auto neighbor_objects = active_sector_->GetNeighborObjects(next_position_sector_neighbor);
 
     active_sector_->SetObjectAtPosition(SectorObjectType::Spaceship, next_position_sector_neighbor);
-    space_ship_->SetPosition(next_position_sector_neighbor, neighbor_objects);
+    space_ship_->SetPosition(next_position_sector_neighbor, active_sector_->GetPositionInUniverse(), neighbor_objects);
   }
 
   Sector &Universe::GetActiveSector() const {
@@ -73,7 +78,32 @@ namespace game {
     space_ship_ = &space_ship;
     auto free_coords = active_sector_->GetRandomFreeCoords();
     auto neighbor_objects = active_sector_->GetNeighborObjects(free_coords);
-    space_ship_->SetPosition(free_coords, neighbor_objects);
+    space_ship_->SetPosition(free_coords, active_sector_->GetPositionInUniverse(), neighbor_objects);
     active_sector_->SetObjectAtPosition(SectorObjectType::Spaceship, free_coords);
+  }
+
+  PackageDestinationResult Universe::GetPackageDestinationInfo() {
+    const int minimum_distance = 0;
+    PackageDestinationResult result{};
+
+    for (size_t row = 0; row < sectors_.GetRowCount(); row++) {
+      for (size_t col = 0; col < sectors_.GetColCount(); col++) {
+        Coords current_sector_position = sectors_(row, col).GetPositionInUniverse();
+        Coords active_sector_position = active_sector_->GetPositionInUniverse();
+        size_t row_distance = std::abs(static_cast<int>(current_sector_position.pos_x_ - active_sector_position.pos_x_));
+        size_t col_distance = std::abs(static_cast<int>(current_sector_position.pos_y_ - active_sector_position.pos_y_));
+
+        if ((row_distance < minimum_distance && col_distance < minimum_distance)
+        || !sectors_(row, col).HasObjectOfType(SectorObjectType::Planet)) continue;
+
+        result.destination_planet_coords = sectors_(row, col).GetRandomObjectPosition(SectorObjectType::Planet);
+        result.destination_sector_coords = current_sector_position;
+        result.current_sector_coords = current_sector_position;
+        result.has_valid_destination = true;
+        break;
+      }
+    }
+
+    return result;
   }
 }
