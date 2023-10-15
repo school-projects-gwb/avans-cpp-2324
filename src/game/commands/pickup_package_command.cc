@@ -1,11 +1,11 @@
 #include "pickup_package_command.h"
 
-namespace Game {
-  void PickupPackageCommand::HandleCommand(CommandCenter &game, int key) const {
+namespace game {
+  void PickupPackageCommand::HandleCommand(GameManager &game, int key) const {
 
   }
 
-  bool PickupPackageCommand::IsAllowed(const CommandCenter &game) const {
+  bool PickupPackageCommand::IsAllowed(const GameManager &game) const {
     if (game.GetState() != Movement) return false;
 
     const auto& space_ship = game.GetSpaceship();

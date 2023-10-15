@@ -6,9 +6,9 @@
 #include "commands/empty_command.h"
 #include "commands/game_reset_command.h"
 
-using namespace Game;
+using namespace game;
 
-namespace Interface {
+namespace interface {
   ActionRegistry::ActionRegistry() {
     hotkeys_.push_back({1, new MoveCommand(), "Naar boven bewegen"});
     hotkeys_.push_back({2, new MoveCommand(), "Naar beneden bewegen"});
@@ -26,7 +26,7 @@ namespace Interface {
       delete hotkey.command;
   }
 
-  void ActionRegistry::HandleCommand(int input_value, CommandCenter &game) const {
+  void ActionRegistry::HandleCommand(int input_value, GameManager &game) const {
     auto it = std::find_if(hotkeys_.begin(), hotkeys_.end(),
                            [input_value](const UserAction &hotkey) {
                              return hotkey.key == input_value;

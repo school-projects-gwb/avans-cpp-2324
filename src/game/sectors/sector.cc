@@ -3,7 +3,7 @@
 #include "helpers/random_helper.h"
 #include "scans/scan_creator.h"
 
-namespace Game {
+namespace game {
   Sector::Sector(const ScanObject &scanData)
       : scan_data_(scanData), objects_(kGridSize, kGridSize) {
     for (auto &object : objects_)

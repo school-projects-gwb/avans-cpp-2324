@@ -4,7 +4,7 @@
 #include "helpers/random_helper.h"
 #include "scan_select_result.h"
 
-namespace Game {
+namespace game {
   ScanCreator::ScanCreator() : scan_(kColRowCount, kColRowCount) {
   }
 

@@ -1,5 +1,5 @@
-#ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_COMMAND_CENTER_H_
-#define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_COMMAND_CENTER_H_
+#ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_MANAGER_H_
+#define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_MANAGER_H_
 
 #include <vector>
 #include "game/scans/scan_creator.h"
@@ -8,15 +8,15 @@
 #include "game/spaceship/spaceship.h"
 #include "data/direction.h"
 
-namespace Game {
-  class CommandCenter {
+namespace game {
+  class GameManager {
    private:
     ScanCreator scanner_;
     Universe universe_;
     SpaceShip space_ship_;
     GameState state_ = Scanning;
    public:
-    CommandCenter();
+    GameManager();
     void MovePlayer(Direction direction);
     void ProcessPlayerInput(int userInput);
     void ResetGame();
@@ -27,4 +27,4 @@ namespace Game {
   };
 }
 
-#endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_COMMAND_CENTER_H_
+#endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_GAME_MANAGER_H_

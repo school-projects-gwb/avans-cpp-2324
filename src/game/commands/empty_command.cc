@@ -1,11 +1,11 @@
 #include "empty_command.h"
 
-namespace Game {
-  void EmptyCommand::HandleCommand(CommandCenter &game, int key) const {
+namespace game {
+  void EmptyCommand::HandleCommand(GameManager &game, int key) const {
 
   }
 
-  bool EmptyCommand::IsAllowed(const CommandCenter &game) const {
+  bool EmptyCommand::IsAllowed(const GameManager &game) const {
     return game.GetState() == Movement || game.GetState() == PendingReset;
   }
 }

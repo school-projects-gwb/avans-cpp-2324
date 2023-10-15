@@ -5,7 +5,7 @@
 #include "scan_select_result.h"
 #include "data/grid.h"
 
-namespace Game {
+namespace game {
   class ScanCreator {
    private:
     static const int kColRowCount = 5;

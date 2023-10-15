@@ -4,13 +4,13 @@
 #include <vector>
 #include "action.h"
 
-namespace Interface {
+namespace interface {
   class ActionRegistry {
    public:
     std::vector<UserAction> hotkeys_;
     ActionRegistry();
     ~ActionRegistry();
-    void HandleCommand(int input_value, Game::CommandCenter &game) const;
+    void HandleCommand(int input_value, game::GameManager &game) const;
   };
 }
 

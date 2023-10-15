@@ -3,7 +3,7 @@
 
 #include "view_object.h"
 
-namespace Interface {
+namespace interface {
   class PlanetViewObject : public ViewObject {
     char GetDisplayCharacter() override;
   };

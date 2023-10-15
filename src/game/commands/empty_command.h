@@ -3,11 +3,11 @@
 
 #include "command.h"
 
-namespace Game {
+namespace game {
   class EmptyCommand : public Command {
    public:
-    void HandleCommand(CommandCenter &game, int key) const override;
-    bool IsAllowed(const CommandCenter &game) const override;
+    void HandleCommand(GameManager &game, int key) const override;
+    bool IsAllowed(const GameManager &game) const override;
   };
 }
 

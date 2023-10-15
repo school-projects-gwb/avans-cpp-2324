@@ -1,10 +1,10 @@
 #include <iostream>
 #include "ui.h"
 
-using namespace Game;
+using namespace game;
 
-namespace Interface {
-  Ui::Ui(const CommandCenter &game) : game_(game), view_object_factory_() {
+namespace interface {
+  Ui::Ui(const GameManager &game) : game_(game), view_object_factory_() {
   }
 
   void Ui::ShowScan() const {

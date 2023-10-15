@@ -1,6 +1,6 @@
 #include "planet_view_object.h"
 
-namespace Interface {
+namespace interface {
   char PlanetViewObject::GetDisplayCharacter() {
     return '@';
   }

@@ -1,14 +1,14 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_COMMANDS_GAME_RESET_COMMAND_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_COMMANDS_GAME_RESET_COMMAND_H_
 
-#include "command_center.h"
+#include "game_manager.h"
 #include "command.h"
 
-namespace Game {
+namespace game {
   class GameResetCommand : public Command {
    public:
-    void HandleCommand(CommandCenter &game, int key) const override;
-    bool IsAllowed(const CommandCenter &game) const override;
+    void HandleCommand(GameManager &game, int key) const override;
+    bool IsAllowed(const GameManager &game) const override;
   };
 }
 

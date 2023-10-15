@@ -9,7 +9,7 @@
 #include "data/direction.h"
 #include "spaceship/spaceship.h"
 
-namespace Game {
+namespace game {
   class Sector {
    public:
     Sector(const ScanObject &scanData);
@@ -25,7 +25,7 @@ namespace Game {
     Coords GetRandomFreeCoords() const;
     std::vector<SectorObjectType> GetNeighborObjects(Coords coords) const;
     Coords GetRelativeNeighborSectorCoords(Coords coords, Direction direction) const;
-    Sector* GetNeighboringSector(Game::Direction direction) const;
+    Sector* GetNeighboringSector(game::Direction direction) const;
 
     bool IsEmptyNewPosition(Coords coords) const;
     bool IsPositionInSectorBounds(Coords coords) const;

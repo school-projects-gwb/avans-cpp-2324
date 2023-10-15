@@ -3,7 +3,7 @@
 #include <utility>
 #include "data/direction.h"
 
-namespace Game {
+namespace game {
   void SpaceShip::SetPosition(Coords new_position, std::vector<SectorObjectType> neighbor_objects) {
     position_ = new_position;
     neighbor_objects_ = std::move(neighbor_objects);

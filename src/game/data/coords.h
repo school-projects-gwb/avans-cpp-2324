@@ -1,7 +1,7 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_DATA_COORDS_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_DATA_COORDS_H_
 
-namespace Game {
+namespace game {
   struct Coords {
     int pos_x_;
     int pos_y_;

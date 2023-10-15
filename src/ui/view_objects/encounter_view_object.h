@@ -3,7 +3,7 @@
 
 #include "view_object.h"
 
-namespace Interface {
+namespace interface {
   class EncounterViewObject : public ViewObject {
     char GetDisplayCharacter() override;
   };

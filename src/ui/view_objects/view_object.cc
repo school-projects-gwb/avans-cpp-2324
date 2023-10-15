@@ -1,7 +1,7 @@
 #include <iostream>
 #include "view_object.h"
 
-namespace Interface {
+namespace interface {
   char ViewObject::GetDisplayCharacter() {
     return '.';
   }

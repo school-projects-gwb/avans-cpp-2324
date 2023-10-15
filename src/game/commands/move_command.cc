@@ -1,8 +1,8 @@
 #include "move_command.h"
 #include "data/direction.h"
 
-namespace Game {
-  void MoveCommand::HandleCommand(CommandCenter &game, int key) const {
+namespace game {
+  void MoveCommand::HandleCommand(GameManager &game, int key) const {
     if (!IsAllowed(game)) return;
 
     Direction movement_direction;
@@ -22,7 +22,7 @@ namespace Game {
     game.MovePlayer(movement_direction);
   }
 
-  bool MoveCommand::IsAllowed(const CommandCenter &game) const {
+  bool MoveCommand::IsAllowed(const GameManager &game) const {
     return game.GetState() == Movement;
   }
 }

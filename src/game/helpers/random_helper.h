@@ -3,7 +3,7 @@
 
 #include <random>
 
-namespace Game {
+namespace game {
   class RandomHelper {
    public:
     static RandomHelper& GetInstance();

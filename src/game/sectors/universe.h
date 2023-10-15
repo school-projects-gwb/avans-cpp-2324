@@ -8,7 +8,7 @@
 #include "scans/scan_creator.h"
 #include "spaceship/spaceship.h"
 
-namespace Game {
+namespace game {
   class Universe {
    public:
     Universe() = default;

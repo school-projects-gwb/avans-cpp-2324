@@ -5,13 +5,13 @@
 #include <utility>
 #include "commands/command.h"
 
-namespace Interface {
+namespace interface {
   struct UserAction {
     int key;
-    Game::Command *command;
+    game::Command *command;
     std::string description;
 
-    UserAction(int k, Game::Command *cmd, std::string desc)
+    UserAction(int k, game::Command *cmd, std::string desc)
         : key(k), command(cmd), description(std::move(desc)) {}
   };
 }

@@ -8,7 +8,7 @@
 #include "sectors/sector_object_type.h"
 #include "sectors/sector.h"
 
-namespace Game {
+namespace game {
   class SpaceShip {
    public:
     void SetPosition(Coords new_position, std::vector<SectorObjectType> neighbor_objects);
@@ -22,6 +22,8 @@ namespace Game {
     bool CanDeliverCargo() const;
     bool IsAtUniverseEdge() const;
    private:
+    int damage_points_ = 0;
+    int winning_points = 0;
     Cargo cargo_;
     Coords position_;
     std::vector<SectorObjectType> neighbor_objects_;

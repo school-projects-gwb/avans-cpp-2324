@@ -3,7 +3,7 @@
 
 #include "sector_object_type.h"
 
-namespace Game {
+namespace game {
   struct SectorObject {
     int pos_x_;
     int pos_y_;

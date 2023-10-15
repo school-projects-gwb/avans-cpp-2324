@@ -4,7 +4,7 @@
 #include <vector>
 #include "coords.h"
 
-namespace Game {
+namespace game {
   template<typename T>
   class Grid {
    public:

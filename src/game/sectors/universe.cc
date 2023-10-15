@@ -2,7 +2,7 @@
 #include "universe.h"
 #include "scans/scan_creator.h"
 
-namespace Game {
+namespace game {
   void Universe::SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult) {
     size_t numRows = scanData.GetRowCount();
     size_t numCols = scanData.GetColCount();

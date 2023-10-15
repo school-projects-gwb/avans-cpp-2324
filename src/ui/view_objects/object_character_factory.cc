@@ -6,9 +6,9 @@
 #include "asteroid_view_object.h"
 #include "spaceship_view_object.h"
 
-using namespace Game;
+using namespace game;
 
-namespace Interface {
+namespace interface {
   std::shared_ptr<ViewObject> ViewObjectFactory::GetObjectCharacter(SectorObjectType object_type) const {
     switch (object_type) {
       case SectorObjectType::Asteroid:return std::make_shared<AsteroidViewObject>();

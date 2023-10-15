@@ -1,27 +1,27 @@
 #include <iostream>
-#include "command_center.h"
+#include "game_manager.h"
 #include "data/direction.h"
 
-namespace Game {
-  CommandCenter::CommandCenter() : scanner_(), universe_(), space_ship_() {
+namespace game {
+  GameManager::GameManager() : scanner_(), universe_(), space_ship_() {
     scanner_.CreateScan();
   }
 
-  void CommandCenter::ResetGame() {
+  void GameManager::ResetGame() {
     state_ = GameState::ShouldReset;
   }
 
-  void CommandCenter::MovePlayer(Direction direction) {
+  void GameManager::MovePlayer(Direction direction) {
     universe_.MoveSpaceship(direction);
     universe_.MoveObjects(space_ship_.GetPosition());
     if (space_ship_.IsAtUniverseEdge()) state_ = GameState::PendingReset;
   }
 
-  GameState CommandCenter::GetState() const {
+  GameState GameManager::GetState() const {
     return state_;
   }
 
-  void CommandCenter::ProcessPlayerInput(int userInput) {
+  void GameManager::ProcessPlayerInput(int userInput) {
     if (state_ != GameState::Scanning) return;
 
     auto sector_input_result = scanner_.PickSectorByInput(userInput);
@@ -33,15 +33,15 @@ namespace Game {
     state_ = GameState::Movement;
   }
 
-  Grid<ScanObject> CommandCenter::GetCurrentScan() const {
+  Grid<ScanObject> GameManager::GetCurrentScan() const {
     return scanner_.GetCurrentScan();
   }
 
-  const SpaceShip& CommandCenter::GetSpaceship() const {
+  const SpaceShip& GameManager::GetSpaceship() const {
     return space_ship_;
   }
 
-  Grid<SectorObjectType> CommandCenter::GetCurrentSector() const {
+  Grid<SectorObjectType> GameManager::GetCurrentSector() const {
     return universe_.GetActiveSector().GetSectorObjects();
   }
 }

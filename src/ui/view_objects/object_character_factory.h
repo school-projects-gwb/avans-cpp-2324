@@ -4,10 +4,10 @@
 #include "sectors/sector_object_type.h"
 #include "view_object.h"
 
-namespace Interface {
+namespace interface {
   class ViewObjectFactory {
    public:
-    std::shared_ptr<ViewObject> GetObjectCharacter(Game::SectorObjectType object_type) const;
+    std::shared_ptr<ViewObject> GetObjectCharacter(game::SectorObjectType object_type) const;
   };
 }
 

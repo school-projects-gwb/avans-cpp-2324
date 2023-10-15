@@ -1,15 +1,15 @@
 #include "ui/ui.h"
-#include "command_center.h"
+#include "game_manager.h"
 #include "ui/input.h"
 
 int main() {
   while (true) {
-    Game::CommandCenter game = Game::CommandCenter();
-    Interface::Ui ui = Interface::Ui(game);
-    Interface::Input input = Interface::Input();
+    game::GameManager game = game::GameManager();
+    interface::Ui ui = interface::Ui(game);
+    interface::Input input = interface::Input();
     ui.UpdateUi(game.GetState());
 
-    while (game.GetState() != Game::GameState::ShouldReset) {
+    while (game.GetState() != game::GameState::ShouldReset) {
       input.ProcessInput(game);
       ui.UpdateUi(game.GetState());
     }
