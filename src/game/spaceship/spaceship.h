@@ -15,7 +15,7 @@ namespace game {
    public:
     void SetPosition(Coords sector_position, Coords universe_position, std::vector<SpaceshipNeighborObject> neighbor_objects);
     void SetIsAtUniverseEdge(bool is_at_edge);
-    void AddCargo(const Package& package, PackageDestinationResult destination_info);
+    void AddCargo(const PackageModel& package, PackageDestinationResult destination_info);
 
     const Coords &GetPosition() const;
     Coords GetNextMovementPosition(Direction direction) const;

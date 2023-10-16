@@ -19,12 +19,28 @@ bool DatabaseConnection::ConnectToSqlite(const char *dbName) {
   return true;
 }
 
+std::unique_ptr<sqlite3_stmt, void(*)(sqlite3_stmt*)> DatabaseConnection::PrepareStatement(const char* sql) {
+  if (!connection_) return std::unique_ptr<sqlite3_stmt, void(*)(sqlite3_stmt*)>(nullptr, nullptr);
+
+  sqlite3_stmt* statement = nullptr;
+
+  int result = sqlite3_prepare_v2(connection_->GetConnection(), sql, -1, &statement, nullptr);
+
+  if (result != SQLITE_OK) {
+    const char* errmsg = sqlite3_errmsg(connection_->GetConnection());
+    throw std::runtime_error(errmsg);
+  }
+
+  auto statement_deleter = [](sqlite3_stmt* stmt) { sqlite3_finalize(stmt); };
+  return std::unique_ptr<sqlite3_stmt, decltype(statement_deleter)>(statement, statement_deleter);
+}
+
 void DatabaseConnection::ExecuteQuery(const char *sql) {
   if (!connection_) return;
 
   int result = sqlite3_exec(connection_->GetConnection(), sql, nullptr, nullptr, nullptr);
   if (result != SQLITE_OK) {
-    // Handle query execution error, e.g., log the error
+    // todo error handling
   }
 }
 

@@ -1,5 +1,5 @@
 #include "cargo.h"
-#include "data_models/package.h"
+#include "data_models/package_model.h"
 
 namespace game {
 
@@ -7,7 +7,7 @@ void Cargo::UpdateStatus(bool is_in_transit) {
   is_in_transit_ = is_in_transit;
 }
 
-void Cargo::AddCargo(const Package& package, PackageDestinationResult destination_info) {
+void Cargo::AddCargo(const PackageModel& package, PackageDestinationResult destination_info) {
   current_shipment_.source_sector_ = destination_info.current_sector_coords;
   current_shipment_.destination_sector_ = destination_info.destination_sector_coords;
   current_shipment_.destination_planet_ = destination_info.destination_planet_coords;

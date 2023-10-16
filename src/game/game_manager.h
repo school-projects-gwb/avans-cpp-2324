@@ -16,8 +16,9 @@ namespace game {
     Universe universe_;
     SpaceShip space_ship_;
     GameState state_ = {};
+    std::vector<PackageModel> package_data_;
    public:
-    GameManager();
+    explicit GameManager(std::vector<PackageModel>& package_data);
     void MovePlayer(Direction direction);
     void ProcessPlayerInput(int userInput);
     void ProcessPackagePickup();

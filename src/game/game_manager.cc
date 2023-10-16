@@ -3,7 +3,8 @@
 #include "data/direction.h"
 
 namespace game {
-  GameManager::GameManager() : scanner_(), universe_(), space_ship_() {
+  GameManager::GameManager(std::vector<PackageModel>& package_data) : scanner_(), universe_(), space_ship_() {
+    package_data_ = package_data;
     scanner_.CreateScan();
   }
 
@@ -24,9 +25,7 @@ namespace game {
       return;
     }
 
-    Package package{};
-    package.content_description_ = "Test package";
-    package.destination_description_ = "Destination description";
+    PackageModel package = PackageModel::GetRandomPackage(package_data_);
     space_ship_.AddCargo(package, package_destination_result);
     ProcessPackageView();
   }

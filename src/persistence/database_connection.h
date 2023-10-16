@@ -14,6 +14,7 @@ class DatabaseConnection {
   DatabaseConnection& operator=(const DatabaseConnection&) = delete;
   bool ConnectToSqlite(const char* dbName);
   void ExecuteQuery(const char* sql);
+  std::unique_ptr<sqlite3_stmt, void (*)(sqlite3_stmt *)> PrepareStatement(const char *sql);
  private:
   DatabaseConnection() = default;
   ~DatabaseConnection() = default;

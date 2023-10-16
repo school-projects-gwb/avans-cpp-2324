@@ -45,7 +45,7 @@ void SpaceShip::SetIsAtUniverseEdge(bool is_at_edge) {
   at_universe_edge = is_at_edge;
 }
 
-void SpaceShip::AddCargo(const Package& package, PackageDestinationResult destination_info) {
+void SpaceShip::AddCargo(const PackageModel& package, PackageDestinationResult destination_info) {
   cargo_.AddCargo(package, destination_info);
 }
 
