@@ -63,6 +63,8 @@ namespace game {
     if (!neighboring_sector->AreObjectsGenerated()) neighboring_sector->GenerateObjects();
     auto new_sector_position_available = neighboring_sector->IsEmptyNewPosition(next_position_sector_neighbor);
     if (!new_sector_position_available) return;
+
+    active_sector_->SetObjectAtPosition(SectorObjectType::EmptySpace, space_ship_->GetPosition());
     active_sector_ = neighboring_sector;
     auto neighbor_objects = active_sector_->GetNeighborObjects(next_position_sector_neighbor);
 

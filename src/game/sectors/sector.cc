@@ -46,7 +46,7 @@ namespace game {
   }
 
   void Sector::SetObjectAtPosition(SectorObjectType type, Coords target_position) {
-    if (IsEmptyNewPosition(target_position)) objects_[target_position] = type;
+    objects_[target_position] = type;
   }
 
   void Sector::MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position) {
