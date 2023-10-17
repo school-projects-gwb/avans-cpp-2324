@@ -3,11 +3,12 @@
 
 #include <vector>
 #include "game/scans/scan_creator.h"
-#include "game/states/main_game_state.h"
+#include "game/enums/main_game_state.h"
 #include "game/sectors/universe.h"
 #include "game/spaceship/spaceship.h"
-#include "data/direction.h"
-#include "states/game_state.h"
+#include "game/enums/direction.h"
+#include "game_state.h"
+#include "data_models/encounter_model.h"
 
 namespace game {
   class GameManager {
@@ -17,19 +18,20 @@ namespace game {
     SpaceShip space_ship_;
     GameState state_ = {};
     std::vector<PackageModel> package_data_;
+    std::vector<EncounterModel> encounter_data_;
    public:
-    explicit GameManager(std::vector<PackageModel>& package_data);
-    void MovePlayer(Direction direction);
+    explicit GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
+    void MovePlayer(enums::Direction direction);
     void ProcessPlayerInput(int userInput);
     void ProcessPackagePickup();
     void ProcessPackageView();
     void ProcessPackageDeliver();
     void ResetGame();
 
-    MainGameState GetMainGameState() const;
-    SubGameState GetSubGameState() const;
+    enums::MainGameState GetMainGameState() const;
+    enums::SubGameState GetSubGameState() const;
     Grid<ScanObject> GetCurrentScan() const;
-    Grid<SectorObjectType> GetCurrentSector() const;
+    Grid<enums::SectorObjectType> GetCurrentSector() const;
     const SpaceShip& GetSpaceship() const;
     void ResetSubGameState();
   };

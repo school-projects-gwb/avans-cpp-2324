@@ -6,7 +6,7 @@ namespace game {
   }
 
   bool PickupPackageCommand::IsAllowed(const GameManager &game) const {
-    if (game.GetMainGameState() != Movement) return false;
+    if (game.GetMainGameState() != enums::Movement) return false;
     return game.GetSpaceship().CanPickupCargo();
   }
 }

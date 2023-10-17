@@ -3,7 +3,7 @@
 
 #include "scan_object.h"
 #include "scan_select_result.h"
-#include "data/grid.h"
+#include "data_types/grid.h"
 
 namespace game {
   class ScanCreator {

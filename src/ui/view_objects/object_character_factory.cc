@@ -9,12 +9,12 @@
 using namespace game;
 
 namespace interface {
-  std::shared_ptr<ViewObject> ViewObjectFactory::GetObjectCharacter(SectorObjectType object_type) const {
+  std::shared_ptr<ViewObject> ViewObjectFactory::GetObjectCharacter(enums::SectorObjectType object_type) const {
     switch (object_type) {
-      case SectorObjectType::Asteroid:return std::make_shared<AsteroidViewObject>();
-      case SectorObjectType::Planet:return std::make_shared<PlanetViewObject>();
-      case SectorObjectType::Encounter:return std::make_shared<EncounterViewObject>();
-      case SectorObjectType::Spaceship:return std::make_shared<SpaceshipViewObject>();
+      case enums::SectorObjectType::Asteroid:return std::make_shared<AsteroidViewObject>();
+      case enums::SectorObjectType::Planet:return std::make_shared<PlanetViewObject>();
+      case enums::SectorObjectType::Encounter:return std::make_shared<EncounterViewObject>();
+      case enums::SectorObjectType::Spaceship:return std::make_shared<SpaceshipViewObject>();
       default:return std::make_shared<ViewObject>();
     }
   }

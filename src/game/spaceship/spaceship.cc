@@ -1,7 +1,7 @@
 #include "spaceship.h"
 
 #include <utility>
-#include "data/direction.h"
+#include "game/enums/direction.h"
 
 namespace game {
 
@@ -11,19 +11,19 @@ void SpaceShip::SetPosition(Coords sector_position, Coords universe_position, st
   neighbor_objects_ = std::move(neighbor_objects);
 }
 
-Coords SpaceShip::GetNextMovementPosition(Direction direction) const {
+Coords SpaceShip::GetNextMovementPosition(enums::Direction direction) const {
   auto next_position = sector_position_;
 
-  if (direction == Up || direction == Down)
-    next_position.pos_y_ += direction == Up ? -1 : 1;
+  if (direction == enums::Up || direction == enums::Down)
+    next_position.pos_y_ += direction == enums::Up ? -1 : 1;
 
-  if (direction == Left || direction == Right)
-    next_position.pos_x_ += direction == Left ? -1 : 1;
+  if (direction == enums::Left || direction == enums::Right)
+    next_position.pos_x_ += direction == enums::Left ? -1 : 1;
 
   return next_position;
 }
 
-bool SpaceShip::HasNeighborOfType(SectorObjectType object_type) const {
+bool SpaceShip::HasNeighborOfType(enums::SectorObjectType object_type) const {
   return std::any_of(neighbor_objects_.begin(), neighbor_objects_.end(), [object_type](const SpaceshipNeighborObject& neighborObject) {
     return neighborObject.object_type_ == object_type;
   });
@@ -59,12 +59,12 @@ bool SpaceShip::CanDeliverCargo() const {
 
   return std::any_of(neighbor_objects_.begin(), neighbor_objects_.end(),
                      [planet_destination](const SpaceshipNeighborObject& neighbor) {
-                       return neighbor.coords_ == planet_destination && neighbor.object_type_ == SectorObjectType::Planet;
+                       return neighbor.coords_ == planet_destination && neighbor.object_type_ == enums::SectorObjectType::Planet;
                      });
 }
 
 bool SpaceShip::CanPickupCargo() const {
-  return HasNeighborOfType(SectorObjectType::Planet) && !cargo_.GetIsInTransit();
+  return HasNeighborOfType(enums::SectorObjectType::Planet) && !cargo_.GetIsInTransit();
 }
 
 bool SpaceShip::CanViewCargo() const {

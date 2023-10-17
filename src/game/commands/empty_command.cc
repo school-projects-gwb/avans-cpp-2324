@@ -6,6 +6,6 @@ namespace game {
   }
 
   bool EmptyCommand::IsAllowed(const GameManager &game) const {
-    return game.GetMainGameState() == Movement || game.GetMainGameState() == PendingReset;
+    return game.GetMainGameState() == enums::Movement || game.GetMainGameState() == enums::PendingReset;
   }
 }

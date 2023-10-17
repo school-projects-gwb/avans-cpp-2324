@@ -5,5 +5,5 @@ void game::GameResetCommand::HandleCommand(game::GameManager &game, int key) con
 }
 
 bool game::GameResetCommand::IsAllowed(const game::GameManager &game) const {
-  return game.GetMainGameState() == MainGameState::PendingReset;
+  return game.GetMainGameState() == enums::MainGameState::PendingReset;
 }

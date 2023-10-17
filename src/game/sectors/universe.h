@@ -15,7 +15,7 @@ namespace game {
     Universe() = default;
     void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
     Sector &GetActiveSector() const;
-    void MoveSpaceship(Direction direction);
+    void MoveSpaceship(enums::Direction direction);
     void MoveObjects(Coords target_location);
     void SetSpaceship(SpaceShip& ship);
     PackageDestinationResult GetPackageDestinationInfo();
@@ -23,7 +23,7 @@ namespace game {
     Grid<Sector> sectors_;
     Sector* active_sector_ = nullptr;
     SpaceShip* space_ship_ = nullptr;
-    void AttemptMoveSpaceshipToDifferentSector(Direction direction);
+    void AttemptMoveSpaceshipToDifferentSector(enums::Direction direction);
   };
 }
 

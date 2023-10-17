@@ -1,7 +1,7 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_DATA_DIRECTION_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_DATA_DIRECTION_H_
 
-namespace game {
+namespace game::enums {
   enum Direction {
     Up, Down, Left, Right, None
   };

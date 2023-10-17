@@ -2,10 +2,10 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SPACESHIP_H_
 
 #include <vector>
-#include "data/coords.h"
-#include "data/direction.h"
+#include "data_types/coords.h"
+#include "game/enums/direction.h"
 #include "cargo.h"
-#include "sectors/sector_object_type.h"
+#include "game/enums/sector_object_type.h"
 #include "sectors/sector.h"
 #include "sectors/package_destination_result.h"
 #include "spaceship_neighbor_object.h"
@@ -18,10 +18,10 @@ namespace game {
     void AddCargo(const PackageModel& package, PackageDestinationResult destination_info);
 
     const Coords &GetPosition() const;
-    Coords GetNextMovementPosition(Direction direction) const;
+    Coords GetNextMovementPosition(enums::Direction direction) const;
     CargoInfo GetCargoInfo() const;
 
-    bool HasNeighborOfType(SectorObjectType object_type) const;
+    bool HasNeighborOfType(enums::SectorObjectType object_type) const;
     bool IsAtUniverseEdge() const;
     bool CanDeliverCargo() const;
     bool CanPickupCargo() const;

@@ -9,17 +9,17 @@ namespace game {
       : scan_data_(scanData), objects_(kGridSize, kGridSize), position_in_universe_(universe_position) {
     for (auto &object : objects_)
       for (auto &column : object)
-        column = SectorObjectType::EmptySpace;
+        column = enums::SectorObjectType::EmptySpace;
   }
 
   void Sector::GenerateObjects() {
-    PlaceObjectsOfType(SectorObjectType::Asteroid, scan_data_.asteroid_amount);
-    PlaceObjectsOfType(SectorObjectType::Planet, scan_data_.planet_amount);
-    PlaceObjectsOfType(SectorObjectType::Encounter, scan_data_.encounter_amount);
+    PlaceObjectsOfType(enums::SectorObjectType::Asteroid, scan_data_.asteroid_amount);
+    PlaceObjectsOfType(enums::SectorObjectType::Planet, scan_data_.planet_amount);
+    PlaceObjectsOfType(enums::SectorObjectType::Encounter, scan_data_.encounter_amount);
     is_generated_ = true;
   }
 
-  void Sector::MoveObjects(SectorObjectType object_type, Coords target_location) {
+  void Sector::MoveObjects(enums::SectorObjectType object_type, Coords target_location) {
     for (int x = 0; x < objects_.GetColCount(); ++x) {
       for (int y = 0; y < objects_.GetRowCount(); ++y) {
         Coords current_position{x, y};
@@ -38,31 +38,31 @@ namespace game {
         }
 
         if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
-          objects_[current_position] = SectorObjectType::EmptySpace;
+          objects_[current_position] = enums::SectorObjectType::EmptySpace;
           objects_[next_position] = object_type;
         }
       }
     }
   }
 
-  void Sector::SetObjectAtPosition(SectorObjectType type, Coords target_position) {
+  void Sector::SetObjectAtPosition(enums::SectorObjectType type, Coords target_position) {
     objects_[target_position] = type;
   }
 
   void Sector::MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position) {
     if (IsEmptyNewPosition(current_position)) return;
     objects_[target_position] = objects_[current_position];
-    objects_[current_position] = SectorObjectType::EmptySpace;
+    objects_[current_position] = enums::SectorObjectType::EmptySpace;
   }
 
-  void Sector::PlaceObjectsOfType(SectorObjectType type, int amount) {
+  void Sector::PlaceObjectsOfType(enums::SectorObjectType type, int amount) {
     for (int i = 0; i < amount; i++) {
       Coords coords = GetRandomFreeCoords();
       objects_[coords] = type;
     }
   }
 
-  const Grid<SectorObjectType>& Sector::GetSectorObjects() const {
+  const Grid<enums::SectorObjectType>& Sector::GetSectorObjects() const {
     return objects_;
   }
 
@@ -73,13 +73,13 @@ namespace game {
     do {
       coords.pos_x_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
       coords.pos_y_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
-    } while (objects_[coords] != SectorObjectType::EmptySpace);
+    } while (objects_[coords] != enums::SectorObjectType::EmptySpace);
 
     return coords;
   }
 
   bool Sector::IsEmptyNewPosition(Coords coords) const {
-    return IsPositionInSectorBounds(coords) && objects_[coords] == SectorObjectType::EmptySpace;
+    return IsPositionInSectorBounds(coords) && objects_[coords] == enums::SectorObjectType::EmptySpace;
   }
 
   std::vector<SpaceshipNeighborObject> Sector::GetNeighborObjects(Coords coords) const {
@@ -113,12 +113,12 @@ namespace game {
         && coords.pos_y_ >= 0 && coords.pos_y_ < objects_.GetRowCount());
   }
 
-  Coords Sector::GetRelativeNeighborSectorCoords(Coords coords, Direction direction) const {
+  Coords Sector::GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const {
     Coords new_coords = coords;
     int col_count_check = objects_.GetColCount()-1;
     int row_count_check = objects_.GetRowCount()-1;
 
-    if (direction == Left || direction == Right) {
+    if (direction == enums::Left || direction == enums::Right) {
       new_coords.pos_x_ = coords.pos_x_ <= 0 ? col_count_check : 0;
     } else {
       new_coords.pos_y_ = coords.pos_y_ <= 0 ? row_count_check : 0;
@@ -131,15 +131,15 @@ namespace game {
     return is_generated_;
   }
 
-  Sector* Sector::GetNeighboringSector(Direction direction) const {
+  Sector* Sector::GetNeighboringSector(enums::Direction direction) const {
     switch (direction) {
-      case Up:
+      case enums::Up:
         return kUp;
-      case Down:
+      case enums::Down:
         return kDown;
-      case Left:
+      case enums::Left:
         return kLeft;
-      case Right:
+      case enums::Right:
         return kRight;
       default:
         return nullptr;
@@ -150,7 +150,7 @@ namespace game {
     return position_in_universe_;
   }
 
-  bool Sector::HasObjectOfType(SectorObjectType object_type) const {
+  bool Sector::HasObjectOfType(enums::SectorObjectType object_type) const {
     if (!AreObjectsGenerated()) return false;
 
     for (int x = 0; x < objects_.GetColCount(); ++x)
@@ -162,7 +162,7 @@ namespace game {
     return false;
   }
 
-  Coords Sector::GetRandomObjectPosition(SectorObjectType object_type) {
+  Coords Sector::GetRandomObjectPosition(enums::SectorObjectType object_type) {
     std::vector<Coords> candidates{};
 
     for (int x = 0; x < objects_.GetColCount(); ++x)

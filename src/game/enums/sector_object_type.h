@@ -1,7 +1,7 @@
 #ifndef ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SECTORS_SECTOR_OBJECT_TYPE_H_
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SECTORS_SECTOR_OBJECT_TYPE_H_
 
-namespace game {
+namespace game::enums {
   enum SectorObjectType {
     Asteroid, Planet, Encounter, EmptySpace, Spaceship
   };

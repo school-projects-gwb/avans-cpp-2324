@@ -6,6 +6,6 @@ namespace game {
   }
 
   bool ViewPackageCommand::IsAllowed(const GameManager &game) const {
-    return game.GetMainGameState() == Movement && game.GetSpaceship().CanViewCargo();
+    return game.GetMainGameState() == enums::Movement && game.GetSpaceship().CanViewCargo();
   }
 }

@@ -8,7 +8,7 @@ namespace interface {
   class Ui {
    public:
     explicit Ui(const game::GameManager &game);
-    void UpdateUi(game::MainGameState state, game::SubGameState sub_game_state) const;
+    void UpdateUi(game::enums::MainGameState state, game::enums::SubGameState sub_game_state) const;
     void ShowSector() const;
    private:
     const ViewObjectFactory view_object_factory_;

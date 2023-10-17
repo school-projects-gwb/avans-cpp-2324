@@ -2,7 +2,7 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_SECTORS_SHIPMENT_H_
 
 #include <string>
-#include "data/coords.h"
+#include "data_types/coords.h"
 
 namespace game {
 

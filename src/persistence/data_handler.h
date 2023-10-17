@@ -3,7 +3,7 @@
 
 #include <sqlite3.h>
 #include "data_models/package_model.h"
-#include "sectors/sector_object_type.h"
+#include "game/enums/sector_object_type.h"
 #include "data_models/encounter_model.h"
 
 namespace persistence {

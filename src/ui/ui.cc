@@ -60,13 +60,13 @@ void Ui::ShowPackageDeliverySuccess() const {
   std::cout << "Pakket succesvol afgeleverd!\n";
 }
 
-void Ui::UpdateUi(MainGameState state, SubGameState sub_game_state) const {
-  if (state == MainGameState::Scanning) ShowScan();
-  if (state == MainGameState::Movement) ShowSector();
-  if (state == MainGameState::PackagePickupBlocked) ShowPackagePickupBlocked();
+void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
+  if (state == enums::MainGameState::Scanning) ShowScan();
+  if (state == enums::MainGameState::Movement) ShowSector();
+  if (state == enums::MainGameState::PackagePickupBlocked) ShowPackagePickupBlocked();
 
-  if (sub_game_state == SubGameState::ShowPackage) ShowPackageInfo();
-  if (sub_game_state == SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
+  if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
+  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
 }
 
 }
