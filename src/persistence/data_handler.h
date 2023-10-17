@@ -10,12 +10,12 @@ namespace persistence {
 
 class DataHandler {
  public:
-  std::vector<game::EncounterModel> GetEncounters();
-  std::vector<game::PackageModel> GetPackages();
+  std::vector<game::EncounterModel> GetEncounters() const;
+  std::vector<game::PackageModel> GetPackages() const;
   std::vector<game::EncounterModel,
-  std::allocator<game::EncounterModel>>::iterator FindEncounterByID(std::vector<game::EncounterModel> &encounters,int id);
-  game::Consequence CreateConsequenceFromRow(sqlite3_stmt *statement);
-  std::string GetStringColumn(sqlite3_stmt *statement, int column_index);
+  std::allocator<game::EncounterModel>>::iterator FindEncounterByID(std::vector<game::EncounterModel> &encounters,int id) const;
+  game::Consequence CreateConsequenceFromRow(sqlite3_stmt *statement) const;
+  std::string GetStringColumn(sqlite3_stmt *statement, int column_index) const;
 };
 
 }

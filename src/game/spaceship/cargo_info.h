@@ -6,8 +6,8 @@
 namespace game {
 
 struct CargoInfo {
-  bool is_in_transit_ = false;
-  Shipment shipment_;
+  bool is_in_transit = false;
+  const Shipment& shipment;
 };
 
 }

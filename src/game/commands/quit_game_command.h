@@ -7,7 +7,7 @@ namespace game {
 class QuitGameCommand : public Command {
  public:
   void HandleCommand(GameManager &game, int key) const override;
-  bool IsAllowed(const GameManager &game) const override;
+  [[nodiscard]] bool IsAllowed(const GameManager &game) const override;
 };
 
 }

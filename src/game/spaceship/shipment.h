@@ -7,11 +7,11 @@
 namespace game {
 
 struct Shipment {
-  Coords destination_sector_;
-  Coords destination_planet_;
-  Coords source_sector_;
-  std::string content_description_;
-  std::string destination_description_;
+  Coords destination_sector;
+  Coords destination_planet;
+  Coords source_sector;
+  std::string content_description;
+  std::string destination_description;
 };
 
 }

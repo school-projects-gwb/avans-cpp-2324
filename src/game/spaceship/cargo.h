@@ -11,8 +11,8 @@ class Cargo {
  public:
   void AddCargo(const PackageModel& package, PackageDestinationResult destination_info);
   void UpdateStatus(bool is_in_transit);
-  CargoInfo GetCargoInfo() const;
-  bool GetIsInTransit() const;
+  [[nodiscard]] CargoInfo GetCargoInfo() const;
+  [[nodiscard]] bool GetIsInTransit() const;
  private:
   Shipment current_shipment_ = {};
   bool is_in_transit_ = false;

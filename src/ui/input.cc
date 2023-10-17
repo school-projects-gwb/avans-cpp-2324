@@ -27,7 +27,7 @@ namespace interface {
     }
   }
 
-  void Input::ShowAllowedCommands(GameManager &game) const {
+  void Input::ShowAllowedCommands(const GameManager& game) const {
     for (const UserAction &hotkey : action_registry_.hotkeys_)
       if (hotkey.command->IsAllowed(game)) std::cout << hotkey.key << " : " << hotkey.description << "\n";
 

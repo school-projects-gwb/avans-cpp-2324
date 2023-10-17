@@ -8,7 +8,6 @@ class SpaceshipStats {
   void AppendWinningPoints(int amount);
   void AppendDamagePoints(int amount);
   void ResetDamagePoints();
-  [[nodiscard]] int GetWinningPoints() const;
   [[nodiscard]] int GetDamagePoints() const;
   bool IsDestroyed() const;
   bool HasEnoughWinningPoints() const;

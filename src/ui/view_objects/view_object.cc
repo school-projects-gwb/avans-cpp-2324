@@ -2,11 +2,11 @@
 #include "view_object.h"
 
 namespace interface {
-  char ViewObject::GetDisplayCharacter() {
+  char ViewObject::GetDisplayCharacter() const {
     return '.';
   }
 
-  void ViewObject::Print() {
+  void ViewObject::Print() const {
     std::cout << GetDisplayCharacter() << " ";
   }
 }

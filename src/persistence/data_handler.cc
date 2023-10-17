@@ -5,7 +5,7 @@
 
 namespace persistence {
 
-std::vector<game::PackageModel> DataHandler::GetPackages() {
+std::vector<game::PackageModel> DataHandler::GetPackages() const {
   std::vector<game::PackageModel> packages;
 
   const char* sql = "SELECT inhoud, bestemming FROM pakketjes";
@@ -31,7 +31,7 @@ std::vector<game::PackageModel> DataHandler::GetPackages() {
   return packages;
 }
 
-std::vector<game::EncounterModel> DataHandler::GetEncounters() {
+std::vector<game::EncounterModel> DataHandler::GetEncounters() const {
   std::vector<game::EncounterModel> encounters;
 
   const char* sql = R"(
@@ -56,14 +56,14 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() {
 
       if (existing_encounter == encounters.end()) {
         game::EncounterModel new_encounter;
-        new_encounter.id_ = encounter_id;
-        new_encounter.description_ = encounter_description;
+        new_encounter.id = encounter_id;
+        new_encounter.description = encounter_description;
         encounters.push_back(new_encounter);
         existing_encounter = encounters.end() - 1;
       }
 
       game::Consequence new_consequence = CreateConsequenceFromRow(statement.get());
-      existing_encounter->consequences_.push_back(new_consequence);
+      existing_encounter->consequences.push_back(new_consequence);
     }
   }
 
@@ -71,26 +71,26 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() {
 }
 
 std::vector<game::EncounterModel, std::allocator<game::EncounterModel>>::iterator
-DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, int id) {
+DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, int id) const {
   return std::find_if(
       encounters.begin(),
       encounters.end(),
       [id](const game::EncounterModel& encounter) {
-        return encounter.id_ == id;
+        return encounter.id == id;
       });
 }
 
-game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement) {
+game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement) const {
   game::Consequence new_consequence;
-  new_consequence.amount_ = sqlite3_column_int(statement, 4);
-  new_consequence.description_ = GetStringColumn(statement, 5);
-  new_consequence.consequence_source_ = game::enums::GetEncounterCharacterFromString(GetStringColumn(statement, 2));
-  new_consequence.consequence_type_ = game::enums::GetEncounterConsequenceTypeFromString(GetStringColumn(statement, 3));
+  new_consequence.amount = sqlite3_column_int(statement, 4);
+  new_consequence.description = GetStringColumn(statement, 5);
+  new_consequence.consequence_source = game::enums::GetEncounterCharacterFromString(GetStringColumn(statement, 2));
+  new_consequence.consequence_type = game::enums::GetEncounterConsequenceTypeFromString(GetStringColumn(statement, 3));
 
   return new_consequence;
 }
 
-std::string DataHandler::GetStringColumn(sqlite3_stmt* statement, int column_index) {
+std::string DataHandler::GetStringColumn(sqlite3_stmt* statement, int column_index) const {
   const char* text = reinterpret_cast<const char*>(sqlite3_column_text(statement, column_index));
   return text ? text : "";
 }

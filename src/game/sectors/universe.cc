@@ -27,7 +27,7 @@ namespace game {
       }
     }
 
-    active_sector_ = &sectors_(pickResult.row_number_, pickResult.col_number_);
+    active_sector_ = &sectors_(pickResult.row_number, pickResult.col_number);
     active_sector_->GenerateObjects();
   }
 
@@ -70,7 +70,7 @@ namespace game {
     space_ship_->SetPosition(next_position_sector_neighbor, active_sector_->GetPositionInUniverse(), neighbor_objects);
   }
 
-  Sector &Universe::GetActiveSector() const {
+  Sector& Universe::GetActiveSector() const {
     return *active_sector_;
   }
 
@@ -82,7 +82,7 @@ namespace game {
     active_sector_->SetObjectAtPosition(enums::SectorObjectType::Spaceship, free_coords);
   }
 
-  PackageDestinationResult Universe::GetPackageDestinationInfo() {
+  PackageDestinationResult Universe::GetPackageDestinationInfo() const {
     const int minimum_distance = 0; // todo set back to 2
     PackageDestinationResult result{};
 
@@ -90,8 +90,8 @@ namespace game {
       for (size_t col = 0; col < sectors_.GetColCount(); col++) {
         Coords current_sector_position = sectors_(row, col).GetPositionInUniverse();
         Coords active_sector_position = active_sector_->GetPositionInUniverse();
-        size_t row_distance = std::abs(static_cast<int>(current_sector_position.pos_x_ - active_sector_position.pos_x_));
-        size_t col_distance = std::abs(static_cast<int>(current_sector_position.pos_y_ - active_sector_position.pos_y_));
+        size_t row_distance = std::abs(static_cast<int>(current_sector_position.pos_x - active_sector_position.pos_x));
+        size_t col_distance = std::abs(static_cast<int>(current_sector_position.pos_y - active_sector_position.pos_y));
 
         if ((row_distance < minimum_distance && col_distance < minimum_distance)
         || !sectors_(row, col).HasObjectOfType(enums::SectorObjectType::Planet)) continue;
@@ -112,9 +112,9 @@ namespace game {
 
     bool removedAtLeastOne = false;
     for (const auto& neighbor : neighbor_objects) {
-      if (neighbor.object_type_ != collision_type) continue;
+      if (neighbor.object_type != collision_type) continue;
 
-      active_sector_->SetObjectAtPosition(enums::SectorObjectType::EmptySpace, neighbor.coords_);
+      active_sector_->SetObjectAtPosition(enums::SectorObjectType::EmptySpace, neighbor.coords);
       removedAtLeastOne = true;
       }
 

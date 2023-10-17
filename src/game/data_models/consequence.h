@@ -2,17 +2,16 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_DATA_MODELS_CONSEQUENCE_H_
 
 #include <string>
-#include "consequence_type.h"
 #include "enums/encounter_character.h"
 #include "enums/encounter_consequence_type.h"
 
 namespace game {
 
 struct Consequence {
-  enums::EncounterConsequenceType consequence_type_;
-  enums::EncounterCharacter consequence_source_;
-  int amount_;
-  std::string description_;
+  enums::EncounterConsequenceType consequence_type;
+  enums::EncounterCharacter consequence_source;
+  int amount;
+  std::string description;
 };
 
 }

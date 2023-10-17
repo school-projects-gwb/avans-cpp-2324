@@ -44,16 +44,16 @@ void Ui::ShowPackagePickupBlocked() const {
 }
 
 void Ui::ShowPackageInfo() const {
-  auto shipment = game_.GetSpaceship().GetCargoInfo().shipment_;
-  std::cout << "Je vervoert: " << shipment.content_description_ << "\n";
-  std::cout << "Bestemming: " << shipment.destination_description_ << "\n";
-  std::cout << "Vanuit sector: " << GetFormattedCoordsString(shipment.source_sector_) << "\n";
-  std::cout << "Sector bestemming: " << GetFormattedCoordsString(shipment.destination_sector_) << "\n";
-  std::cout << "Planeet bestemming: " << GetFormattedCoordsString(shipment.destination_planet_) << "\n";
+  auto shipment = game_.GetSpaceship().GetCargoInfo().shipment;
+  std::cout << "Je vervoert: " << shipment.content_description << "\n";
+  std::cout << "Bestemming: " << shipment.destination_description << "\n";
+  std::cout << "Vanuit sector: " << GetFormattedCoordsString(shipment.source_sector) << "\n";
+  std::cout << "Sector bestemming: " << GetFormattedCoordsString(shipment.destination_sector) << "\n";
+  std::cout << "Planeet bestemming: " << GetFormattedCoordsString(shipment.destination_planet) << "\n";
 }
 
 std::string Ui::GetFormattedCoordsString(game::Coords coords) const {
-  return "x: " + std::to_string(coords.pos_x_) + ", y: " + std::to_string(coords.pos_y_);
+  return "x: " + std::to_string(coords.pos_x) + ", y: " + std::to_string(coords.pos_y);
 }
 
 void Ui::ShowPackageDeliverySuccess() const {

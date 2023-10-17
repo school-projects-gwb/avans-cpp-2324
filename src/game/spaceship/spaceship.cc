@@ -15,17 +15,17 @@ Coords SpaceShip::GetNextMovementPosition(enums::Direction direction) const {
   auto next_position = sector_position_;
 
   if (direction == enums::Up || direction == enums::Down)
-    next_position.pos_y_ += direction == enums::Up ? -1 : 1;
+    next_position.pos_y += direction == enums::Up ? -1 : 1;
 
   if (direction == enums::Left || direction == enums::Right)
-    next_position.pos_x_ += direction == enums::Left ? -1 : 1;
+    next_position.pos_x += direction == enums::Left ? -1 : 1;
 
   return next_position;
 }
 
 bool SpaceShip::HasNeighborOfType(enums::SectorObjectType object_type) const {
   return std::any_of(neighbor_objects_.begin(), neighbor_objects_.end(), [object_type](const SpaceshipNeighborObject& neighborObject) {
-    return neighborObject.object_type_ == object_type;
+    return neighborObject.object_type == object_type;
   });
 }
 
@@ -51,15 +51,15 @@ void SpaceShip::AddCargo(const PackageModel& package, PackageDestinationResult d
 
 bool SpaceShip::CanDeliverCargo() const {
   auto cargo_info = GetCargoInfo();
-  auto shipment = cargo_info.shipment_;
+  auto shipment = cargo_info.shipment;
 
-  if (!cargo_info.is_in_transit_ || !(shipment.destination_sector_ == universe_position_)) return false;
+  if (!cargo_info.is_in_transit || !(shipment.destination_sector == universe_position_)) return false;
 
-  Coords planet_destination = shipment.destination_planet_;
+  Coords planet_destination = shipment.destination_planet;
 
   return std::any_of(neighbor_objects_.begin(), neighbor_objects_.end(),
                      [planet_destination](const SpaceshipNeighborObject& neighbor) {
-                       return neighbor.coords_ == planet_destination && neighbor.object_type_ == enums::SectorObjectType::Planet;
+                       return neighbor.coords == planet_destination && neighbor.object_type == enums::SectorObjectType::Planet;
                      });
 }
 
@@ -80,7 +80,7 @@ SpaceshipStats& SpaceShip::GetStats() {
   return spaceship_stats_;
 }
 
-bool SpaceShip::IsDestroyed() {
+bool SpaceShip::IsDestroyed() const {
   return spaceship_stats_.IsDestroyed();
 }
 

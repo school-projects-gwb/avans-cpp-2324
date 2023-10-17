@@ -18,14 +18,14 @@ namespace game {
     void SetIsAtUniverseEdge(bool is_at_edge);
     void AddCargo(const PackageModel& package, PackageDestinationResult destination_info);
 
-    const Coords &GetPosition() const;
-    Coords GetNextMovementPosition(enums::Direction direction) const;
-    CargoInfo GetCargoInfo() const;
+    [[nodiscard]] const Coords& GetPosition() const;
+    [[nodiscard]] Coords GetNextMovementPosition(enums::Direction direction) const;
+    [[nodiscard]] CargoInfo GetCargoInfo() const;
     SpaceshipStats& GetStats();
 
     bool HasNeighborOfType(enums::SectorObjectType object_type) const;
     bool HasEnoughWinningPoints() const;
-    bool IsDestroyed();
+    bool IsDestroyed() const;
     bool IsAtUniverseEdge() const;
     bool CanDeliverCargo() const;
     bool CanPickupCargo() const;

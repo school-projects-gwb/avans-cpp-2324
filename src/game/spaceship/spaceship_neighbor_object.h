@@ -7,8 +7,8 @@
 namespace game {
 
 struct SpaceshipNeighborObject {
-  Coords coords_;
-  enums::SectorObjectType object_type_;
+  Coords coords;
+  enums::SectorObjectType object_type;
 };
 
 }

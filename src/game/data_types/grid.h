@@ -22,11 +22,11 @@ namespace game {
     }
 
     T &operator[](const Coords &coords) {
-      return grid_[coords.pos_y_][coords.pos_x_];
+      return grid_[coords.pos_y][coords.pos_x];
     }
 
     const T &operator[](const Coords &coords) const {
-      return grid_[coords.pos_y_][coords.pos_x_];
+      return grid_[coords.pos_y][coords.pos_x];
     }
 
     using iterator = typename std::vector<std::vector<T>>::iterator;

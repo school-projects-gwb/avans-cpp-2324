@@ -1,7 +1,7 @@
 #include "asteroid_view_object.h"
 
 namespace interface {
-  char AsteroidViewObject::GetDisplayCharacter() {
+  char AsteroidViewObject::GetDisplayCharacter() const {
     return 'O';
   }
 }

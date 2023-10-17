@@ -3,9 +3,9 @@
 
 namespace game {
   struct ScanSelectResult {
-    bool is_valid_ = false;
-    int row_number_;
-    int col_number_;
+    bool is_valid = false;
+    int row_number;
+    int col_number;
   };
 }
 

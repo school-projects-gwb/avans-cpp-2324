@@ -28,7 +28,7 @@ int main() {
       input.ProcessInput(game);
       ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
       game.ResetSubGameState();
-      should_quit = game.ShouldQuit();
+      should_quit = game.GetShouldQuit();
     }
   }
 }

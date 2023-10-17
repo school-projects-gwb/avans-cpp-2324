@@ -5,7 +5,7 @@
 
 namespace interface {
   class AsteroidViewObject : public ViewObject {
-    char GetDisplayCharacter() override;
+    char GetDisplayCharacter() const override;
   };
 }
 

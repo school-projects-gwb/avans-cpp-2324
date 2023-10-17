@@ -15,10 +15,6 @@ void SpaceshipStats::ResetDamagePoints() {
   damage_points_ = 0;
 }
 
-int SpaceshipStats::GetWinningPoints() const {
-  return winning_points_;
-}
-
 int SpaceshipStats::GetDamagePoints() const {
   return damage_points_;
 }

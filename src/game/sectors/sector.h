@@ -3,7 +3,6 @@
 
 #include <vector>
 #include "game/scans/scan_object.h"
-#include "sector_object.h"
 #include "data_types/grid.h"
 #include "data_types/coords.h"
 #include "game/enums/direction.h"
@@ -28,7 +27,7 @@ namespace game {
     Coords GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const;
     Coords GetPositionInUniverse() const;
     Sector* GetNeighboringSector(enums::Direction direction) const;
-    Coords GetRandomObjectPosition(enums::SectorObjectType object_type);
+    Coords GetRandomObjectPosition(enums::SectorObjectType object_type) const;
 
     bool IsEmptyNewPosition(Coords coords) const;
     bool IsPositionInSectorBounds(Coords coords) const;

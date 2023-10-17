@@ -4,8 +4,8 @@
 namespace interface {
   class ViewObject {
    public:
-    virtual char GetDisplayCharacter();
-    virtual void Print();
+    virtual char GetDisplayCharacter() const;
+    virtual void Print() const;
   };
 }
 

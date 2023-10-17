@@ -6,8 +6,8 @@
 namespace game {
 
 struct GameState {
-  enums::MainGameState main_game_state_ = enums::Scanning;
-  enums::SubGameState sub_game_state_ = enums::DoNothing;
+  enums::MainGameState main_game_state = enums::Scanning;
+  enums::SubGameState sub_game_state = enums::DoNothing;
 };
 
 }

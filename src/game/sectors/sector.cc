@@ -30,14 +30,14 @@ namespace game {
 
     for (const Coords& current_position : objectsToMove) {
       Coords next_position = current_position;
-      if (current_position.pos_x_ < target_location.pos_x_) {
-        next_position.pos_x_++;
-      } else if (current_position.pos_x_ > target_location.pos_x_) {
-        next_position.pos_x_--;
-      } else if (current_position.pos_y_ < target_location.pos_y_) {
-        next_position.pos_y_++;
-      } else if (current_position.pos_y_ > target_location.pos_y_) {
-        next_position.pos_y_--;
+      if (current_position.pos_x < target_location.pos_x) {
+        next_position.pos_x++;
+      } else if (current_position.pos_x > target_location.pos_x) {
+        next_position.pos_x--;
+      } else if (current_position.pos_y < target_location.pos_y) {
+        next_position.pos_y++;
+      } else if (current_position.pos_y > target_location.pos_y) {
+        next_position.pos_y--;
       }
 
       if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
@@ -73,8 +73,8 @@ namespace game {
     Coords coords = {};
 
     do {
-      coords.pos_x_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
-      coords.pos_y_ = random_helper.GenerateRandomInt(0, kGridSize - 1);
+      coords.pos_x = random_helper.GenerateRandomInt(0, kGridSize - 1);
+      coords.pos_y = random_helper.GenerateRandomInt(0, kGridSize - 1);
     } while (objects_[coords] != enums::SectorObjectType::EmptySpace);
 
     return coords;
@@ -96,13 +96,13 @@ namespace game {
 
     for (const Coords& offset : offsets) {
       Coords neighborCoords = coords;
-      neighborCoords.pos_x_ +=  + offset.pos_x_;
-      neighborCoords.pos_y_ +=  + offset.pos_y_;
+      neighborCoords.pos_x +=  + offset.pos_x;
+      neighborCoords.pos_y +=  + offset.pos_y;
 
       if (IsPositionInSectorBounds(neighborCoords)) {
         SpaceshipNeighborObject neighborObject = {};
-        neighborObject.coords_ = neighborCoords;
-        neighborObject.object_type_ = objects_[neighborCoords];
+        neighborObject.coords = neighborCoords;
+        neighborObject.object_type = objects_[neighborCoords];
         neighbors.push_back(neighborObject);
       }
     }
@@ -111,8 +111,8 @@ namespace game {
   }
 
   bool Sector::IsPositionInSectorBounds(Coords coords) const {
-    return (coords.pos_x_ >= 0 && coords.pos_x_ < objects_.GetColCount()
-        && coords.pos_y_ >= 0 && coords.pos_y_ < objects_.GetRowCount());
+    return (coords.pos_x >= 0 && coords.pos_x < objects_.GetColCount()
+        && coords.pos_y >= 0 && coords.pos_y < objects_.GetRowCount());
   }
 
   Coords Sector::GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const {
@@ -121,9 +121,9 @@ namespace game {
     int row_count_check = objects_.GetRowCount()-1;
 
     if (direction == enums::Left || direction == enums::Right) {
-      new_coords.pos_x_ = coords.pos_x_ <= 0 ? col_count_check : 0;
+      new_coords.pos_x = coords.pos_x <= 0 ? col_count_check : 0;
     } else {
-      new_coords.pos_y_ = coords.pos_y_ <= 0 ? row_count_check : 0;
+      new_coords.pos_y = coords.pos_y <= 0 ? row_count_check : 0;
     }
 
     return new_coords;
@@ -164,7 +164,7 @@ namespace game {
     return false;
   }
 
-  Coords Sector::GetRandomObjectPosition(enums::SectorObjectType object_type) {
+  Coords Sector::GetRandomObjectPosition(enums::SectorObjectType object_type) const {
     std::vector<Coords> candidates{};
 
     for (int x = 0; x < objects_.GetColCount(); ++x)

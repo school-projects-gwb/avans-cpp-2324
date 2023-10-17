@@ -22,9 +22,9 @@ namespace game {
 
   ScanSelectResult ScanCreator::PickSectorByInput(int input) const {
     ScanSelectResult result{};
-    result.is_valid_ = false;
-    result.row_number_ = -1;
-    result.col_number_ = -1;
+    result.is_valid = false;
+    result.row_number = -1;
+    result.col_number = -1;
 
     std::string value_string = std::to_string(input);
     if (value_string.length() != 2) return result;
@@ -33,9 +33,9 @@ namespace game {
     int col_number = static_cast<int>(value_string[1] - '0') - 1;
 
     if (IsOnEdge(row_number, col_number)) {
-      result.is_valid_ = true;
-      result.row_number_ = row_number;
-      result.col_number_ = col_number;
+      result.is_valid = true;
+      result.row_number = row_number;
+      result.col_number = col_number;
       return result;
     }
 

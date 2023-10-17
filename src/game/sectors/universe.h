@@ -14,11 +14,11 @@ namespace game {
    public:
     Universe() = default;
     void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
-    Sector &GetActiveSector() const;
+    Sector& GetActiveSector() const;
     void MoveSpaceship(enums::Direction direction);
     void MoveObjects(Coords target_location);
     void SetSpaceship(SpaceShip& ship);
-    PackageDestinationResult GetPackageDestinationInfo();
+    PackageDestinationResult GetPackageDestinationInfo() const;
     bool TryRemoveCollidingObjects(const Coords &target_position, enums::SectorObjectType collision_type);
    private:
     Grid<Sector> sectors_;

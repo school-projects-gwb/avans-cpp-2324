@@ -3,11 +3,11 @@
 
 namespace game {
   struct Coords {
-    int pos_x_;
-    int pos_y_;
+    int pos_x;
+    int pos_y;
 
     bool operator==(const Coords& other) const {
-      return pos_x_ == other.pos_x_ && pos_y_ == other.pos_y_;
+      return pos_x == other.pos_x && pos_y == other.pos_y;
     }
   };
 }

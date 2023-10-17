@@ -6,12 +6,12 @@
 
 namespace interface {
   class Input {
-   private:
-    ActionRegistry action_registry_;
-    void ShowAllowedCommands(game::GameManager &game) const;
    public:
     Input();
-    void ProcessInput(game::GameManager &game) const;
+    void ProcessInput(game::GameManager& game) const;
+   private:
+    ActionRegistry action_registry_;
+    void ShowAllowedCommands(const game::GameManager& game) const;
   };
 }
 

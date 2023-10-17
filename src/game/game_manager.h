@@ -18,29 +18,31 @@ namespace game {
     Universe universe_;
     SpaceShip space_ship_;
     GameState state_ = {};
-    std::vector<PackageModel> package_data_;
+    std::vector<PackageModel>& package_data_;
     EncounterGenerator encounter_generator_;
     bool should_quit_game_ = false;
    public:
     explicit GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
-    void MovePlayer(enums::Direction direction);
+
+    void ProcessPlayerMovement(enums::Direction direction);
     void ProcessPlayerInput(int userInput);
     void ProcessPackagePickup();
     void ProcessPackageView();
     void ProcessPackageDeliver();
-    void ResetGame();
-    bool ShouldQuit() const;
-
-    enums::MainGameState GetMainGameState() const;
-    enums::SubGameState GetSubGameState() const;
-    Grid<ScanObject> GetCurrentScan() const;
-    Grid<enums::SectorObjectType> GetCurrentSector() const;
-    const SpaceShip& GetSpaceship() const;
-    const std::vector<std::string>& GetEncounterLog() const;
-    void ResetSubGameState();
     void ProcessEncounter(enums::EncounterCharacter encounter_character);
     void ProcessDoNothing();
+
+    void ResetSubGameState();
+    void ResetGame();
     void QuitGame();
+
+    [[nodiscard]] enums::MainGameState GetMainGameState() const;
+    [[nodiscard]] enums::SubGameState GetSubGameState() const;
+    [[nodiscard]] Grid<ScanObject> GetCurrentScan() const;
+    [[nodiscard]] Grid<enums::SectorObjectType> GetCurrentSector() const;
+    [[nodiscard]] const SpaceShip& GetSpaceship() const;
+    [[nodiscard]] const std::vector<std::string>& GetEncounterLog() const;
+    bool GetShouldQuit() const;
   };
 }
 

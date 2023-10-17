@@ -5,7 +5,7 @@
 
 namespace interface {
   class EncounterViewObject : public ViewObject {
-    char GetDisplayCharacter() override;
+    char GetDisplayCharacter() const override;
   };
 }
 

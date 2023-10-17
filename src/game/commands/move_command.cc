@@ -19,7 +19,7 @@ namespace game {
       default:movement_direction = enums::None;
     }
 
-    game.MovePlayer(movement_direction);
+    game.ProcessPlayerMovement(movement_direction);
   }
 
   bool MoveCommand::IsAllowed(const GameManager &game) const {
