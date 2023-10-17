@@ -73,10 +73,19 @@ bool SpaceShip::CanViewCargo() const {
 
 void SpaceShip::DeliverCargo() {
   cargo_.UpdateStatus(false);
+  spaceship_stats_.AppendWinningPoints(1);
 }
 
 SpaceshipStats& SpaceShip::GetStats() {
   return spaceship_stats_;
+}
+
+bool SpaceShip::IsDestroyed() {
+  return spaceship_stats_.IsDestroyed();
+}
+
+bool SpaceShip::HasEnoughWinningPoints() const {
+  return spaceship_stats_.HasEnoughWinningPoints();
 }
 
 }

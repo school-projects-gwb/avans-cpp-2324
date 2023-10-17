@@ -4,8 +4,9 @@
 #include "commands/view_package_command.h"
 #include "commands/deliver_package_command.h"
 #include "commands/empty_command.h"
-#include "commands/game_reset_command.h"
+#include "commands/reset_game_command.h"
 #include "commands/encounter_character_command.h"
+#include "commands/quit_game_command.h"
 
 using namespace game;
 
@@ -19,7 +20,8 @@ namespace interface {
     hotkeys_.push_back({6, new ViewPackageCommand(), "Pakketje bekijken"});
     hotkeys_.push_back({7, new DeliverPackageCommand(), "Pakketje bezorgen"});
     hotkeys_.push_back({8, new EmptyCommand(), "Niets doen"});
-    hotkeys_.push_back({9, new GameResetCommand(), "Rand van universum: geef op en reset spel"});
+    hotkeys_.push_back({9, new ResetGameCommand(), "Reset spel"});
+    hotkeys_.push_back({10, new QuitGameCommand(), "Stop met spelen"});
     hotkeys_.push_back({1, new EncounterCharacterCommand(), "Fry"});
     hotkeys_.push_back({2, new EncounterCharacterCommand(), "Leela"});
     hotkeys_.push_back({3, new EncounterCharacterCommand(), "Bender"});

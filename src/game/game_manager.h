@@ -20,6 +20,7 @@ namespace game {
     GameState state_ = {};
     std::vector<PackageModel> package_data_;
     EncounterGenerator encounter_generator_;
+    bool should_quit_game_ = false;
    public:
     explicit GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
     void MovePlayer(enums::Direction direction);
@@ -28,6 +29,7 @@ namespace game {
     void ProcessPackageView();
     void ProcessPackageDeliver();
     void ResetGame();
+    bool ShouldQuit() const;
 
     enums::MainGameState GetMainGameState() const;
     enums::SubGameState GetSubGameState() const;
@@ -37,6 +39,8 @@ namespace game {
     const std::vector<std::string>& GetEncounterLog() const;
     void ResetSubGameState();
     void ProcessEncounter(enums::EncounterCharacter encounter_character);
+    void ProcessDoNothing();
+    void QuitGame();
   };
 }
 

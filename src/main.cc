@@ -16,8 +16,9 @@ int main() {
   persistence::DataHandler data_handler;
   auto packages = data_handler.GetPackages();
   auto encounters = data_handler.GetEncounters();
+  bool should_quit = false;
 
-  while (true) {
+  while (!should_quit) {
     auto game = game::GameManager(packages, encounters);
     auto ui = interface::Ui(game);
     auto input = interface::Input();
@@ -27,6 +28,7 @@ int main() {
       input.ProcessInput(game);
       ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
       game.ResetSubGameState();
+      should_quit = game.ShouldQuit();
     }
   }
 }

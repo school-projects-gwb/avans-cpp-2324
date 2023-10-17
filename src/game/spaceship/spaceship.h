@@ -24,6 +24,8 @@ namespace game {
     SpaceshipStats& GetStats();
 
     bool HasNeighborOfType(enums::SectorObjectType object_type) const;
+    bool HasEnoughWinningPoints() const;
+    bool IsDestroyed();
     bool IsAtUniverseEdge() const;
     bool CanDeliverCargo() const;
     bool CanPickupCargo() const;

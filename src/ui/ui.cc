@@ -61,9 +61,13 @@ void Ui::ShowPackageDeliverySuccess() const {
 }
 
 void Ui::ShowEncounter() const {
+  std::cout << "\n";
+
   auto encounter_log = game_.GetEncounterLog();
   for (auto record : encounter_log)
     std::cout << record + "\n";
+
+  std::cout << "\n";
 }
 
 void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
@@ -75,6 +79,10 @@ void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state
   if (state == enums::MainGameState::Movement) ShowSector();
   if (state == enums::MainGameState::PackagePickupBlocked) ShowPackagePickupBlocked();
   if (state == enums::MainGameState::ActiveEncounter) ShowEncounter();
+
+  if (state == enums::MainGameState::PendingReset) std::cout << "Rand van universum bereikt! Wil je opgeven?\n";
+  if (state == enums::MainGameState::HasWon) std::cout << "Je hebt gewonnen! Je kan opnieuw spelen of stoppen.\n";
+  if (state == enums::MainGameState::HasLost) std::cout << "Je hebt verloren! Je kan opnieuw spelen of stoppen.?\n";
 }
 
 }

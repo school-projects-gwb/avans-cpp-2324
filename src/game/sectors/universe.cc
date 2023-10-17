@@ -10,16 +10,14 @@ namespace game {
 
     sectors_.Resize(numRows, numCols, Sector(ScanObject{}, Coords{}));
 
-    for (size_t row = 0; row < numRows; row++)
-      for (size_t col = 0; col < numCols; col++) {
-        Coords universe_coords = Coords();
-        universe_coords.pos_x_ = col;
-        universe_coords.pos_y_ = row;
+    for (int row = 0; row < numRows; row++)
+      for (int col = 0; col < numCols; col++) {
+        Coords universe_coords = {col, row};
         sectors_(row, col) = Sector(scanData(row, col), universe_coords);
       }
 
-    for (size_t row = 0; row < numRows; row++) {
-      for (size_t col = 0; col < numCols; col++) {
+    for (int row = 0; row < numRows; row++) {
+      for (int col = 0; col < numCols; col++) {
         Sector &current_sector = sectors_(row, col);
 
         current_sector.kUp = (row > 0) ? &sectors_(row - 1, col) : nullptr;

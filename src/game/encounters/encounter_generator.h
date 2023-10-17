@@ -24,6 +24,7 @@ class EncounterGenerator {
                                                enums::EncounterCharacter character_two);
   void AddEncounterLogRecord(const std::string &content);
   void ProcessConsequenceResult(const Consequence &consequence, SpaceshipStats& spaceship_stats);
+  void ProcessFight(const Consequence &consequence, SpaceshipStats &spaceship_stats);
 };
 
 }

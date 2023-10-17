@@ -39,11 +39,47 @@ void EncounterGenerator::ProcessConsequenceResult(const Consequence& consequence
       spaceship_stats.ResetDamagePoints();
       break;
     case enums::Schade:
-      AddEncounterLogRecord("Je raakt in een gevecht!");
-      // todo: implement fight
+      AddEncounterLogRecord("Je raakt in gevecht met " + current_encounter_.description_ + "!");
+      ProcessFight(consequence, spaceship_stats);
       break;
     default:
       break;
+  }
+}
+
+void EncounterGenerator::ProcessFight(const Consequence& consequence, SpaceshipStats& spaceship_stats) {
+  const int hit_count_before_fight_over = 3;
+  int enemy_hit_count = 0;
+  int min_dice_amount = 1, max_dice_amount = 6;
+
+  while (enemy_hit_count < hit_count_before_fight_over && !spaceship_stats.IsDestroyed()) {
+    // Deal damage to spaceship
+    int dice_thrown = 0, damage_to_deal = 0;
+    while (dice_thrown < consequence.amount_) {
+      damage_to_deal += random_helper_.GenerateRandomInt(min_dice_amount, max_dice_amount);
+      dice_thrown++;
+    }
+
+    spaceship_stats.AppendDamagePoints(damage_to_deal);
+    AddEncounterLogRecord(current_encounter_.description_ + " doet " + std::to_string(damage_to_deal)
+    + " punten schade. Je hebt in totaal " + std::to_string(spaceship_stats.GetDamagePoints()) + " schadepunten.");
+    if (spaceship_stats.IsDestroyed()) break;
+
+    // Deal damage to consequence
+    int can_attack = random_helper_.GenerateRandomInt(0, 1);
+    if (can_attack == 0) {
+      AddEncounterLogRecord("Je schiet en mist.");
+      continue;
+    }
+
+    enemy_hit_count++;
+    AddEncounterLogRecord("Je schiet en raakt. " + std::to_string(enemy_hit_count) + " raak geschoten!");
+  }
+
+  if (spaceship_stats.IsDestroyed()) {
+    AddEncounterLogRecord(current_encounter_.description_ + " heeft je verslagen! Game-over.");
+  } else {
+    AddEncounterLogRecord(current_encounter_.description_  + " is verslagen!");
   }
 }
 
@@ -59,7 +95,7 @@ const std::vector<std::string>& EncounterGenerator::GetLatestEncounterLog() cons
 void EncounterGenerator::CreateRandomEncounter() {
   current_encounter_log.clear();
   current_encounter_ = encounters_.at(random_helper_.GenerateRandomInt(0, encounters_.size()-1));
-  AddEncounterLogRecord(current_encounter_.description_);
+  AddEncounterLogRecord("Het ruimteschip USS Planet Express Ship komt tegen: " + current_encounter_.description_);
 }
 
 void EncounterGenerator::AddEncounterLogRecord(const std::string& content) {
