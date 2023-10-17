@@ -18,6 +18,7 @@ namespace interface {
     void ShowPackageInfo() const;
     [[nodiscard]] std::string GetFormattedCoordsString(game::Coords coords) const;
     void ShowPackageDeliverySuccess() const;
+    void ShowEncounter() const;
   };
 }
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_UI_H_

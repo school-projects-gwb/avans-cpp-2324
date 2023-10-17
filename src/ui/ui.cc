@@ -60,13 +60,20 @@ void Ui::ShowPackageDeliverySuccess() const {
   std::cout << "Pakket succesvol afgeleverd!\n";
 }
 
+void Ui::ShowEncounter() const {
+  auto encounter_log = game_.GetEncounterLog();
+  for (auto record : encounter_log)
+    std::cout << record + "\n";
+}
+
 void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
+  if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
+  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
+
   if (state == enums::MainGameState::Scanning) ShowScan();
   if (state == enums::MainGameState::Movement) ShowSector();
   if (state == enums::MainGameState::PackagePickupBlocked) ShowPackagePickupBlocked();
-
-  if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
-  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
+  if (state == enums::MainGameState::ActiveEncounter) ShowEncounter();
 }
 
 }

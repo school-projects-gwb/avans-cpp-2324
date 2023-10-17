@@ -34,6 +34,7 @@ namespace game {
     Grid<ScanObject> GetCurrentScan() const;
     Grid<enums::SectorObjectType> GetCurrentSector() const;
     const SpaceShip& GetSpaceship() const;
+    const std::vector<std::string>& GetEncounterLog() const;
     void ResetSubGameState();
     void ProcessEncounter(enums::EncounterCharacter encounter_character);
   };

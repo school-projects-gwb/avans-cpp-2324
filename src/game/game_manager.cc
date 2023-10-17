@@ -18,6 +18,7 @@ namespace game {
     universe_.MoveSpaceship(direction);
     // todo remove debug code
     state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
+    encounter_generator_.CreateRandomEncounter();
     return;
 
     // We can return immediately without moving other objects when this happens
@@ -28,13 +29,15 @@ namespace game {
 
     universe_.MoveObjects(space_ship_.GetPosition());
     auto collision_found =  universe_.TryRemoveCollidingObjects(space_ship_.GetPosition(), enums::SectorObjectType::Encounter);
-    if (collision_found) state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
+    if (collision_found) {
+      state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
+      encounter_generator_.CreateRandomEncounter();
+    }
   }
 
   void GameManager::ProcessEncounter(enums::EncounterCharacter encounter_character) {
-    encounter_generator_.Generate(space_ship_.GetStats(), encounter_character);
+    encounter_generator_.GenerateResult(space_ship_.GetStats(), encounter_character);
     state_.main_game_state_ = enums::MainGameState::Movement;
-    state_.sub_game_state_ = enums::SubGameState::ShowEncounter;
   }
 
   void GameManager::ProcessPackagePickup() {
@@ -84,6 +87,10 @@ namespace game {
   void GameManager::ProcessPackageDeliver() {
     space_ship_.DeliverCargo();
     state_.sub_game_state_ = enums::SubGameState::PackageDeliverySuccess;
+  }
+
+  const std::vector<std::string>& GameManager::GetEncounterLog() const {
+   return encounter_generator_.GetLatestEncounterLog();
   }
 
   enums::SubGameState GameManager::GetSubGameState() const {
