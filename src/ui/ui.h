@@ -16,7 +16,7 @@ namespace interface {
     void ShowScan() const;
     void ShowPackagePickupBlocked() const;
     void ShowPackageInfo() const;
-    std::string GetFormattedCoordsString(game::Coords coords) const;
+    [[nodiscard]] std::string GetFormattedCoordsString(game::Coords coords) const;
     void ShowPackageDeliverySuccess() const;
   };
 }

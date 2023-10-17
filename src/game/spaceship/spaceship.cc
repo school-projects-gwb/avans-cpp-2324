@@ -75,4 +75,8 @@ void SpaceShip::DeliverCargo() {
   cargo_.UpdateStatus(false);
 }
 
+SpaceshipStats SpaceShip::GetStats() const {
+  return spaceship_stats_;
+}
+
 }

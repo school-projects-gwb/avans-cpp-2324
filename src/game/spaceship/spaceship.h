@@ -9,6 +9,7 @@
 #include "sectors/sector.h"
 #include "sectors/package_destination_result.h"
 #include "spaceship_neighbor_object.h"
+#include "spaceship_stats.h"
 
 namespace game {
   class SpaceShip {
@@ -20,6 +21,7 @@ namespace game {
     const Coords &GetPosition() const;
     Coords GetNextMovementPosition(enums::Direction direction) const;
     CargoInfo GetCargoInfo() const;
+    SpaceshipStats GetStats() const;
 
     bool HasNeighborOfType(enums::SectorObjectType object_type) const;
     bool IsAtUniverseEdge() const;
@@ -28,8 +30,7 @@ namespace game {
     bool CanViewCargo() const;
     void DeliverCargo();
    private:
-    int damage_points_ = 0;
-    int winning_points = 0;
+    SpaceshipStats spaceship_stats_ = {};
     Cargo cargo_;
     Coords universe_position_;
     Coords sector_position_;

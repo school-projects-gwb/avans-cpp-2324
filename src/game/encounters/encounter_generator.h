@@ -3,12 +3,13 @@
 
 #include <vector>
 #include "data_models/encounter_model.h"
+#include "spaceship/spaceship_stats.h"
 
 namespace game {
 
 class EncounterGenerator {
  public:
-  EncounterGenerator(std::vector<EncounterModel> encounters);
+  static std::vector<std::string> Generate(std::vector<EncounterModel> encounters, SpaceshipStats spaceship_stats);
 };
 
 }
