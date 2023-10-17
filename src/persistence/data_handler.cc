@@ -35,7 +35,7 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() {
   std::vector<game::EncounterModel> encounters;
 
   const char* sql = R"(
-    SELECT ontmoetingen.ID, consequenties.bron, consequenties.type, aantal, tekst
+    SELECT ontmoetingen.ID, ontmoetingen.omschrijving, consequenties.bron, consequenties.type, aantal, tekst
     FROM ontmoetingen
     LEFT JOIN consequenties ON ontmoetingen.ID = consequenties.ontmoetingID
     LEFT JOIN consequentietypes ON consequenties.type = consequentietypes.type
@@ -50,12 +50,14 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() {
   if (statement) {
     while (sqlite3_step(statement.get()) == SQLITE_ROW) {
       int encounter_id = sqlite3_column_int(statement.get(), 0);
+      std::string encounter_description = GetStringColumn(statement.get(), 1);
 
       auto existing_encounter = FindEncounterByID(encounters, encounter_id);
 
       if (existing_encounter == encounters.end()) {
         game::EncounterModel new_encounter;
         new_encounter.id_ = encounter_id;
+        new_encounter.description_ = encounter_description;
         encounters.push_back(new_encounter);
         existing_encounter = encounters.end() - 1;
       }
@@ -80,15 +82,13 @@ DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, in
 
 game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement) {
   game::Consequence new_consequence;
-  new_consequence.amount_ = sqlite3_column_int(statement, 3);
-  new_consequence.description_ = GetStringColumn(statement, 4);
+  new_consequence.amount_ = sqlite3_column_int(statement, 4);
+  new_consequence.description_ = GetStringColumn(statement, 5);
 
-  game::ConsequenceSource source;
-  source.source_ = GetStringColumn(statement, 1);
-  new_consequence.consequence_source_ = source;
+  new_consequence.consequence_source_ = game::enums::EncounterCharacterStringToEnum(GetStringColumn(statement, 1));
 
   game::ConsequenceType type;
-  type.type = GetStringColumn(statement, 2);
+  type.type = GetStringColumn(statement, 3);
   new_consequence.consequence_type_ = type;
 
   return new_consequence;

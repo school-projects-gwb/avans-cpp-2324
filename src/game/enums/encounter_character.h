@@ -4,8 +4,24 @@
 namespace game::enums {
 
 enum EncounterCharacter {
-  Fry, Leela, Bender
+  Fry, Leela, Bender, BenderSuccess, BenderFailure, NoValidCharacter
 };
+
+static EncounterCharacter EncounterCharacterStringToEnum(const std::string& string_value) {
+  EncounterCharacter character = NoValidCharacter;
+
+  if (string_value == "BenderSuccess") {
+    character = BenderSuccess;
+  } else if(string_value == "BenderFailure") {
+    character = BenderFailure;
+  } else if (string_value == "Fry") {
+    character = Fry;
+  } else if (string_value == "Leela") {
+    character = Leela;
+  }
+
+  return character;
+}
 
 }
 

@@ -3,7 +3,6 @@
 
 #include <string>
 #include "consequence_type.h"
-#include "consequence_source.h"
 #include "consequence.h"
 
 namespace game {
@@ -11,6 +10,7 @@ namespace game {
 struct EncounterModel {
   std::vector<Consequence> consequences_;
   int id_;
+  std::string description_;
 };
 
 }

@@ -3,13 +3,13 @@
 
 #include <string>
 #include "consequence_type.h"
-#include "consequence_source.h"
+#include "enums/encounter_character.h"
 
 namespace game {
 
 struct Consequence {
   ConsequenceType consequence_type_;
-  ConsequenceSource consequence_source_;
+  enums::EncounterCharacter consequence_source_;
   int amount_;
   std::string description_;
 };

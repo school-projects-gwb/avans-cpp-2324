@@ -16,6 +16,9 @@ namespace game {
 
   void GameManager::MovePlayer(enums::Direction direction) {
     universe_.MoveSpaceship(direction);
+    // todo remove debug code
+    state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
+    return;
 
     // We can return immediately without moving other objects when this happens
     if (space_ship_.IsAtUniverseEdge()) {
@@ -29,7 +32,9 @@ namespace game {
   }
 
   void GameManager::ProcessEncounter(enums::EncounterCharacter encounter_character) {
-
+    encounter_generator_.Generate(space_ship_.GetStats(), encounter_character);
+    state_.main_game_state_ = enums::MainGameState::Movement;
+    state_.sub_game_state_ = enums::SubGameState::ShowEncounter;
   }
 
   void GameManager::ProcessPackagePickup() {
@@ -53,7 +58,6 @@ namespace game {
   }
 
   void GameManager::ProcessPlayerInput(int userInput) {
-    std::cout << "HI";
     if (state_.main_game_state_ != enums::MainGameState::Scanning) return;
 
     auto sector_input_result = scanner_.PickSectorByInput(userInput);
