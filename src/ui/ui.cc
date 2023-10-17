@@ -69,6 +69,7 @@ void Ui::ShowEncounter() const {
 void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
   if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
   if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
+  if (sub_game_state == enums::SubGameState::ShowEncounter) ShowEncounter();
 
   if (state == enums::MainGameState::Scanning) ShowScan();
   if (state == enums::MainGameState::Movement) ShowSector();

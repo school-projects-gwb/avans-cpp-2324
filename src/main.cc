@@ -18,9 +18,9 @@ int main() {
   auto encounters = data_handler.GetEncounters();
 
   while (true) {
-    game::GameManager game = game::GameManager(packages, encounters);
-    interface::Ui ui = interface::Ui(game);
-    interface::Input input = interface::Input();
+    auto game = game::GameManager(packages, encounters);
+    auto ui = interface::Ui(game);
+    auto input = interface::Input();
     ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
 
     while (game.GetMainGameState() != game::enums::MainGameState::ShouldReset) {

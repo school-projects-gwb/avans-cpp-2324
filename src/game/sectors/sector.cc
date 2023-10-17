@@ -20,27 +20,29 @@ namespace game {
   }
 
   void Sector::MoveObjects(enums::SectorObjectType object_type, Coords target_location) {
-    for (int x = 0; x < objects_.GetColCount(); ++x) {
+    std::vector<Coords> objectsToMove;
+
+    for (int x = 0; x < objects_.GetColCount(); ++x)
       for (int y = 0; y < objects_.GetRowCount(); ++y) {
         Coords current_position{x, y};
-        if (objects_[current_position] != object_type) continue;
+        if (objects_[current_position] == object_type) objectsToMove.push_back(current_position);
+      }
 
-        Coords next_position = current_position;
+    for (const Coords& current_position : objectsToMove) {
+      Coords next_position = current_position;
+      if (current_position.pos_x_ < target_location.pos_x_) {
+        next_position.pos_x_++;
+      } else if (current_position.pos_x_ > target_location.pos_x_) {
+        next_position.pos_x_--;
+      } else if (current_position.pos_y_ < target_location.pos_y_) {
+        next_position.pos_y_++;
+      } else if (current_position.pos_y_ > target_location.pos_y_) {
+        next_position.pos_y_--;
+      }
 
-        if (current_position.pos_x_ < target_location.pos_x_) {
-          next_position.pos_x_++;
-        } else if (current_position.pos_x_ > target_location.pos_x_) {
-          next_position.pos_x_--;
-        } else if (current_position.pos_y_ < target_location.pos_y_) {
-          next_position.pos_y_++;
-        } else if (current_position.pos_y_ > target_location.pos_y_) {
-          next_position.pos_y_--;
-        }
-
-        if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
-          objects_[current_position] = enums::SectorObjectType::EmptySpace;
-          objects_[next_position] = object_type;
-        }
+      if (IsPositionInSectorBounds(next_position) && IsEmptyNewPosition(next_position)) {
+        objects_[current_position] = enums::SectorObjectType::EmptySpace;
+        objects_[next_position] = object_type;
       }
     }
   }

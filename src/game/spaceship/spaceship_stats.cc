@@ -1,4 +1,5 @@
 #include "spaceship_stats.h"
+#include <iostream>
 
 namespace game {
 

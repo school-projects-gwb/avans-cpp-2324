@@ -16,10 +16,6 @@ namespace game {
 
   void GameManager::MovePlayer(enums::Direction direction) {
     universe_.MoveSpaceship(direction);
-    // todo remove debug code
-    state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
-    encounter_generator_.CreateRandomEncounter();
-    return;
 
     // We can return immediately without moving other objects when this happens
     if (space_ship_.IsAtUniverseEdge()) {
@@ -37,6 +33,7 @@ namespace game {
 
   void GameManager::ProcessEncounter(enums::EncounterCharacter encounter_character) {
     encounter_generator_.GenerateResult(space_ship_.GetStats(), encounter_character);
+    state_.sub_game_state_ = enums::SubGameState::ShowEncounter;
     state_.main_game_state_ = enums::MainGameState::Movement;
   }
 

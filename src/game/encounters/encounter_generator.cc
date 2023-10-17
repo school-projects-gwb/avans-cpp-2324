@@ -1,6 +1,5 @@
 #include "encounter_generator.h"
 #include "helpers/random_helper.h"
-#include <iostream>
 
 namespace game {
 
@@ -23,6 +22,7 @@ void EncounterGenerator::GenerateResult(SpaceshipStats& spaceship_stats, enums::
 
   Consequence random_consequence = possible_consequences[randomIndex];
   AddEncounterLogRecord(random_consequence.description_);
+  ProcessConsequenceResult(random_consequence, spaceship_stats);
 }
 
 void EncounterGenerator::ProcessConsequenceResult(const Consequence& consequence, SpaceshipStats& spaceship_stats) {
