@@ -108,4 +108,18 @@ namespace game {
 
     return result;
   }
+
+  bool Universe::TryRemoveCollidingObjects(const Coords &target_position, enums::SectorObjectType collision_type) {
+    auto neighbor_objects = active_sector_->GetNeighborObjects(target_position);
+
+    bool removedAtLeastOne = false;
+    for (const auto& neighbor : neighbor_objects) {
+      if (neighbor.object_type_ != collision_type) continue;
+
+      active_sector_->SetObjectAtPosition(enums::SectorObjectType::EmptySpace, neighbor.coords_);
+      removedAtLeastOne = true;
+      }
+
+    return removedAtLeastOne;
+  }
 }

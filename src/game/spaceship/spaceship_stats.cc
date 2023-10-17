@@ -2,11 +2,11 @@
 
 namespace game {
 
-int SpaceshipStats::AppendWinningPoints(int amount) {
+void SpaceshipStats::AppendWinningPoints(int amount) {
   winning_points_ += amount;
 }
 
-int SpaceshipStats::AppendDamagePoints(int amount) {
+void SpaceshipStats::AppendDamagePoints(int amount) {
   damage_points_ += amount;
 }
 

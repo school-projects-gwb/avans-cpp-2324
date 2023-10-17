@@ -4,12 +4,18 @@
 #include <vector>
 #include "data_models/encounter_model.h"
 #include "spaceship/spaceship_stats.h"
+#include "enums/encounter_character.h"
 
 namespace game {
 
 class EncounterGenerator {
  public:
-  static std::vector<std::string> Generate(std::vector<EncounterModel> encounters, SpaceshipStats spaceship_stats);
+  explicit EncounterGenerator(std::vector<EncounterModel>& encounters);
+  [[nodiscard]] const std::vector<std::string>& GetLatestEncounterLog() const;
+  void Generate(SpaceshipStats spaceship_stats, enums::EncounterCharacter encounter_character);
+ private:
+  std::vector<EncounterModel> encounters_;
+  std::vector<std::string> latest_encounter_log_;
 };
 
 }

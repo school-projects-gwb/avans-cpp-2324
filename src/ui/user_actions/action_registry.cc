@@ -5,6 +5,7 @@
 #include "commands/deliver_package_command.h"
 #include "commands/empty_command.h"
 #include "commands/game_reset_command.h"
+#include "commands/encounter_character_command.h"
 
 using namespace game;
 
@@ -19,6 +20,9 @@ namespace interface {
     hotkeys_.push_back({7, new DeliverPackageCommand(), "Pakketje bezorgen"});
     hotkeys_.push_back({8, new EmptyCommand(), "Niets doen"});
     hotkeys_.push_back({9, new GameResetCommand(), "Rand van universum: geef op en reset spel"});
+    hotkeys_.push_back({1, new EncounterCharacterCommand(), "Fry"});
+    hotkeys_.push_back({2, new EncounterCharacterCommand(), "Leela"});
+    hotkeys_.push_back({3, new EncounterCharacterCommand(), "Bender"});
   }
 
   ActionRegistry::~ActionRegistry() {
@@ -28,8 +32,8 @@ namespace interface {
 
   void ActionRegistry::HandleCommand(int input_value, GameManager &game) const {
     auto it = std::find_if(hotkeys_.begin(), hotkeys_.end(),
-                           [input_value](const UserAction &hotkey) {
-                             return hotkey.key == input_value;
+                           [input_value, &game](const UserAction &hotkey) {
+                             return hotkey.key == input_value && hotkey.command->IsAllowed(game);
                            });
 
     if (it != hotkeys_.end()) {

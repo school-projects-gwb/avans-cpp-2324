@@ -5,8 +5,8 @@ namespace game {
 
 class SpaceshipStats {
  public:
-  int AppendWinningPoints(int amount);
-  int AppendDamagePoints(int amount);
+  void AppendWinningPoints(int amount);
+  void AppendDamagePoints(int amount);
   int GetWinningPoints() const;
   int GetDamagePoints() const;
  private:

@@ -9,6 +9,7 @@
 #include "game/enums/direction.h"
 #include "game_state.h"
 #include "data_models/encounter_model.h"
+#include "encounters/encounter_generator.h"
 
 namespace game {
   class GameManager {
@@ -18,7 +19,7 @@ namespace game {
     SpaceShip space_ship_;
     GameState state_ = {};
     std::vector<PackageModel> package_data_;
-    std::vector<EncounterModel> encounter_data_;
+    EncounterGenerator encounter_generator_;
    public:
     explicit GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
     void MovePlayer(enums::Direction direction);
@@ -34,6 +35,7 @@ namespace game {
     Grid<enums::SectorObjectType> GetCurrentSector() const;
     const SpaceShip& GetSpaceship() const;
     void ResetSubGameState();
+    void ProcessEncounter(enums::EncounterCharacter encounter_character);
   };
 }
 

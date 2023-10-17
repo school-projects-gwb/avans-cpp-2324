@@ -19,6 +19,7 @@ namespace game {
     void MoveObjects(Coords target_location);
     void SetSpaceship(SpaceShip& ship);
     PackageDestinationResult GetPackageDestinationInfo();
+    bool TryRemoveCollidingObjects(const Coords &target_position, enums::SectorObjectType collision_type);
    private:
     Grid<Sector> sectors_;
     Sector* active_sector_ = nullptr;

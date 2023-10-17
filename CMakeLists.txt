@@ -17,7 +17,9 @@ add_executable(assessment_cplus_23_24_gunwunbun ${SOURCES}
         src/game/data_models/consequence_type.h
         src/game/data_models/consequence.h
         src/game/encounters/encounter_generator.h
-        src/game/spaceship/spaceship_stats.h)
+        src/game/spaceship/spaceship_stats.h
+        src/game/enums/encounter_character.h
+        src/game/commands/encounter_character_command.h)
 
 configure_file(planetexpress.db ${CMAKE_BINARY_DIR}/planetexpress.db COPYONLY)
 

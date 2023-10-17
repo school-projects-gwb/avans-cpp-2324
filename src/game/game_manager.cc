@@ -1,12 +1,12 @@
 #include <iostream>
 #include "game_manager.h"
 #include "game/enums/direction.h"
+#include "encounters/encounter_generator.h"
 
 namespace game {
   GameManager::GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data) :
-  scanner_(), universe_(), space_ship_() {
+  scanner_(), universe_(), space_ship_(), encounter_generator_(encounter_data) {
     package_data_ = package_data;
-    encounter_data_ = encounter_data;
     scanner_.CreateScan();
   }
 
@@ -16,8 +16,20 @@ namespace game {
 
   void GameManager::MovePlayer(enums::Direction direction) {
     universe_.MoveSpaceship(direction);
+
+    // We can return immediately without moving other objects when this happens
+    if (space_ship_.IsAtUniverseEdge()) {
+      state_.main_game_state_ = enums::MainGameState::PendingReset;
+      return;
+    }
+
     universe_.MoveObjects(space_ship_.GetPosition());
-    if (space_ship_.IsAtUniverseEdge()) state_.main_game_state_ = enums::MainGameState::PendingReset;
+    auto collision_found =  universe_.TryRemoveCollidingObjects(space_ship_.GetPosition(), enums::SectorObjectType::Encounter);
+    if (collision_found) state_.main_game_state_ = enums::MainGameState::ActiveEncounter;
+  }
+
+  void GameManager::ProcessEncounter(enums::EncounterCharacter encounter_character) {
+
   }
 
   void GameManager::ProcessPackagePickup() {
@@ -41,6 +53,7 @@ namespace game {
   }
 
   void GameManager::ProcessPlayerInput(int userInput) {
+    std::cout << "HI";
     if (state_.main_game_state_ != enums::MainGameState::Scanning) return;
 
     auto sector_input_result = scanner_.PickSectorByInput(userInput);
