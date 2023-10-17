@@ -84,12 +84,8 @@ game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement)
   game::Consequence new_consequence;
   new_consequence.amount_ = sqlite3_column_int(statement, 4);
   new_consequence.description_ = GetStringColumn(statement, 5);
-
-  new_consequence.consequence_source_ = game::enums::EncounterCharacterStringToEnum(GetStringColumn(statement, 2));
-
-  game::ConsequenceType type;
-  type.type = GetStringColumn(statement, 3);
-  new_consequence.consequence_type_ = type;
+  new_consequence.consequence_source_ = game::enums::GetEncounterCharacterFromString(GetStringColumn(statement, 2));
+  new_consequence.consequence_type_ = game::enums::GetEncounterConsequenceTypeFromString(GetStringColumn(statement, 3));
 
   return new_consequence;
 }

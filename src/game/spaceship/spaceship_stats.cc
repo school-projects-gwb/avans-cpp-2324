@@ -10,6 +10,10 @@ void SpaceshipStats::AppendDamagePoints(int amount) {
   damage_points_ += amount;
 }
 
+void SpaceshipStats::ResetDamagePoints() {
+  damage_points_ = 0;
+}
+
 int SpaceshipStats::GetWinningPoints() const {
   return winning_points_;
 }

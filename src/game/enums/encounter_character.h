@@ -9,9 +9,8 @@ enum EncounterCharacter {
   Fry, Leela, Bender, BenderSuccess, BenderFailure, NoValidCharacter
 };
 
-static EncounterCharacter EncounterCharacterStringToEnum(const std::string& string_value) {
+static EncounterCharacter GetEncounterCharacterFromString(const std::string& string_value) {
   EncounterCharacter character = NoValidCharacter;
-  std::cout << string_value;
 
   if (string_value == "BenderSuccess") {
     character = BenderSuccess;
@@ -24,6 +23,19 @@ static EncounterCharacter EncounterCharacterStringToEnum(const std::string& stri
   }
 
   return character;
+}
+
+static const std::string GetEncounterCharacterFromEnum(EncounterCharacter encounter_character) {
+  switch (encounter_character) {
+    case Bender:
+      return "Bender";
+    case Fry:
+      return "Fry";
+    case Leela:
+      return "Leela";
+    default:
+      return "";
+  }
 }
 
 }

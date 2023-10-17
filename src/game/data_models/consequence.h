@@ -4,11 +4,12 @@
 #include <string>
 #include "consequence_type.h"
 #include "enums/encounter_character.h"
+#include "enums/encounter_consequence_type.h"
 
 namespace game {
 
 struct Consequence {
-  ConsequenceType consequence_type_;
+  enums::EncounterConsequenceType consequence_type_;
   enums::EncounterCharacter consequence_source_;
   int amount_;
   std::string description_;

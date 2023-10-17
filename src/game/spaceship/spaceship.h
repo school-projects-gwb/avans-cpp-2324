@@ -21,7 +21,7 @@ namespace game {
     const Coords &GetPosition() const;
     Coords GetNextMovementPosition(enums::Direction direction) const;
     CargoInfo GetCargoInfo() const;
-    SpaceshipStats GetStats() const;
+    SpaceshipStats& GetStats();
 
     bool HasNeighborOfType(enums::SectorObjectType object_type) const;
     bool IsAtUniverseEdge() const;

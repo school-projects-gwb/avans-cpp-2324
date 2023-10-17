@@ -7,8 +7,9 @@ class SpaceshipStats {
  public:
   void AppendWinningPoints(int amount);
   void AppendDamagePoints(int amount);
-  int GetWinningPoints() const;
-  int GetDamagePoints() const;
+  void ResetDamagePoints();
+  [[nodiscard]] int GetWinningPoints() const;
+  [[nodiscard]] int GetDamagePoints() const;
  private:
   int damage_points_ = 0;
   int winning_points_ = 0;

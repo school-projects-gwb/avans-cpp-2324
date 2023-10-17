@@ -8,42 +8,62 @@ EncounterGenerator::EncounterGenerator(std::vector<EncounterModel>& encounters) 
 
 }
 
-void EncounterGenerator::GenerateResult(SpaceshipStats spaceship_stats, enums::EncounterCharacter encounter_character) {
+void EncounterGenerator::GenerateResult(SpaceshipStats& spaceship_stats, enums::EncounterCharacter encounter_character) {
+  AddEncounterLogRecord("Je koos: " + enums::GetEncounterCharacterFromEnum(encounter_character));
   auto source = encounter_character == enums::Bender ? GetRandomCharacter(enums::BenderSuccess, enums::BenderFailure) : encounter_character;
 
-  std::vector<Consequence> matchingConsequences;
+  std::vector<Consequence> possible_consequences;
 
   for (const Consequence& consequence : current_encounter_.consequences_)
-    if (consequence.consequence_source_ == source) matchingConsequences.push_back(consequence);
+    if (consequence.consequence_source_ == source) possible_consequences.push_back(consequence);
 
-  if (matchingConsequences.empty()) return;
+  if (possible_consequences.empty()) return;
 
-  int randomIndex = random_helper_.GenerateRandomInt(0, matchingConsequences.size() - 1);
+  int randomIndex = random_helper_.GenerateRandomInt(0, possible_consequences.size() - 1);
 
-  Consequence randomConsequence = matchingConsequences[randomIndex];
+  Consequence random_consequence = possible_consequences[randomIndex];
+  AddEncounterLogRecord(random_consequence.description_);
+}
 
-  std::cout << "\n" << current_encounter_.description_ + "\n";
-  std::cout << randomConsequence.description_ + "\n";
+void EncounterGenerator::ProcessConsequenceResult(const Consequence& consequence, SpaceshipStats& spaceship_stats) {
+  switch (consequence.consequence_type_) {
+    case enums::Geen:
+      AddEncounterLogRecord("Er is niks gebeurd en je bent veilig weggekomen");
+      break;
+    case enums::Overwinningspunt:
+      AddEncounterLogRecord("Je krijgt (" + std::to_string(consequence.amount_) + ") overwinningspunten");
+      spaceship_stats.AppendWinningPoints(consequence.amount_);
+      break;
+    case enums::Reparatie:
+      AddEncounterLogRecord("Je hebt geluk; al je schadepunten worden gerepareerd!");
+      spaceship_stats.ResetDamagePoints();
+      break;
+    case enums::Schade:
+      AddEncounterLogRecord("Je raakt in een gevecht!");
+      // todo: implement fight
+      break;
+    default:
+      break;
+  }
 }
 
 enums::EncounterCharacter EncounterGenerator::GetRandomCharacter(enums::EncounterCharacter character_one,
                                                                  enums::EncounterCharacter character_two) {
-
   return random_helper_.GenerateRandomInt(0, 1) == 0 ? character_one : character_two;
 }
 
 const std::vector<std::string>& EncounterGenerator::GetLatestEncounterLog() const {
-  return latest_encounter_log_;
+  return current_encounter_log;
 }
 
 void EncounterGenerator::CreateRandomEncounter() {
-  latest_encounter_log_.clear();
+  current_encounter_log.clear();
   current_encounter_ = encounters_.at(random_helper_.GenerateRandomInt(0, encounters_.size()-1));
-  latest_encounter_log_.emplace_back(current_encounter_.description_);
+  AddEncounterLogRecord(current_encounter_.description_);
 }
 
-const std::string& EncounterGenerator::GetCurrentEncounterDescription() {
-  return current_encounter_.description_;
+void EncounterGenerator::AddEncounterLogRecord(const std::string& content) {
+  current_encounter_log.emplace_back(content);
 }
 
 }

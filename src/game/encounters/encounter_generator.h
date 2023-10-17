@@ -13,16 +13,17 @@ class EncounterGenerator {
  public:
   explicit EncounterGenerator(std::vector<EncounterModel>& encounters);
   [[nodiscard]] const std::vector<std::string>& GetLatestEncounterLog() const;
-  void GenerateResult(SpaceshipStats spaceship_stats, enums::EncounterCharacter encounter_character);
+  void GenerateResult(SpaceshipStats& spaceship_stats, enums::EncounterCharacter encounter_character);
   void CreateRandomEncounter();
-  const std::string &GetCurrentEncounterDescription();
  private:
   EncounterModel current_encounter_;
   RandomHelper random_helper_ = RandomHelper::GetInstance();
   std::vector<EncounterModel> encounters_;
-  std::vector<std::string> latest_encounter_log_;
+  std::vector<std::string> current_encounter_log;
   enums::EncounterCharacter GetRandomCharacter(enums::EncounterCharacter character_one,
                                                enums::EncounterCharacter character_two);
+  void AddEncounterLogRecord(const std::string &content);
+  void ProcessConsequenceResult(const Consequence &consequence, SpaceshipStats& spaceship_stats);
 };
 
 }
