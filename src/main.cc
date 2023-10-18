@@ -4,6 +4,7 @@
 #include "ui/input.h"
 #include "database_connection.h"
 #include "data_handler.h"
+#include "logger.h"
 
 int main() {
   try {
@@ -30,5 +31,7 @@ int main() {
       game.ResetSubGameState();
       should_quit = game.GetShouldQuit();
     }
+
+    persistence::Logger::GetInstance().SaveLogToFile();
   }
 }

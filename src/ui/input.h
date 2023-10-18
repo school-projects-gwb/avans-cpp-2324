@@ -12,6 +12,7 @@ namespace interface {
    private:
     ActionRegistry action_registry_;
     void ShowAllowedCommands(const game::GameManager& game) const;
+    void PrintToOutput(const std::string &content) const;
   };
 }
 

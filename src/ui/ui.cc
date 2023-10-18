@@ -33,7 +33,7 @@ void Ui::ShowSector() const {
   for (const auto &row : sector) {
     for (const auto &col : row) {
       auto view_object = view_object_factory_.GetObjectCharacter(col);
-      if (view_object) view_object->Print();
+      if (view_object) PrintToOutput(view_object->GetPrintContent());
     }
 
     PrintToOutput("\n");
