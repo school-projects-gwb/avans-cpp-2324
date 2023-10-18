@@ -36,6 +36,8 @@ void Logger::SaveLogToFile() {
   } else {
     std::cerr << "Failed to open log file for writing." << std::endl;
   }
+
+  log_.clear();
 }
 
 }

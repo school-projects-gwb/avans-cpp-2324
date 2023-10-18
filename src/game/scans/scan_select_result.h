@@ -2,11 +2,13 @@
 #define ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_ENTITIES_SCAN_SELECT_RESULT_H_
 
 namespace game {
-  struct ScanSelectResult {
-    bool is_valid = false;
-    int row_number;
-    int col_number;
-  };
+
+struct ScanSelectResult {
+  bool is_valid = false;
+  int row_number;
+  int col_number;
+};
+
 }
 
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_GAME_ENTITIES_SCAN_SELECT_RESULT_H_
