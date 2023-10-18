@@ -4,7 +4,7 @@
 namespace game::enums {
 
 enum SubGameState {
-  PackageDeliverySuccess, ShowPackage, DoNothing, ShowEncounter
+  PackageDeliverySuccess, PackagePickupBlocked, ShowPackage, DoNothing, ShowEncounter
 };
 
 }

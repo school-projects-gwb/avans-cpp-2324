@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ui.h"
+#include "logger.h"
 
 using namespace game;
 
@@ -11,22 +12,23 @@ Ui::Ui(const GameManager &game) : game_(game), view_object_factory_() {
 void Ui::ShowScan() const {
   auto scan = game_.GetCurrentScan();
 
-  std::cout << "Scan van universum:\n";
+  PrintToOutput("Scan van universum:\n");
 
   for (const auto &row : scan) {
     for (const auto &col : row)
-      std::cout << col.asteroid_amount << col.encounter_amount << col.planet_amount << "  ";
+      PrintToOutput(std::to_string(col.asteroid_amount) + std::to_string(col.encounter_amount) +
+      std::to_string(col.planet_amount) + "  ");
 
-    std::cout << "\n\n";
+    PrintToOutput("\n\n");
   }
 
-  std::cout << "Kies je sector (Rij + kolom. Voorbeeld: 01 = rij 0 sector 1):\n";
+  PrintToOutput("Kies je sector (Rij + kolom. Voorbeeld: 01 = rij 0 sector 1):\n");
 }
 
 void Ui::ShowSector() const {
   auto sector = game_.GetCurrentSector();
 
-  std::cout << "Huidige sector:\n";
+  PrintToOutput("Huidige sector:\n");
 
   for (const auto &row : sector) {
     for (const auto &col : row) {
@@ -34,55 +36,51 @@ void Ui::ShowSector() const {
       if (view_object) view_object->Print();
     }
 
-    std::cout << "\n";
+    PrintToOutput("\n");
   }
 }
 
-void Ui::ShowPackagePickupBlocked() const {
-  ShowSector();
-  std::cout << "Geen geschikte bestemming gevonden voor pakket.\n";
+void Ui::PrintToOutput(const std::string& content) const {
+  std::cout << content;
+  persistence::Logger::GetInstance().AddLogRecord(content);
 }
 
 void Ui::ShowPackageInfo() const {
   auto shipment = game_.GetSpaceship().GetCargoInfo().shipment;
-  std::cout << "Je vervoert: " << shipment.content_description << "\n";
-  std::cout << "Bestemming: " << shipment.destination_description << "\n";
-  std::cout << "Vanuit sector: " << GetFormattedCoordsString(shipment.source_sector) << "\n";
-  std::cout << "Sector bestemming: " << GetFormattedCoordsString(shipment.destination_sector) << "\n";
-  std::cout << "Planeet bestemming: " << GetFormattedCoordsString(shipment.destination_planet) << "\n";
+  PrintToOutput("Je vervoert: " + shipment.content_description + "\n");
+  PrintToOutput("Bestemming: " + shipment.destination_description + "\n");
+  PrintToOutput("Vanuit sector: " + GetFormattedCoordsString(shipment.source_sector) + "\n");
+  PrintToOutput("Sector bestemming: " + GetFormattedCoordsString(shipment.destination_sector) + "\n");
+  PrintToOutput("Planeet bestemming: " + GetFormattedCoordsString(shipment.destination_planet) + "\n");
 }
 
 std::string Ui::GetFormattedCoordsString(game::Coords coords) const {
   return "x: " + std::to_string(coords.pos_x) + ", y: " + std::to_string(coords.pos_y);
 }
 
-void Ui::ShowPackageDeliverySuccess() const {
-  std::cout << "Pakket succesvol afgeleverd!\n";
-}
-
 void Ui::ShowEncounter() const {
-  std::cout << "\n";
+  PrintToOutput("\n");
 
   auto encounter_log = game_.GetEncounterLog();
   for (auto record : encounter_log)
-    std::cout << record + "\n";
+    PrintToOutput(record + "\n");
 
-  std::cout << "\n";
+  PrintToOutput("\n");
 }
 
 void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
   if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
-  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) ShowPackageDeliverySuccess();
   if (sub_game_state == enums::SubGameState::ShowEncounter) ShowEncounter();
+  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) PrintToOutput("Pakket succesvol afgeleverd!\n");
+  if (sub_game_state == enums::SubGameState::PackagePickupBlocked) PrintToOutput("Geen geschikte bestemming gevonden voor pakket.\n");
 
   if (state == enums::MainGameState::Scanning) ShowScan();
   if (state == enums::MainGameState::Movement) ShowSector();
-  if (state == enums::MainGameState::PackagePickupBlocked) ShowPackagePickupBlocked();
   if (state == enums::MainGameState::ActiveEncounter) ShowEncounter();
 
-  if (state == enums::MainGameState::PendingReset) std::cout << "Rand van universum bereikt! Wil je opgeven?\n";
-  if (state == enums::MainGameState::HasWon) std::cout << "Je hebt gewonnen! Je kan opnieuw spelen of stoppen.\n";
-  if (state == enums::MainGameState::HasLost) std::cout << "Je hebt verloren! Je kan opnieuw spelen of stoppen.?\n";
+  if (state == enums::MainGameState::PendingReset) PrintToOutput("Rand van universum bereikt! Wil je opgeven?\n");
+  if (state == enums::MainGameState::HasWon) PrintToOutput("Je hebt gewonnen! Je kan opnieuw spelen of stoppen.\n");
+  if (state == enums::MainGameState::HasLost) PrintToOutput("Je hebt verloren! Je kan opnieuw spelen of stoppen.?\n");
 }
 
 }

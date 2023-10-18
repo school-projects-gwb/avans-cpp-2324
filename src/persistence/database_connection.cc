@@ -3,7 +3,7 @@
 namespace persistence {
 
 DatabaseConnection &DatabaseConnection::GetInstance() {
-  static DatabaseConnection instance; // Singleton instance
+  static DatabaseConnection instance;
   return instance;
 }
 

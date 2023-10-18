@@ -3,8 +3,7 @@
 
 namespace game::enums {
   enum MainGameState {
-    Scanning, Movement, ActiveEncounter, PendingReset, ShouldReset,
-    PackagePickupBlocked, HasWon, HasLost
+    Scanning, Movement, ActiveEncounter, PendingReset, ShouldReset, HasWon, HasLost
   };
 }
 

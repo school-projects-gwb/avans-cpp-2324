@@ -42,7 +42,7 @@ void GameManager::ProcessPlayerInput(int userInput) {
 void GameManager::ProcessPackagePickup() {
   auto package_destination_result = universe_.GetPackageDestinationInfo();
   if (!package_destination_result.has_valid_destination) {
-    state_.main_game_state = enums::MainGameState::PackagePickupBlocked;
+    state_.sub_game_state = enums::SubGameState::PackagePickupBlocked;
     return;
   }
 

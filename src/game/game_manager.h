@@ -13,14 +13,6 @@
 
 namespace game {
   class GameManager {
-   private:
-    ScanCreator scanner_;
-    Universe universe_;
-    SpaceShip space_ship_;
-    GameState state_ = {};
-    std::vector<PackageModel>& package_data_;
-    EncounterGenerator encounter_generator_;
-    bool should_quit_game_ = false;
    public:
     explicit GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
 
@@ -43,6 +35,14 @@ namespace game {
     [[nodiscard]] const SpaceShip& GetSpaceship() const;
     [[nodiscard]] const std::vector<std::string>& GetEncounterLog() const;
     bool GetShouldQuit() const;
+   private:
+    ScanCreator scanner_;
+    Universe universe_;
+    SpaceShip space_ship_;
+    GameState state_ = {};
+    std::vector<PackageModel>& package_data_;
+    EncounterGenerator encounter_generator_;
+    bool should_quit_game_ = false;
   };
 }
 

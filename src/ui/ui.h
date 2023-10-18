@@ -14,11 +14,10 @@ namespace interface {
     const ViewObjectFactory view_object_factory_;
     const game::GameManager &game_;
     void ShowScan() const;
-    void ShowPackagePickupBlocked() const;
     void ShowPackageInfo() const;
     [[nodiscard]] std::string GetFormattedCoordsString(game::Coords coords) const;
-    void ShowPackageDeliverySuccess() const;
     void ShowEncounter() const;
+    void PrintToOutput(const std::string &content) const;
   };
 }
 #endif //ASSESSMENT_CPLUS_23_24_GUNWUNBUN_SRC_UI_UI_H_
