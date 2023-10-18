@@ -18,7 +18,7 @@ void Input::ProcessInput(GameManager &game) const {
     ShowAllowedCommands(game);
     std::getline(std::cin, input);
     std::istringstream iss(input);
-    persistence::Logger::GetInstance().AddLogRecord("\nUser input: " + std::to_string(user_input));
+    persistence::Logger::GetInstance().AddLogRecord(" " + std::to_string(user_input) + " (User input)\n");
 
     if (iss >> user_input) {
       action_registry_.HandleCommand(user_input, game);

@@ -40,7 +40,7 @@ void Ui::ShowSector() const {
   }
 }
 
-void Ui::PrintToOutput(const std::string& content) const {
+void Ui::PrintToOutput(const std::string& content) {
   std::cout << content;
   persistence::Logger::GetInstance().AddLogRecord(content);
 }
@@ -54,7 +54,7 @@ void Ui::ShowPackageInfo() const {
   PrintToOutput("Planeet bestemming: " + GetFormattedCoordsString(shipment.destination_planet) + "\n");
 }
 
-std::string Ui::GetFormattedCoordsString(game::Coords coords) const {
+std::string Ui::GetFormattedCoordsString(game::Coords coords) {
   return "x: " + std::to_string(coords.pos_x) + ", y: " + std::to_string(coords.pos_y);
 }
 
