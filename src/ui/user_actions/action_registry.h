@@ -11,6 +11,12 @@ class ActionRegistry {
   std::vector<UserAction> hotkeys_;
   ActionRegistry();
   ~ActionRegistry();
+  // Delete other operations
+  ActionRegistry(const ActionRegistry&) = delete;
+  ActionRegistry& operator=(const ActionRegistry&) = delete;
+  ActionRegistry(ActionRegistry&&) = delete;
+  ActionRegistry& operator=(ActionRegistry&&) = delete;
+
   void HandleCommand(int input_value, game::GameManager &game) const;
 };
 

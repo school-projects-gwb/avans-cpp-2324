@@ -9,8 +9,13 @@ namespace persistence {
 class Logger {
  public:
   static Logger& GetInstance();
+
+  // Delete other operations
   Logger(const Logger&) = delete;
   Logger& operator=(const Logger&) = delete;
+  Logger(Logger&&) = delete;
+  Logger& operator=(Logger&&) = delete;
+
   void AddLogRecord(const std::string& new_log_record);
   void SaveLogToFile();
  private:

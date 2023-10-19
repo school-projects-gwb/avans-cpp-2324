@@ -9,6 +9,12 @@ class SqliteConnection {
  public:
   explicit SqliteConnection(const char* dbName);
   ~SqliteConnection();
+  // Delete other operations
+  SqliteConnection(const SqliteConnection&) = delete;
+  SqliteConnection& operator=(const SqliteConnection&) = delete;
+  SqliteConnection(SqliteConnection&&) = delete;
+  SqliteConnection& operator=(SqliteConnection&&) = delete;
+
   sqlite3* GetConnection() const;
  private:
   sqlite3* connection;

@@ -7,7 +7,14 @@ namespace game {
 
 class Command {
  public:
+  Command() = default;
   virtual ~Command() = default;
+  // Delete other operations
+  Command(const Command&) = delete;
+  Command& operator=(const Command&) = delete;
+  Command(Command&&) = delete;
+  Command& operator=(Command&&) = delete;
+
   virtual void HandleCommand(GameManager &game, int key) const = 0;
   virtual bool IsAllowed(const GameManager &game) const = 0;
 };
