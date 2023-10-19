@@ -17,7 +17,7 @@ class SqliteConnection {
 
   sqlite3* GetConnection() const;
  private:
-  sqlite3* connection;
+  sqlite3* connection_;
   bool FileExists(const char* fileName) const;
 };
 

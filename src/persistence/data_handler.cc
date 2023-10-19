@@ -11,7 +11,12 @@ std::vector<game::PackageModel> DataHandler::GetPackages() const {
   const char* sql = "SELECT inhoud, bestemming FROM pakketjes";
 
   DatabaseConnection& connection = DatabaseConnection::GetInstance();
-  connection.ExecuteQuery(sql);
+
+  try {
+    connection.ExecuteQuery(sql);
+  } catch (const std::runtime_error &ex) {
+    throw;
+  }
 
   auto statement = connection.PrepareStatement(sql);
 
@@ -43,7 +48,12 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() const {
   )";
 
   DatabaseConnection& connection = DatabaseConnection::GetInstance();
-  connection.ExecuteQuery(sql);
+
+  try {
+    connection.ExecuteQuery(sql);
+  } catch (const std::runtime_error &ex) {
+    throw;
+  }
 
   auto statement = connection.PrepareStatement(sql);
 

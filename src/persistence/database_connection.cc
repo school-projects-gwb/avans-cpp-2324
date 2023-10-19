@@ -1,3 +1,4 @@
+#include <iostream>
 #include "database_connection.h"
 
 namespace persistence {
@@ -12,7 +13,7 @@ bool DatabaseConnection::ConnectToSqlite(const char *dbName) {
 
   try {
     connection_ = std::make_unique<SqliteConnection>(dbName);
-  } catch (std::runtime_error &ex) {
+  } catch (const std::runtime_error &ex) {
     throw;
   }
 
@@ -39,9 +40,8 @@ void DatabaseConnection::ExecuteQuery(const char *sql) {
   if (!connection_) return;
 
   int result = sqlite3_exec(connection_->GetConnection(), sql, nullptr, nullptr, nullptr);
-  if (result != SQLITE_OK) {
-    // todo error handling
-  }
+  if (result != SQLITE_OK)
+    throw std::runtime_error("Query is invalid!");
 }
 
 }

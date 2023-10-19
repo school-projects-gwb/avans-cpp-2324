@@ -83,7 +83,7 @@ namespace game {
   }
 
   PackageDestinationResult Universe::GetPackageDestinationInfo() const {
-    const int minimum_distance = 0; // todo set back to 2
+    const int minimum_distance = 2;
     PackageDestinationResult result{};
 
     for (size_t row = 0; row < sectors_.GetRowCount(); row++) {

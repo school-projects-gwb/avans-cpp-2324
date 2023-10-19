@@ -9,14 +9,24 @@
 int main() {
   try {
     persistence::DatabaseConnection::GetInstance().ConnectToSqlite("planetexpress.db");
-  } catch (std::runtime_error &ex) {
+  } catch (const std::runtime_error &ex) {
     std::cerr << ex.what();
     return 0;
   }
 
+  std::vector<game::PackageModel> packages;
+  std::vector<game::EncounterModel> encounters;
+
   persistence::DataHandler data_handler;
-  auto packages = data_handler.GetPackages();
-  auto encounters = data_handler.GetEncounters();
+
+  try {
+    packages = data_handler.GetPackages();
+    encounters = data_handler.GetEncounters();
+  } catch(const std::runtime_error &ex) {
+    std::cerr << ex.what();
+    return 0;
+  }
+
   bool should_quit = false;
 
   while (!should_quit) {
