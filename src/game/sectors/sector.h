@@ -22,20 +22,20 @@ class Sector {
   Sector *kLeft = nullptr;
   Sector *kRight = nullptr;
 
-  const Grid<enums::SectorObjectType>& GetSectorObjects() const;
-  Coords GetRandomFreeCoords() const;
-  std::vector<SpaceshipNeighborObject> GetNeighborObjects(Coords coords) const;
-  Coords GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const;
-  Coords GetPositionInUniverse() const;
-  Sector* GetNeighboringSector(enums::Direction direction) const;
-  Coords GetRandomObjectPosition(enums::SectorObjectType object_type) const;
+  [[nodiscard]] const Grid<enums::SectorObjectType>& GetSectorObjects() const;
+  [[nodiscard]] Coords GetRandomFreeCoords() const;
+  [[nodiscard]] std::vector<SpaceshipNeighborObject> GetNeighborObjects(Coords coords) const;
+  [[nodiscard]] Coords GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const;
+  [[nodiscard]] const Coords& GetPositionInUniverse() const;
+  [[nodiscard]] Sector* GetNeighboringSector(enums::Direction direction) const;
+  [[nodiscard]] Coords GetRandomObjectPosition(enums::SectorObjectType object_type) const;
 
-  bool IsEmptyNewPosition(Coords coords) const;
-  bool IsPositionInSectorBounds(Coords coords) const;
-  bool HasObjectOfType(enums::SectorObjectType object_type) const;
-  bool AreObjectsGenerated() const;
-  void MoveObjects(enums::SectorObjectType object_type, Coords target_location);
-  void MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position);
+  [[nodiscard]] bool IsEmptyNewPosition(Coords coords) const;
+  [[nodiscard]] bool IsPositionInSectorBounds(Coords coords) const;
+  [[nodiscard]] bool HasObjectOfType(enums::SectorObjectType object_type) const;
+  [[nodiscard]] bool AreObjectsGenerated() const;
+  void MoveObjects(const enums::SectorObjectType& object_type, const Coords& target_location);
+  void MoveObjectAtPositionToTargetPosition(const Coords& current_position, const Coords& target_position);
   void SetObjectAtPosition(enums::SectorObjectType type, Coords target_position);
  private:
   Coords position_in_universe_;

@@ -31,11 +31,11 @@ namespace game {
     active_sector_->GenerateObjects();
   }
 
-  void Universe::MoveObjects(Coords target_location) {
+  void Universe::MoveObjects(const Coords& target_location) {
     active_sector_->MoveObjects(enums::SectorObjectType::Encounter, target_location);
   }
 
-  void Universe::MoveSpaceship(enums::Direction direction) {
+  void Universe::MoveSpaceship(const enums::Direction& direction) {
     auto next_position = space_ship_->GetNextMovementPosition(direction);
     auto position_available = active_sector_->IsEmptyNewPosition(next_position);
 
@@ -49,7 +49,7 @@ namespace game {
     }
   }
 
-  void Universe::AttemptMoveSpaceshipToDifferentSector(enums::Direction direction) {
+  void Universe::AttemptMoveSpaceshipToDifferentSector(const enums::Direction& direction) {
     auto neighboring_sector = active_sector_->GetNeighboringSector(direction);
     if (neighboring_sector == nullptr) {
       space_ship_->SetIsAtUniverseEdge(true);
@@ -70,7 +70,7 @@ namespace game {
     space_ship_->SetPosition(next_position_sector_neighbor, active_sector_->GetPositionInUniverse(), neighbor_objects);
   }
 
-  Sector& Universe::GetActiveSector() const {
+  const Sector& Universe::GetActiveSector() const {
     return *active_sector_;
   }
 

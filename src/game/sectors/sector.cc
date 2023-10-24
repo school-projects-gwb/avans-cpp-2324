@@ -19,7 +19,7 @@ namespace game {
     is_generated_ = true;
   }
 
-  void Sector::MoveObjects(enums::SectorObjectType object_type, Coords target_location) {
+  void Sector::MoveObjects(const enums::SectorObjectType& object_type, const Coords& target_location) {
     std::vector<Coords> objectsToMove;
 
     for (int x = 0; x < objects_.GetColCount(); ++x)
@@ -51,7 +51,7 @@ namespace game {
     objects_[target_position] = type;
   }
 
-  void Sector::MoveObjectAtPositionToTargetPosition(Coords current_position, Coords target_position) {
+  void Sector::MoveObjectAtPositionToTargetPosition(const Coords& current_position, const Coords& target_position) {
     if (IsEmptyNewPosition(current_position)) return;
     objects_[target_position] = objects_[current_position];
     objects_[current_position] = enums::SectorObjectType::EmptySpace;
@@ -148,7 +148,7 @@ namespace game {
     }
   }
 
-  Coords Sector::GetPositionInUniverse() const {
+  const Coords& Sector::GetPositionInUniverse() const {
     return position_in_universe_;
   }
 

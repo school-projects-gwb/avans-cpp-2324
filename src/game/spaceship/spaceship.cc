@@ -14,11 +14,9 @@ void SpaceShip::SetPosition(Coords sector_position, Coords universe_position, st
 Coords SpaceShip::GetNextMovementPosition(enums::Direction direction) const {
   auto next_position = sector_position_;
 
-  if (direction == enums::Up || direction == enums::Down)
-    next_position.pos_y += direction == enums::Up ? -1 : 1;
+  if (direction == enums::Up || direction == enums::Down) next_position.pos_y += direction == enums::Up ? -1 : 1;
 
-  if (direction == enums::Left || direction == enums::Right)
-    next_position.pos_x += direction == enums::Left ? -1 : 1;
+  if (direction == enums::Left || direction == enums::Right) next_position.pos_x += direction == enums::Left ? -1 : 1;
 
   return next_position;
 }
@@ -38,11 +36,11 @@ CargoInfo SpaceShip::GetCargoInfo() const {
 }
 
 bool SpaceShip::IsAtUniverseEdge() const {
-  return at_universe_edge;
+  return at_universe_edge_;
 }
 
 void SpaceShip::SetIsAtUniverseEdge(bool is_at_edge) {
-  at_universe_edge = is_at_edge;
+  at_universe_edge_ = is_at_edge;
 }
 
 void SpaceShip::AddCargo(const PackageModel& package, PackageDestinationResult destination_info) {

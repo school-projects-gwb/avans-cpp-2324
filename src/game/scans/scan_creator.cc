@@ -20,7 +20,7 @@ namespace game {
     }
   }
 
-  ScanSelectResult ScanCreator::PickSectorByInput(int input) const {
+  ScanSelectResult ScanCreator::PickSectorByInput(int input) {
     ScanSelectResult result{};
     result.is_valid = false;
     result.row_number = -1;
@@ -42,14 +42,14 @@ namespace game {
     return result;
   }
 
-  bool ScanCreator::IsOnEdge(int row_number, int col_number) const {
+  bool ScanCreator::IsOnEdge(int row_number, int col_number) {
     if ((row_number == 0 || row_number == kColRowCount - 1) && (col_number >= 0 && col_number <= 5)) return true;
     if ((col_number == 0 || col_number == kColRowCount - 1) && (row_number >= 0 && row_number <= 5)) return true;
 
     return false;
   }
 
-  Grid<ScanObject> ScanCreator::GetCurrentScan() const {
+  const Grid<ScanObject>& ScanCreator::GetCurrentScan() const {
     return scan_;
   }
 }

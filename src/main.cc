@@ -14,10 +14,9 @@ int main() {
     return 0;
   }
 
+  persistence::DataHandler data_handler;
   std::vector<game::PackageModel> packages;
   std::vector<game::EncounterModel> encounters;
-
-  persistence::DataHandler data_handler;
 
   try {
     packages = data_handler.GetPackages();

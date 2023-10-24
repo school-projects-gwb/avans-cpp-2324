@@ -6,7 +6,7 @@
 namespace interface {
 
 class PlanetViewObject : public ViewObject {
-  char GetDisplayCharacter() const override;
+  [[nodiscard]] char GetDisplayCharacter() const override;
 };
 
 }

@@ -11,9 +11,9 @@ class ScanCreator {
  public:
   ScanCreator();
   void CreateScan();
-  ScanSelectResult PickSectorByInput(int input) const;
-  Grid<ScanObject> GetCurrentScan() const;
-  bool IsOnEdge(int row_number, int col_number) const;
+  [[nodiscard]] static ScanSelectResult PickSectorByInput(int input);
+  [[nodiscard]] const Grid<ScanObject>& GetCurrentScan() const;
+  [[nodiscard]] static bool IsOnEdge(int row_number, int col_number);
  private:
   static const int kColRowCount = 5;
   Grid<ScanObject> scan_;

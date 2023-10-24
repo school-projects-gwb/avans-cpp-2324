@@ -3,7 +3,7 @@
 
 namespace game {
 
-EncounterGenerator::EncounterGenerator(std::vector<EncounterModel>& encounters) : encounters_(encounters) {
+EncounterGenerator::EncounterGenerator(const std::vector<EncounterModel>& encounters) : encounters_(encounters) {
 
 }
 

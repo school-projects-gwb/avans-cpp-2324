@@ -8,7 +8,7 @@ namespace interface {
 
 class ViewObjectFactory {
  public:
-  std::shared_ptr<ViewObject> GetObjectCharacter(game::enums::SectorObjectType object_type) const;
+  [[nodiscard]] std::shared_ptr<ViewObject> GetObjectCharacter(game::enums::SectorObjectType object_type) const;
 };
 
 }

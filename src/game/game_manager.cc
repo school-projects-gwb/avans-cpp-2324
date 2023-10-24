@@ -5,12 +5,12 @@
 
 namespace game {
 
-GameManager::GameManager(std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data) :
+GameManager::GameManager(const std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data) :
 scanner_(), universe_(), space_ship_(), encounter_generator_(encounter_data), package_data_(package_data) {
   scanner_.CreateScan();
 }
 
-void GameManager::ProcessPlayerMovement(enums::Direction direction) {
+void GameManager::ProcessPlayerMovement(const enums::Direction& direction) {
   universe_.MoveSpaceship(direction);
 
   // We can return immediately without moving other objects when this happens
@@ -61,7 +61,7 @@ void GameManager::ProcessPackageDeliver() {
   if (space_ship_.HasEnoughWinningPoints()) state_.main_game_state = enums::MainGameState::HasWon;
 }
 
-void GameManager::ProcessEncounter(enums::EncounterCharacter encounter_character) {
+void GameManager::ProcessEncounter(const enums::EncounterCharacter& encounter_character) {
   encounter_generator_.GenerateResult(space_ship_.GetStats(), encounter_character);
   state_.sub_game_state = enums::SubGameState::ShowEncounter;
   state_.main_game_state = space_ship_.IsDestroyed() ? enums::MainGameState::HasLost : enums::MainGameState::Movement;
@@ -93,11 +93,11 @@ enums::MainGameState GameManager::GetMainGameState() const {
   return state_.main_game_state;
 }
 
-Grid<ScanObject> GameManager::GetCurrentScan() const {
+const Grid<ScanObject>& GameManager::GetCurrentScan() const {
   return scanner_.GetCurrentScan();
 }
 
-Grid<enums::SectorObjectType> GameManager::GetCurrentSector() const {
+const Grid<enums::SectorObjectType>& GameManager::GetCurrentSector() const {
   return universe_.GetActiveSector().GetSectorObjects();
 }
 

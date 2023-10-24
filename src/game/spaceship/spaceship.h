@@ -24,13 +24,13 @@ class SpaceShip {
   [[nodiscard]] CargoInfo GetCargoInfo() const;
   SpaceshipStats& GetStats();
 
-  bool HasNeighborOfType(enums::SectorObjectType object_type) const;
-  bool HasEnoughWinningPoints() const;
-  bool IsDestroyed() const;
-  bool IsAtUniverseEdge() const;
-  bool CanDeliverCargo() const;
-  bool CanPickupCargo() const;
-  bool CanViewCargo() const;
+  [[nodiscard]] bool HasNeighborOfType(enums::SectorObjectType object_type) const;
+  [[nodiscard]] bool HasEnoughWinningPoints() const;
+  [[nodiscard]] bool IsDestroyed() const;
+  [[nodiscard]] bool IsAtUniverseEdge() const;
+  [[nodiscard]] bool CanDeliverCargo() const;
+  [[nodiscard]] bool CanPickupCargo() const;
+  [[nodiscard]] bool CanViewCargo() const;
   void DeliverCargo();
  private:
   SpaceshipStats spaceship_stats_ = {};
@@ -38,7 +38,7 @@ class SpaceShip {
   Coords universe_position_;
   Coords sector_position_;
   std::vector<SpaceshipNeighborObject> neighbor_objects_;
-  bool at_universe_edge = false;
+  bool at_universe_edge_ = false;
 };
 
 }
