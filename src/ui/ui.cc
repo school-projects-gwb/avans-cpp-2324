@@ -27,8 +27,9 @@ void Ui::ShowScan() const {
 
 void Ui::ShowSector() const {
   auto sector = game_.GetCurrentSector();
+  auto sector_coords = game_.GetCurrentSectorCoords();
 
-  PrintToOutput("Huidige sector:\n");
+  PrintToOutput("Huidige sector (positie " + GetFormattedCoordsString(sector_coords) + ")\n");
 
   for (const auto &row : sector) {
     for (const auto &col : row) {
@@ -55,7 +56,7 @@ void Ui::ShowPackageInfo() const {
 }
 
 std::string Ui::GetFormattedCoordsString(game::Coords coords) {
-  return "x: " + std::to_string(coords.pos_x) + ", y: " + std::to_string(coords.pos_y);
+  return "x: " + std::to_string(coords.pos_x+1) + ", y: " + std::to_string(coords.pos_y+1);
 }
 
 void Ui::ShowEncounter() const {

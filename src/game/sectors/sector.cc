@@ -158,7 +158,7 @@ namespace game {
     for (int x = 0; x < objects_.GetColCount(); ++x)
       for (int y = 0; y < objects_.GetRowCount(); ++y) {
         Coords current_position{x, y};
-        if (objects_[current_position] != object_type) return true;
+        if (objects_[current_position] == object_type) return true;
       }
 
     return false;

@@ -33,6 +33,7 @@ class GameManager {
   [[nodiscard]] enums::SubGameState GetSubGameState() const;
   [[nodiscard]] const Grid<ScanObject>& GetCurrentScan() const;
   [[nodiscard]] const Grid<enums::SectorObjectType>& GetCurrentSector() const;
+  [[nodiscard]] const Coords GetCurrentSectorCoords() const;
   [[nodiscard]] const SpaceShip& GetSpaceship() const;
   [[nodiscard]] const std::vector<std::string>& GetEncounterLog() const;
   [[nodiscard]] bool GetShouldQuit() const;

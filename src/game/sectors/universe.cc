@@ -98,7 +98,7 @@ namespace game {
 
         result.destination_planet_coords = sectors_(row, col).GetRandomObjectPosition(enums::SectorObjectType::Planet);
         result.destination_sector_coords = current_sector_position;
-        result.current_sector_coords = current_sector_position;
+        result.current_sector_coords = active_sector_position;
         result.has_valid_destination = true;
         break;
       }

@@ -101,6 +101,10 @@ const Grid<enums::SectorObjectType>& GameManager::GetCurrentSector() const {
   return universe_.GetActiveSector().GetSectorObjects();
 }
 
+const Coords GameManager::GetCurrentSectorCoords() const {
+  return universe_.GetActiveSector().GetPositionInUniverse();
+}
+
 const SpaceShip& GameManager::GetSpaceship() const {
   return space_ship_;
 }
