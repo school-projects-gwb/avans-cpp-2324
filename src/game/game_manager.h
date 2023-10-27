@@ -37,6 +37,7 @@ class GameManager {
   [[nodiscard]] const SpaceShip& GetSpaceship() const;
   [[nodiscard]] const std::vector<std::string>& GetEncounterLog() const;
   [[nodiscard]] bool GetShouldQuit() const;
+  void MoveSectorObjects();
  private:
   ScanCreator scanner_;
   Universe universe_;

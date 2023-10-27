@@ -36,6 +36,7 @@ int main() {
 
     while (game.GetMainGameState() != game::enums::MainGameState::ShouldReset) {
       input.ProcessInput(game);
+      game.MoveSectorObjects();
       ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
       game.ResetSubGameState();
       should_quit = game.GetShouldQuit();

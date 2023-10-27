@@ -85,5 +85,8 @@ bool SpaceShip::IsDestroyed() const {
 bool SpaceShip::HasEnoughWinningPoints() const {
   return spaceship_stats_.HasEnoughWinningPoints();
 }
+bool SpaceShip::GetWinningPoints() const {
+  return spaceship_stats_.GetWinningPoints();
+}
 
 }

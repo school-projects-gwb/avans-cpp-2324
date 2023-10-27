@@ -27,4 +27,8 @@ bool SpaceshipStats::HasEnoughWinningPoints() const {
   return winning_points_ >= points_to_win_;
 }
 
+bool SpaceshipStats::GetWinningPoints() const {
+  return winning_points_;
+}
+
 }

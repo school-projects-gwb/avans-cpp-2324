@@ -31,6 +31,7 @@ class SpaceShip {
   [[nodiscard]] bool CanDeliverCargo() const;
   [[nodiscard]] bool CanPickupCargo() const;
   [[nodiscard]] bool CanViewCargo() const;
+  [[nodiscard]] bool GetWinningPoints() const;
   void DeliverCargo();
  private:
   SpaceshipStats spaceship_stats_ = {};

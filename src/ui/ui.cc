@@ -63,7 +63,7 @@ void Ui::ShowEncounter() const {
   PrintToOutput("\n");
 
   auto encounter_log = game_.GetEncounterLog();
-  for (auto record : encounter_log)
+  for (const auto& record : encounter_log)
     PrintToOutput(record + "\n");
 
   PrintToOutput("\n");
@@ -72,8 +72,11 @@ void Ui::ShowEncounter() const {
 void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state) const {
   if (sub_game_state == enums::SubGameState::ShowPackage) ShowPackageInfo();
   if (sub_game_state == enums::SubGameState::ShowEncounter) ShowEncounter();
-  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) PrintToOutput("Pakket succesvol afgeleverd!\n");
   if (sub_game_state == enums::SubGameState::PackagePickupBlocked) PrintToOutput("Geen geschikte bestemming gevonden voor pakket.\n");
+  if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) {
+    auto space_ship = game_.GetSpaceship();
+    PrintToOutput("Pakket succesvol afgeleverd! Je hebt " + std::to_string(space_ship.GetWinningPoints()) + " punt(en).\n");
+  }
 
   if (state == enums::MainGameState::Scanning) ShowScan();
   if (state == enums::MainGameState::Movement) ShowSector();

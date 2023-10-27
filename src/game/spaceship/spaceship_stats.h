@@ -9,11 +9,12 @@ class SpaceshipStats {
   void AppendDamagePoints(int amount);
   void ResetDamagePoints();
   [[nodiscard]] int GetDamagePoints() const;
-  bool IsDestroyed() const;
-  bool HasEnoughWinningPoints() const;
+  [[nodiscard]] bool GetWinningPoints() const;
+  [[nodiscard]] bool IsDestroyed() const;
+  [[nodiscard]] bool HasEnoughWinningPoints() const;
  private:
   const int points_to_die_ = 200;
-  const int points_to_win_ = 10;
+  const int points_to_win_ = 1;
   int damage_points_ = 0;
   int winning_points_ = 0;
 };
