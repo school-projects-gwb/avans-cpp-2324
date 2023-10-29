@@ -1,0 +1,1739 @@
+Scan van universum:
+932  642  042  701  801  
+
+900  523  600  820  240  
+
+832  721  211  323  412  
+
+501  840  712  033  923  
+
+643  423  343  303  213  
+
+Kies je sector (Rij + kolom. Voorbeeld: 01 = rij 0 sector 1):
+Kies een actie:
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Bone Vampire
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Bone Vampire
+Je koos: Leela
+He's not a bone vampire, he's mister Peppy!
+
+Er is niks gebeurd en je bent veilig weggekomen
+
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . * . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . . 
+6  | O . P . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . * . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . * . . 
+4  | . . . . . . . . . . 
+5  | . . P . . . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . * . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O * . . . 
+4  | . . . . . . . . . . 
+5  | . . . P . . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . * . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O * . . . 
+4  | . . . . . . . . . . 
+5  | . . . . P . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . * . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O * . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . P . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . * . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Moon Worm
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Moon Worm
+Je koos: Leela
+*chomp*
+Je raakt in gevecht met Moon Worm!
+Moon Worm doet 15 punten schade. Je hebt in totaal 15 schadepunten.
+Je schiet en mist.
+Moon Worm doet 12 punten schade. Je hebt in totaal 27 schadepunten.
+Je schiet en mist.
+Moon Worm doet 9 punten schade. Je hebt in totaal 36 schadepunten.
+Je schiet en mist.
+Moon Worm doet 4 punten schade. Je hebt in totaal 40 schadepunten.
+Je schiet en raakt. 1 raak geschoten!
+Moon Worm doet 13 punten schade. Je hebt in totaal 53 schadepunten.
+Je schiet en mist.
+Moon Worm doet 7 punten schade. Je hebt in totaal 60 schadepunten.
+Je schiet en mist.
+Moon Worm doet 5 punten schade. Je hebt in totaal 65 schadepunten.
+Je schiet en mist.
+Moon Worm doet 11 punten schade. Je hebt in totaal 76 schadepunten.
+Je schiet en mist.
+Moon Worm doet 16 punten schade. Je hebt in totaal 92 schadepunten.
+Je schiet en raakt. 2 raak geschoten!
+Moon Worm doet 9 punten schade. Je hebt in totaal 101 schadepunten.
+Je schiet en raakt. 3 raak geschoten!
+Moon Worm is verslagen!
+
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . * . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . * . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . * . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . * 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Purple Fruit Snake
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Purple Fruit Snake
+Je koos: Leela
+Purple fruit snakes are nearly extinct
+
+Je raakt in gevecht met Purple Fruit Snake!
+Purple Fruit Snake doet 3 punten schade. Je hebt in totaal 104 schadepunten.
+Je schiet en raakt. 1 raak geschoten!
+Purple Fruit Snake doet 2 punten schade. Je hebt in totaal 106 schadepunten.
+Je schiet en raakt. 2 raak geschoten!
+Purple Fruit Snake doet 4 punten schade. Je hebt in totaal 110 schadepunten.
+Je schiet en mist.
+Purple Fruit Snake doet 5 punten schade. Je hebt in totaal 115 schadepunten.
+Je schiet en mist.
+Purple Fruit Snake doet 2 punten schade. Je hebt in totaal 117 schadepunten.
+Je schiet en raakt. 3 raak geschoten!
+Purple Fruit Snake is verslagen!
+
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . * . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . * . . . . . 
+4  | . . . . . . . . . . 
+5  | P . . . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+5  =  Pakketje oppikken
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . * . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . * . . . . . . 
+4  | . . . . . . . . . . 
+5  | . P . . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . * . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . * . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . P . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . * . . . . . . 
+3  | . . . * . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . P . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . * . . . . . 
+3  | . . . . * . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . P . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . * . . . . 
+3  | . . . . . * . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . P . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . * . . . 
+3  | . . . . . . * . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . * . . 
+3  | . . . . . . . * . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . * . 
+3  | . . . . . . . . * . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . * 
+3  | . . . . . . . . . * 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | P . . . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | * * . . . . @ . . . 
+8  | . . . . . . . . . . 
+9  | . . . . * . . * . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: El Chupanibre
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: El Chupanibre
+Je koos: Leela
+*chomp*
+Je raakt in gevecht met El Chupanibre!
+El Chupanibre doet 7 punten schade. Je hebt in totaal 124 schadepunten.
+Je schiet en raakt. 1 raak geschoten!
+El Chupanibre doet 7 punten schade. Je hebt in totaal 131 schadepunten.
+Je schiet en raakt. 2 raak geschoten!
+El Chupanibre doet 9 punten schade. Je hebt in totaal 140 schadepunten.
+Je schiet en mist.
+El Chupanibre doet 12 punten schade. Je hebt in totaal 152 schadepunten.
+Je schiet en raakt. 3 raak geschoten!
+El Chupanibre is verslagen!
+
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . P . . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | * . . . . . @ . . . 
+8  | . . . . . . . . . . 
+9  | . . . * . . * . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . P . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . * . . . . @ . . . 
+8  | . . . . . . . . . . 
+9  | . . * . . * . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . P . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . * . . . @ . . . 
+8  | . . . . . . . . . . 
+9  | . . . * * . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . P . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . * . . @ . . . 
+8  | . . . . * . . . . . 
+9  | . . . * . . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . P . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . * . @ . . . 
+8  | . . . . . * . . . . 
+9  | . . . . * . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . . . 
+8  | . . . . . . * . . . 
+9  | . . . . . * . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . . . 
+8  | . . . . . . . * . . 
+9  | . . . . . . * . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . . . 
+8  | . . . . . . . . * . 
+9  | . . . . . . . * . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . . . 
+8  | . . . . . . . . . * 
+9  | . . . . . . . . * . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+5  =  Pakketje oppikken
+8  =  Niets doen
+
+>  1 (User input)
+Je vervoert: Colossal tooth whitener, a mega-deodorant, a humongous acne cream
+Bestemming: Unattractive giant monster
+Vanuit sector: x: 3, y: 1
+Sector bestemming: x: 1, y: 1
+Planeet bestemming: x: 7, y: 1
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . . * 
+8  | . . . . . . . . . . 
+9  | . . . . . . . . . * 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ . * . 
+8  | . . . . . . . . . . 
+9  | . . . . . . . . * . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ * . . 
+8  | . . . . . . . . . . 
+9  | . . . . . . . * . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . * @ * . . 
+8  | . . . . . . . . . . 
+9  | . . . . . . * . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Robot Mafia
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Robot Mafia
+Je koos: Leela
+Well, well, well. What have we here? No, seriously. What is that?
+Er is niks gebeurd en je bent veilig weggekomen
+
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . P . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | . . . . . * . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . P . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | . . . . * . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . P . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | . . . * . . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . P . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | . . * . . . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . P . . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | . * . . . . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 3, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | P . . . . . . . . . 
+6  | . . . . . . . . . @ 
+7  | . . . . . . @ * . . 
+8  | . . . . . . . . . . 
+9  | * . . . . . . . . . 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Lrrr, Emperor of the planet Omicron Persei 8
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Lrrr, Emperor of the planet Omicron Persei 8
+Je koos: Leela
+'Friends' is ancient Earth's most foolish program. Why does Ross, the largest friend, not simply eat the other five?
+Er is niks gebeurd en je bent veilig weggekomen
+
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . . * 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . . * . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . . * . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . . * . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . . * . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . P . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . . * . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . P . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . . * . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . . P . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . . * . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . . P . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | . * . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | . P . . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 2, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . . . . . 
+2  | * . . . . . . . . . 
+3  | . . . . . . . . . . 
+4  | . . . . . . . . . . 
+5  | P . . . . . . . . . 
+6  | @ . . . . . . . . O 
+7  | . O . . . . O . . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O @ 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . * 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+Je vervoert: Colossal tooth whitener, a mega-deodorant, a humongous acne cream
+Bestemming: Unattractive giant monster
+Vanuit sector: x: 3, y: 1
+Sector bestemming: x: 1, y: 1
+Planeet bestemming: x: 7, y: 1
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . P 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . . * 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . P . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O . * . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . P . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O * . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . P . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O * . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . P . . . 
+5  | . . . . . . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O * . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | @ . . . . O P . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O * . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . P . . . 
+3  | @ . . . . O . . . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . . 
+6  | O . . . . . . . . O 
+7  | . O . . . . O * . . 
+8  | O . . . . . . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+6  =  Pakketje bekijken
+7  =  Pakketje bezorgen
+8  =  Niets doen
+
+>  1 (User input)
+Pakket succesvol afgeleverd! Je hebt 1 punt(en).
+Scan van universum:
+643  042  701  801  900  
+
+523  600  820  240  832  
+
+721  211  323  412  501  
+
+840  712  033  923  643  
+
+423  343  303  213  920  
+
+Kies je sector (Rij + kolom. Voorbeeld: 01 = rij 0 sector 1):
+Kies een actie:
+
+>  7 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Hydroponic Farmer
+
+Kies een actie:
+1  =  Fry
+2  =  Leela
+3  =  Bender
+
+>  1 (User input)
+
+Het ruimteschip USS Planet Express Ship komt tegen: Hydroponic Farmer
+Je koos: Leela
+Looky here city girl, oxygen don't grow on trees.
+Er is niks gebeurd en je bent veilig weggekomen
+
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . * . . . @ . . * . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . . 
+6  | @ . P . . . . . . . 
+7  | . O . . . . O . . . 
+8  | O . . . . . . * . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  2 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . . * . . @ . * . . 
+4  | . . . . . . . . . . 
+5  | . . . . . . . . . . 
+6  | @ . . . . . . . . . 
+7  | . O P . . . O . . . 
+8  | O . . . . . * . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . @ * . . . 
+4  | . . * . . . . . . . 
+5  | . . . . . . . . . . 
+6  | @ . . . . . . . . . 
+7  | . O . . . . O . . . 
+8  | O . P . . * . . . . 
+9  | . . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . @ * . . . 
+4  | . . . . . . . . . . 
+5  | . . * . . . . . . . 
+6  | @ . . . . . . . . . 
+7  | . O . . . . O . . . 
+8  | O . . . * . . . . . 
+9  | . . P . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . @ * . . . 
+4  | . . . . . . . . . . 
+5  | . * . . . . . . . . 
+6  | @ . . . . . . . . . 
+7  | . O . . . . O . . . 
+8  | O . . * . . . . . . 
+9  | . P . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+
+Huidige sector (positie x: 1, y: 1)
+
+      1 2 3 4 5 6 7 8 9 10 
+      _ _ _ _ _ _ _ _ _ _ 
+1  | . . . . . . @ . . . 
+2  | . . . . . . . . . . 
+3  | . . . . . @ * . . . 
+4  | . . . . . . . . . . 
+5  | * . . . . . . . . . 
+6  | @ . . . . . . . . . 
+7  | . O . . . . O . . . 
+8  | O . * . . . . . . . 
+9  | P . . . . O . . O O 
+10 | . . . . . . . . . . 
+
+Kies een actie:
+1  =  Naar boven bewegen
+2  =  Naar beneden bewegen
+3  =  Naar links bewegen
+4  =  Naar rechts bewegen
+8  =  Niets doen
+
+>  1 (User input)
+Rand van universum bereikt! Wil je opgeven?
+Kies een actie:
+8  =  Niets doen
+9  =  Reset spel
+10  =  Stop met spelen
+
+>  3 (User input)

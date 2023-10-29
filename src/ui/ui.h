@@ -17,11 +17,11 @@ class Ui {
   const game::GameManager &game_;
   void ShowScan() const;
   void ShowPackageInfo() const;
-  [[nodiscard]] static std::string GetFormattedCoordsString(game::Coords coords);
+  void ShowEncounter() const;
   static void PrintFormattedRowNumber(int row_number);
   static void PrintFormattedColumnHeader(int total_column_count);
-  void ShowEncounter() const;
   static void PrintToOutput(const std::string &content, const std::string& color = ANSI_COLOR_RESET);
+  [[nodiscard]] static std::string GetFormattedCoordsString(game::Coords coords);
 };
 
 }

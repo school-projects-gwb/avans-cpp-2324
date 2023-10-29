@@ -90,7 +90,7 @@ DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, in
       });
 }
 
-game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement) const {
+game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement) {
   game::Consequence new_consequence;
   new_consequence.amount = sqlite3_column_int(statement, 4);
   new_consequence.description = GetStringColumn(statement, 5);

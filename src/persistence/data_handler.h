@@ -14,7 +14,7 @@ class DataHandler {
   [[nodiscard]] std::vector<game::PackageModel> GetPackages() const;
   static std::vector<game::EncounterModel,
   std::allocator<game::EncounterModel>>::iterator FindEncounterByID(std::vector<game::EncounterModel> &encounters,int id) ;
-  game::Consequence CreateConsequenceFromRow(sqlite3_stmt *statement) const;
+  static game::Consequence CreateConsequenceFromRow(sqlite3_stmt *statement) ;
   static std::string GetStringColumn(sqlite3_stmt *statement, int column_index) ;
 };
 

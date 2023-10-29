@@ -3,7 +3,6 @@
 #include <sstream>
 #include "input.h"
 #include "logger.h"
-#include "ansi_colors.h"
 
 using namespace game;
 
