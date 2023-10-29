@@ -16,7 +16,7 @@ void GameManager::ProcessPlayerMovement(const enums::Direction& direction) {
 }
 
 void GameManager::ProcessObjectMovement() {
-  if (state_.main_game_state != enums::Movement) return;
+  if (state_.main_game_state != enums::Movement && !encounter_generator_.IsInActiveEncounter()) return;
 
   universe_.MoveEncounters(space_ship_.GetPosition());
   auto collision_found = universe_.TryRemoveCollidingObjects(space_ship_.GetPosition(), enums::SectorObjectType::Encounter);

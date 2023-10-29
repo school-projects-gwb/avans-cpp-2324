@@ -102,4 +102,8 @@ void EncounterGenerator::AddEncounterLogRecord(const std::string& content) {
   current_encounter_log.emplace_back(content);
 }
 
+bool EncounterGenerator::IsInActiveEncounter() {
+  return !current_encounter_log.empty();
+}
+
 }
