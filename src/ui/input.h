@@ -9,7 +9,7 @@ namespace interface {
 class Input {
  public:
   Input();
-  void ProcessInput(game::GameManager& game) const;
+  void ParseInput(game::GameManager &game) const;
  private:
   ActionRegistry action_registry_;
   void ShowAllowedCommands(const game::GameManager& game) const;

@@ -42,7 +42,7 @@ int main() {
     ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
 
     while (game.GetMainGameState() != game::enums::MainGameState::ShouldReset) {
-      input.ProcessInput(game);
+      input.ParseInput(game);
       game.ProcessObjectMovement();
       ui.UpdateUi(game.GetMainGameState(), game.GetSubGameState());
       game.ResetSubGameState();

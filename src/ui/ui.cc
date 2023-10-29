@@ -30,9 +30,13 @@ void Ui::ShowSector() const {
   auto sector = game_.GetCurrentSector();
   auto sector_coords = game_.GetCurrentSectorCoords();
 
-  PrintToOutput("Huidige sector (positie " + GetFormattedCoordsString(sector_coords) + ")\n");
+  PrintToOutput("\nHuidige sector (positie " + GetFormattedCoordsString(sector_coords) + ")\n\n");
+  PrintFormattedColumnHeader(sector.GetColCount());
 
+  int row_count = 0;
   for (const auto &row : sector) {
+    PrintFormattedRowNumber(++row_count);
+
     for (const auto &col : row) {
       auto view_object = view_object_factory_.GetObjectCharacter(col);
       if (view_object) PrintToOutput(view_object->GetPrintContent(), view_object->GetDisplayColor());
@@ -40,6 +44,8 @@ void Ui::ShowSector() const {
 
     PrintToOutput("\n");
   }
+
+  PrintToOutput("\n");
 }
 
 void Ui::PrintToOutput(const std::string& content, const std::string& color) {
@@ -86,6 +92,33 @@ void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state
   if (state == enums::MainGameState::PendingReset) PrintToOutput("Rand van universum bereikt! Wil je opgeven?\n");
   if (state == enums::MainGameState::HasWon) PrintToOutput("Je hebt gewonnen! Je kan opnieuw spelen of stoppen.\n");
   if (state == enums::MainGameState::HasLost) PrintToOutput("Je hebt verloren! Je kan opnieuw spelen of stoppen.?\n");
+}
+
+void Ui::PrintFormattedRowNumber(int row_number) {
+  std::string row_string = std::to_string(row_number);
+  PrintToOutput(row_number < 10 ? (row_string + "  |  ") : (row_string + " |  "), ANSI_COLOR_GRAY);
+}
+
+void Ui::PrintFormattedColumnHeader(int total_column_count) {
+  const int leading_space_count = 6;
+
+  // Number row
+  for (int i = 0; i < leading_space_count; ++i)
+    PrintToOutput(" ");
+
+  for (int col = 1; col <= total_column_count; ++col)
+    PrintToOutput(std::to_string(col) + " ", ANSI_COLOR_GRAY);
+
+  PrintToOutput("\n");
+
+  // Underscore/separator row
+  for (int i = 0; i < leading_space_count; ++i)
+    PrintToOutput(" ");
+
+  for (int i = 0; i < total_column_count; ++i)
+    PrintToOutput("_ ", ANSI_COLOR_GRAY);
+
+  PrintToOutput("\n");
 }
 
 }

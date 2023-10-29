@@ -3,6 +3,7 @@
 #include <sstream>
 #include "input.h"
 #include "logger.h"
+#include "ansi_colors.h"
 
 using namespace game;
 
@@ -10,7 +11,7 @@ namespace interface {
 
 Input::Input() : action_registry_() {}
 
-void Input::ProcessInput(GameManager &game) const {
+void Input::ParseInput(game::GameManager &game) const {
   std::string input;
   int user_input;
 
@@ -29,10 +30,12 @@ void Input::ProcessInput(GameManager &game) const {
   }
 }
 
-void Input::ShowAllowedCommands(const GameManager& game) const {
+void Input::ShowAllowedCommands(const game::GameManager& game) const {
   PrintToOutput("Kies een actie:\n");
+
   for (const UserAction &hotkey : action_registry_.hotkeys_)
-    if (hotkey.command->IsAllowed(game)) PrintToOutput(std::to_string(hotkey.key) + "  =  " + hotkey.description + "\n");
+    if (hotkey.command->IsAllowed(game))
+      PrintToOutput(std::to_string(hotkey.key) + "  =  " + hotkey.description + "\n");
 
   PrintToOutput("\n> ");
 }
