@@ -7,6 +7,7 @@ namespace interface {
 
 class EncounterViewObject : public ViewObject {
   [[nodiscard]] char GetDisplayCharacter() const override;
+  [[nodiscard]] const std::string GetDisplayColor() const override;
 };
 
 }

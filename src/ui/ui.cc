@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ui.h"
 #include "logger.h"
+#include "ansi_colors.h"
 
 using namespace game;
 
@@ -34,15 +35,15 @@ void Ui::ShowSector() const {
   for (const auto &row : sector) {
     for (const auto &col : row) {
       auto view_object = view_object_factory_.GetObjectCharacter(col);
-      if (view_object) PrintToOutput(view_object->GetPrintContent());
+      if (view_object) PrintToOutput(view_object->GetPrintContent(), view_object->GetDisplayColor());
     }
 
     PrintToOutput("\n");
   }
 }
 
-void Ui::PrintToOutput(const std::string& content) {
-  std::cout << content;
+void Ui::PrintToOutput(const std::string& content, const std::string& color) {
+  std::cout << color <<  content << ANSI_COLOR_RESET;
   persistence::Logger::GetInstance().AppendLogRecord(content);
 }
 

@@ -3,6 +3,7 @@
 
 #include "game_manager.h"
 #include "ui/view_objects/object_character_factory.h"
+#include "ansi_colors.h"
 
 namespace interface {
 
@@ -18,7 +19,7 @@ class Ui {
   void ShowPackageInfo() const;
   [[nodiscard]] static std::string GetFormattedCoordsString(game::Coords coords) ;
   void ShowEncounter() const;
-  static void PrintToOutput(const std::string &content) ;
+  static void PrintToOutput(const std::string &content, const std::string& color = ANSI_COLOR_RESET);
 };
 
 }
