@@ -15,7 +15,6 @@ class EncounterGenerator {
   [[nodiscard]] const std::vector<std::string>& GetLatestEncounterLog() const;
   void GenerateResult(SpaceshipStats& spaceship_stats, enums::EncounterCharacter encounter_character);
   void CreateRandomEncounter();
-  bool IsInActiveEncounter();
  private:
   EncounterModel current_encounter_;
   RandomHelper random_helper_ = RandomHelper::GetInstance();
