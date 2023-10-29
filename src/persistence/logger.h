@@ -16,7 +16,7 @@ class Logger {
   Logger(Logger&&) = delete;
   Logger& operator=(Logger&&) = delete;
 
-  void AddLogRecord(const std::string& new_log_record);
+  void AppendLogRecord(const std::string& new_log_record);
   void SaveLogToFile();
  private:
   Logger() = default;

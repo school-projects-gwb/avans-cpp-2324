@@ -3,7 +3,7 @@
 
 #include "scan_object.h"
 #include "scan_select_result.h"
-#include "data_types/grid.h"
+#include "data_types/vector_grid.h"
 
 namespace game {
 
@@ -12,11 +12,11 @@ class ScanCreator {
   ScanCreator();
   void CreateScan();
   [[nodiscard]] static ScanSelectResult PickSectorByInput(int input);
-  [[nodiscard]] const Grid<ScanObject>& GetCurrentScan() const;
+  [[nodiscard]] const VectorGrid<ScanObject>& GetCurrentScan() const;
   [[nodiscard]] static bool IsOnEdge(int row_number, int col_number);
  private:
   static const int kColRowCount = 5;
-  Grid<ScanObject> scan_;
+  VectorGrid<ScanObject> scan_;
 };
 
 }

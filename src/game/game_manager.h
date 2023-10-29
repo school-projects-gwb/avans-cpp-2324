@@ -18,6 +18,7 @@ class GameManager {
   explicit GameManager(const std::vector<PackageModel>& package_data, std::vector<EncounterModel>& encounter_data);
 
   void ProcessPlayerMovement(const enums::Direction& direction);
+  void ProcessObjectMovement();
   void ProcessPlayerInput(int userInput);
   void ProcessPackagePickup();
   void ProcessPackageView();
@@ -31,13 +32,12 @@ class GameManager {
 
   [[nodiscard]] enums::MainGameState GetMainGameState() const;
   [[nodiscard]] enums::SubGameState GetSubGameState() const;
-  [[nodiscard]] const Grid<ScanObject>& GetCurrentScan() const;
-  [[nodiscard]] const Grid<enums::SectorObjectType>& GetCurrentSector() const;
+  [[nodiscard]] const VectorGrid<ScanObject>& GetCurrentScan() const;
+  [[nodiscard]] const VectorGrid<enums::SectorObjectType>& GetCurrentSector() const;
   [[nodiscard]] const Coords GetCurrentSectorCoords() const;
   [[nodiscard]] const SpaceShip& GetSpaceship() const;
   [[nodiscard]] const std::vector<std::string>& GetEncounterLog() const;
   [[nodiscard]] bool GetShouldQuit() const;
-  void MoveSectorObjects();
  private:
   ScanCreator scanner_;
   Universe universe_;

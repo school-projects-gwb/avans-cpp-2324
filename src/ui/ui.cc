@@ -43,7 +43,7 @@ void Ui::ShowSector() const {
 
 void Ui::PrintToOutput(const std::string& content) {
   std::cout << content;
-  persistence::Logger::GetInstance().AddLogRecord(content);
+  persistence::Logger::GetInstance().AppendLogRecord(content);
 }
 
 void Ui::ShowPackageInfo() const {

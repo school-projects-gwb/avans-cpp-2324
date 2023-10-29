@@ -8,16 +8,14 @@ DatabaseConnection &DatabaseConnection::GetInstance() {
   return instance;
 }
 
-bool DatabaseConnection::ConnectToSqlite(const char *dbName) {
-  if (connection_) return true;
+void DatabaseConnection::ConnectToSqlite(const char *dbName) {
+  if (connection_) return;
 
   try {
-    connection_ = std::make_unique<SqliteConnection>(dbName);
+    connection_ = std::make_unique<SqliteConnectionWrapper>(dbName);
   } catch (const std::runtime_error &ex) {
     throw;
   }
-
-  return true;
 }
 
 std::unique_ptr<sqlite3_stmt, void(*)(sqlite3_stmt*)> DatabaseConnection::PrepareStatement(const char* sql) {
@@ -36,7 +34,7 @@ std::unique_ptr<sqlite3_stmt, void(*)(sqlite3_stmt*)> DatabaseConnection::Prepar
   return std::unique_ptr<sqlite3_stmt, decltype(statement_deleter)>(statement, statement_deleter);
 }
 
-void DatabaseConnection::ExecuteQuery(const char *sql) {
+void DatabaseConnection::ExecuteQuery(const char *sql) const {
   if (!connection_) return;
 
   int result = sqlite3_exec(connection_->GetConnection(), sql, nullptr, nullptr, nullptr);

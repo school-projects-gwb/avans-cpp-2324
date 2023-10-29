@@ -7,12 +7,12 @@
 namespace game {
 
 template<typename T>
-class Grid {
+class VectorGrid {
  public:
-  Grid(size_t rows, size_t cols)
+  VectorGrid(size_t rows, size_t cols)
       : grid_(rows, std::vector<T>(cols)) {}
 
-  Grid() = default;
+  VectorGrid() = default;
 
   T &operator()(size_t row, size_t col) {
     return grid_[row][col];
@@ -49,11 +49,11 @@ class Grid {
     return grid_.end();
   }
 
-  size_t GetRowCount() const {
+  [[nodiscard]] size_t GetRowCount() const {
     return grid_.size();
   }
 
-  size_t GetColCount() const {
+  [[nodiscard]] size_t GetColCount() const {
     return grid_.empty() ? 0 : grid_[0].size();
   }
 

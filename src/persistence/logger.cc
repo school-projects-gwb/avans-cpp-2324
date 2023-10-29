@@ -11,7 +11,7 @@ Logger &Logger::GetInstance() {
   return instance;
 }
 
-void Logger::AddLogRecord(const std::string& new_log_record) {
+void Logger::AppendLogRecord(const std::string& new_log_record) {
   log_.emplace_back(new_log_record);
 }
 

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "game/scans/scan_object.h"
-#include "data_types/grid.h"
+#include "data_types/vector_grid.h"
 #include "data_types/coords.h"
 #include "game/enums/direction.h"
 #include "spaceship/spaceship.h"
@@ -22,7 +22,7 @@ class Sector {
   Sector *kLeft = nullptr;
   Sector *kRight = nullptr;
 
-  [[nodiscard]] const Grid<enums::SectorObjectType>& GetSectorObjects() const;
+  [[nodiscard]] const VectorGrid<enums::SectorObjectType>& GetSectorObjects() const;
   [[nodiscard]] Coords GetRandomFreeCoords() const;
   [[nodiscard]] std::vector<SpaceshipNeighborObject> GetNeighborObjects(Coords coords) const;
   [[nodiscard]] Coords GetRelativeNeighborSectorCoords(Coords coords, enums::Direction direction) const;
@@ -42,9 +42,12 @@ class Sector {
   bool is_generated_ = false;
   ScanObject scan_data_;
   static const int kGridSize = 10;
-  Grid<enums::SectorObjectType> objects_;
+  VectorGrid<enums::SectorObjectType> objects_;
 
   void PlaceObjectsOfType(enums::SectorObjectType type, int amount);
+  static Coords CalculateNextPosition(const Coords &current_position, const Coords &target_location);
+  bool IsValidMove(const Coords &next_position, enums::SectorObjectType object_type) const;
+  void MoveObject(const Coords &current_position, const Coords &next_position);
 };
 
 }

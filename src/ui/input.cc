@@ -18,7 +18,7 @@ void Input::ProcessInput(GameManager &game) const {
     ShowAllowedCommands(game);
     std::getline(std::cin, input);
     std::istringstream iss(input);
-    persistence::Logger::GetInstance().AddLogRecord(" " + std::to_string(user_input) + " (User input)\n");
+    persistence::Logger::GetInstance().AppendLogRecord(" " + std::to_string(user_input) + " (User input)\n");
 
     if (iss >> user_input) {
       action_registry_.HandleCommand(user_input, game);
@@ -30,15 +30,16 @@ void Input::ProcessInput(GameManager &game) const {
 }
 
 void Input::ShowAllowedCommands(const GameManager& game) const {
+  PrintToOutput("Kies een actie:\n");
   for (const UserAction &hotkey : action_registry_.hotkeys_)
-    if (hotkey.command->IsAllowed(game)) PrintToOutput(std::to_string(hotkey.key) + " : " + hotkey.description + "\n");
+    if (hotkey.command->IsAllowed(game)) PrintToOutput(std::to_string(hotkey.key) + "  =  " + hotkey.description + "\n");
 
   PrintToOutput("\n> ");
 }
 
-void Input::PrintToOutput(const std::string& content) const {
+void Input::PrintToOutput(const std::string& content) {
   std::cout << content;
-  persistence::Logger::GetInstance().AddLogRecord(content);
+  persistence::Logger::GetInstance().AppendLogRecord(content);
 }
 
 }

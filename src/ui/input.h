@@ -13,7 +13,7 @@ class Input {
  private:
   ActionRegistry action_registry_;
   void ShowAllowedCommands(const game::GameManager& game) const;
-  void PrintToOutput(const std::string &content) const;
+  static void PrintToOutput(const std::string &content) ;
 };
 
 }

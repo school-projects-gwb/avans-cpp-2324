@@ -3,7 +3,7 @@
 
 #include <sqlite3.h>
 #include <memory>
-#include "sqlite_connection.h"
+#include "sqlite_connection_wrapper.h"
 
 namespace persistence {
 
@@ -12,13 +12,13 @@ class DatabaseConnection {
   static DatabaseConnection& GetInstance();
   DatabaseConnection(const DatabaseConnection&) = delete;
   DatabaseConnection& operator=(const DatabaseConnection&) = delete;
-  bool ConnectToSqlite(const char* dbName);
-  void ExecuteQuery(const char* sql);
+  void ConnectToSqlite(const char* dbName);
+  void ExecuteQuery(const char* sql) const;
   std::unique_ptr<sqlite3_stmt, void (*)(sqlite3_stmt *)> PrepareStatement(const char *sql);
  private:
   DatabaseConnection() = default;
   ~DatabaseConnection() = default;
-  std::unique_ptr<SqliteConnection> connection_;
+  std::unique_ptr<SqliteConnectionWrapper> connection_;
 };
 
 }
