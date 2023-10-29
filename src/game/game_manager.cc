@@ -15,6 +15,17 @@ void GameManager::ProcessPlayerMovement(const enums::Direction& direction) {
   if (space_ship_.IsAtUniverseEdge()) state_.main_game_state = enums::MainGameState::PendingReset;
 }
 
+void GameManager::ProcessObjectMovement() {
+  if (state_.main_game_state != enums::Movement || state_.sub_game_state == enums::ShowEncounter) return;
+
+  universe_.MoveEncounters(space_ship_.GetPosition());
+  auto collision_found = universe_.TryRemoveCollidingObjects(space_ship_.GetPosition(), enums::SectorObjectType::Encounter);
+  if (collision_found) {
+    state_.main_game_state = enums::MainGameState::ActiveEncounter;
+    encounter_generator_.CreateRandomEncounter();
+  }
+}
+
 void GameManager::ProcessPlayerInput(int userInput) {
   if (state_.main_game_state != enums::MainGameState::Scanning) return;
 
@@ -65,7 +76,6 @@ void GameManager::ProcessDoNothing() {
   state_.main_game_state = enums::MainGameState::Movement;
 }
 
-
 void GameManager::ResetGame() {
   state_.main_game_state = enums::MainGameState::ShouldReset;
 }
@@ -79,19 +89,19 @@ void GameManager::QuitGame() {
   should_quit_game_ = true;
 }
 
-enums::SubGameState GameManager::GetSubGameState() const {
-  return state_.sub_game_state;
-}
-
 enums::MainGameState GameManager::GetMainGameState() const {
   return state_.main_game_state;
 }
 
-const Grid<ScanObject>& GameManager::GetCurrentScan() const {
+enums::SubGameState GameManager::GetSubGameState() const {
+  return state_.sub_game_state;
+}
+
+const VectorGrid<ScanObject>& GameManager::GetCurrentScan() const {
   return scanner_.GetCurrentScan();
 }
 
-const Grid<enums::SectorObjectType>& GameManager::GetCurrentSector() const {
+const VectorGrid<enums::SectorObjectType>& GameManager::GetCurrentSector() const {
   return universe_.GetActiveSector().GetSectorObjects();
 }
 
@@ -109,17 +119,6 @@ const std::vector<std::string>& GameManager::GetEncounterLog() const {
 
 bool GameManager::GetShouldQuit() const {
   return should_quit_game_;
-}
-
-void GameManager::MoveSectorObjects() {
-  if (state_.main_game_state != enums::Movement) return;
-
-  universe_.MoveObjects(space_ship_.GetPosition());
-  auto collision_found = universe_.TryRemoveCollidingObjects(space_ship_.GetPosition(), enums::SectorObjectType::Encounter);
-  if (collision_found) {
-    state_.main_game_state = enums::MainGameState::ActiveEncounter;
-    encounter_generator_.CreateRandomEncounter();
-  }
 }
 
 }

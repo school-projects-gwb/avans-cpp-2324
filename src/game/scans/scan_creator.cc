@@ -49,7 +49,7 @@ namespace game {
     return false;
   }
 
-  const Grid<ScanObject>& ScanCreator::GetCurrentScan() const {
+  const VectorGrid<ScanObject>& ScanCreator::GetCurrentScan() const {
     return scan_;
   }
 }

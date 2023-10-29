@@ -25,7 +25,7 @@ static EncounterCharacter GetEncounterCharacterFromString(const std::string& str
   return character;
 }
 
-static const std::string GetEncounterCharacterFromEnum(EncounterCharacter encounter_character) {
+static std::string GetEncounterCharacterFromEnum(EncounterCharacter encounter_character) {
   switch (encounter_character) {
     case Bender:
       return "Bender";

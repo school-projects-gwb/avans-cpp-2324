@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include "sqlite_connection.h"
+#include "sqlite_connection_wrapper.h"
 
 namespace persistence {
 
-SqliteConnection::SqliteConnection(const char *dbName) {
+SqliteConnectionWrapper::SqliteConnectionWrapper(const char *dbName) {
   if (!FileExists(dbName)) throw std::runtime_error("Database file does not exist");
 
   int error = sqlite3_open(dbName, &connection_);
@@ -18,15 +18,15 @@ SqliteConnection::SqliteConnection(const char *dbName) {
   }
 }
 
-SqliteConnection::~SqliteConnection() {
+SqliteConnectionWrapper::~SqliteConnectionWrapper() {
   if (connection_) sqlite3_close(connection_);
 }
 
-sqlite3 *SqliteConnection::GetConnection() const {
+sqlite3 *SqliteConnectionWrapper::GetConnection() const {
   return connection_;
 }
 
-bool SqliteConnection::FileExists(const char *fileName) const {
+bool SqliteConnectionWrapper::FileExists(const char *fileName) const {
   std::ifstream file(fileName);
   return file.good();
 }

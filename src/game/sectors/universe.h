@@ -14,18 +14,19 @@ namespace game {
 class Universe {
  public:
   Universe() = default;
-  void SetSectors(const Grid<ScanObject> &scanData, const ScanSelectResult &pickResult);
+  void SetSectors(const VectorGrid<ScanObject> &scanData, const ScanSelectResult &pickResult);
   [[nodiscard]] const Sector& GetActiveSector() const;
   void MoveSpaceship(const enums::Direction& direction);
-  void MoveObjects(const Coords& target_location);
+  void MoveEncounters(const Coords& target_location);
   void SetSpaceship(SpaceShip& ship);
   [[nodiscard]] PackageDestinationResult GetPackageDestinationInfo() const;
   bool TryRemoveCollidingObjects(const Coords &target_position, enums::SectorObjectType collision_type);
  private:
-  Grid<Sector> sectors_;
+  VectorGrid<Sector> sectors_;
   Sector* active_sector_ = nullptr;
   SpaceShip* space_ship_ = nullptr;
   void AttemptMoveSpaceshipToDifferentSector(const enums::Direction& direction);
+  void AttemptMoveSpaceshipInsideSector(Coords &next_position);
 };
 
 }

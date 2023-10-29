@@ -12,8 +12,8 @@ void Cargo::AddCargo(const PackageModel& package, PackageDestinationResult desti
   current_shipment_.destination_sector = destination_info.destination_sector_coords;
   current_shipment_.destination_planet = destination_info.destination_planet_coords;
 
-  current_shipment_.destination_description = package.destination_description_;
-  current_shipment_.content_description = package.content_description_;
+  current_shipment_.destination_description = package.destination_;
+  current_shipment_.content_description = package.description_;
 
   is_in_transit_ = true;
 }

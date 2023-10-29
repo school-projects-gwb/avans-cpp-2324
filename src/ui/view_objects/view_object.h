@@ -8,6 +8,7 @@ namespace interface {
 class ViewObject {
  public:
   [[nodiscard]] virtual char GetDisplayCharacter() const;
+  [[nodiscard]] virtual const std::string GetDisplayColor() const;
   [[nodiscard]] virtual const std::string GetPrintContent() const;
 };
 

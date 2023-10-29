@@ -27,8 +27,8 @@ std::vector<game::PackageModel> DataHandler::GetPackages() const {
     const char* destination_description = reinterpret_cast<const char*>(sqlite3_column_text(statement.get(), 1));
 
     game::PackageModel package;
-    package.content_description_ = content_description ? content_description : "";
-    package.destination_description_ = destination_description ? destination_description : "";
+    package.description_ = content_description ? content_description : "";
+    package.destination_ = destination_description ? destination_description : "";
 
     packages.push_back(package);
   }
@@ -81,7 +81,7 @@ std::vector<game::EncounterModel> DataHandler::GetEncounters() const {
 }
 
 std::vector<game::EncounterModel, std::allocator<game::EncounterModel>>::iterator
-DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, int id) const {
+DataHandler::FindEncounterByID(std::vector<game::EncounterModel>& encounters, int id) {
   return std::find_if(
       encounters.begin(),
       encounters.end(),
@@ -100,7 +100,7 @@ game::Consequence DataHandler::CreateConsequenceFromRow(sqlite3_stmt* statement)
   return new_consequence;
 }
 
-std::string DataHandler::GetStringColumn(sqlite3_stmt* statement, int column_index) const {
+std::string DataHandler::GetStringColumn(sqlite3_stmt* statement, int column_index) {
   const char* text = reinterpret_cast<const char*>(sqlite3_column_text(statement, column_index));
   return text ? text : "";
 }

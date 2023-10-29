@@ -14,7 +14,7 @@ class SpaceshipStats {
   [[nodiscard]] bool HasEnoughWinningPoints() const;
  private:
   const int points_to_die_ = 200;
-  const int points_to_win_ = 1;
+  const int points_to_win_ = 10;
   int damage_points_ = 0;
   int winning_points_ = 0;
 };
