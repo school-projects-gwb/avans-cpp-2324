@@ -16,7 +16,7 @@ void Ui::UpdateUi(enums::MainGameState state, enums::SubGameState sub_game_state
   if (sub_game_state == enums::SubGameState::PackagePickupBlocked) PrintToOutput("Geen geschikte bestemming gevonden voor pakket.\n");
   if (sub_game_state == enums::SubGameState::PackageDeliverySuccess) {
     auto space_ship = game_.GetSpaceship();
-    PrintToOutput("Pakket succesvol afgeleverd! Je hebt " + std::to_string(space_ship.GetWinningPoints()) + " punt(en).\n");
+    PrintToOutput("Pakket succesvol afgeleverd! Je hebt " + std::to_string(space_ship.GetWinningPoints()) + " overwinningspunt(en).\n");
   }
 
   if (state == enums::MainGameState::Scanning) ShowScan();
@@ -91,7 +91,7 @@ void Ui::PrintFormattedRowNumber(int row_number) {
 }
 
 void Ui::PrintFormattedColumnHeader(int total_column_count) {
-  const int leading_space_count = 6;
+  const int leading_space_count = 5;
 
   // Number row
   for (int i = 0; i < leading_space_count; ++i)
